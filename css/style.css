@@ -1,0 +1,142 @@
+/* ----------- constantes ----------- */
+:root {
+    --azulElevAi: #0D2345;
+    --azulDestaque: #1c3f90;
+}
+
+
+/* ----------- barra rolagem ----------- */
+::-webkit-vscrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+  background: none; /* Cor do fundo/trilho da barra */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--azulElevAi); /* Cor da parte que se move (o puxador) */
+  border-radius: 5px; /* Arredondamento das bordas */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--azulDestaque); /* Cor do puxador ao passar o mouse */
+}
+
+
+/* ----------- navbar ----------- */
+.bodyNav {
+    background-color: var(--azulElevAi);
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100vh;
+}
+
+.logoElevAi {
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.titleNav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+}
+
+.titleNav a:hover {
+    background-color: var(--azulDestaque);
+}
+
+.iconNav {
+    margin-right: 0.5rem;
+}
+
+
+/* ----------- global ----------- */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+/* ----------- Celulares menores ----------- */
+@media (max-width: 500px) {
+    .bodyNav {
+        width: 30% !important;
+    }
+
+    .titleNav a {
+        font-size: 0.50rem;
+    }
+}
+
+/* ----------- Celulares menores ----------- */
+@media (max-width: 500px) {
+    .bodyNav {
+        width: 28% !important;
+    }
+
+    .titleNav a {
+        font-size: 0.55rem;
+    }
+}
+
+/* ----------- Celulares maiores ----------- */
+@media (max-width: 900px) { 
+    .bodyNav {
+        width: 25%;
+        padding: 1rem 0.5rem;
+    }
+
+    .titleNav a {
+        margin-bottom: 0.5rem;
+        font-size: 0.60rem;
+        padding: 0.1rem;
+    }
+
+    .logoElevAi {
+        width: 80%;
+        margin-bottom: 1.5rem;
+    }
+
+    .iconNav {
+        display: none;
+    }
+}
+
+
+/* ----------- Tablet ----------- */
+@media (max-width: 1200px) {
+    .bodyNav {
+        width: 15%;
+        padding: 1rem 0.85rem;
+    }
+
+    .titleNav a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.75rem;
+        padding: 0.3rem;
+    }
+
+    .logoElevAi {
+        width: 70%;
+        margin-bottom: 1.5rem;
+    }
+
+    .iconNav {
+        font-size: 0.5rem;
+        margin-right: 0.25rem;
+    }
+}
