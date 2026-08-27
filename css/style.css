@@ -2,6 +2,7 @@
 :root {
     --azulElevAi: #0D2345;
     --azulDestaque: #1c3f90;
+    --fonteLato: "Lato", sans-serif;
 }
 
 
@@ -33,6 +34,11 @@
     left: 0;
     width: 15%;
     height: 100vh;
+}
+
+#page-content {
+    margin-left: 15%;
+    padding: 1.5rem;
 }
 
 .logoElevAi {
@@ -67,6 +73,12 @@ html, body {
     height: 100%;
 }
 
+.titlePage {
+    font-family: var(--fonteLato);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
 
 /* ----------- Celulares menores ----------- */
 @media (max-width: 500px) {
@@ -76,6 +88,10 @@ html, body {
 
     .titleNav a {
         font-size: 0.50rem;
+    }
+
+    #page-content {
+        margin-left: 30%;
     }
 }
 
@@ -88,12 +104,16 @@ html, body {
     .titleNav a {
         font-size: 0.55rem;
     }
+
+    #page-content {
+        margin-left: 728% !important;
+    }
 }
 
 /* ----------- Celulares maiores ----------- */
 @media (max-width: 900px) { 
     .bodyNav {
-        width: 25%;
+        width: 25% !important;
         padding: 1rem 0.5rem;
     }
 
@@ -111,13 +131,17 @@ html, body {
     .iconNav {
         display: none;
     }
+
+    #page-content {
+        margin-left: 25% !important;
+    }
 }
 
 
 /* ----------- Tablet ----------- */
 @media (max-width: 1200px) {
     .bodyNav {
-        width: 15%;
+        width: 20% !important;
         padding: 1rem 0.85rem;
     }
 
@@ -138,5 +162,9 @@ html, body {
     .iconNav {
         font-size: 0.5rem;
         margin-right: 0.25rem;
+    }
+
+    #page-content {
+        margin-left: 20% !important;
     }
 }
