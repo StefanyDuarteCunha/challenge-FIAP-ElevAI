@@ -15,20 +15,117 @@
 <body>
     <div id="navbar-placeholder"></div>
     <div id="page-content">
-        <header>
+        <header class="headerDash">
             <h1 class="titlePage">Dashboard Geral</h1>
+            <div class="campoPeriodo">
+                <label for="dataInicio">Período: </label>
+                <div class="inputContainer">
+                    <input type="date" id="data-inicio" name="inicio" value="2026-05-11" class="inputDate">
+                    <span>a</span>
+                    <input type="date" id="data-fim" name="fim" value="2026-05-11" class="inputDate">
+                </div>
+            </div>
         </header>
-        <main></main>
+        <main>
+            <div class="lineDash30">
+                <div class="colDash colDash30">
+                    <p class="subtitleDash m-0">Ocorrências abertas</p>
+                    <p class="dadoDash m-0">128</p>
+                    <p class="legendaDash m-0">+12% do período anterior</p>
+                </div>
+                <div class="colDash colDash30">
+                    <p class="subtitleDash m-0">Atendimentos hoje</p>
+                    <p class="dadoDash m-0">342</p>
+                    <p class="legendaDash m-0">-8% do período anterior</p>
+                </div>
+                <div class="colDash colDash30">
+                    <p class="subtitleDash m-0">Tempo médio de resposta</p>
+                    <p class="dadoDash m-0">1h24m</p>
+                    <p class="legendaDash m-0">-30min do período anterior</p>
+                </div>
+            </div>
+            <div class="lineDash lineDash47">
+                <div class="colDash colDash47">
+                    <p class="titleDash m-0">Ocorrências por criticidade</p>
+                </div>
+                <div class="colDash colDash47">
+                    <p class="titleDash m-0">Ocorrências por região</p>
+                </div>
+            </div>
+            <div class="lineDash">
+                <div class="colDash">
+                    <p class="titleDash m-0">Evolução das ocorrências</p>
+                </div>
+            </div>
+            <div class="lineDash lineDash47">
+                <div class="colDash colDash47">
+                    <p class="titleDash m-0">Top 5 - Tipos de ocorrências</p>
+                    <table>
+                        <thead></thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Parada entre andares</td>
+                                <td>30 (23%)</td>
+                            </tr>
+                             <tr>
+                                <td>2</td>
+                                <td>Falha na porta</td>
+                                <td>23 (19%)</td>
+                            </tr>
+                             <tr>
+                                <td>3</td>
+                                <td>Falta de energia</td>
+                                <td>20 (16%)</td>
+                            </tr>
+                             <tr>
+                                <td>4</td>
+                                <td>Alarme acionado</td>
+                                <td>16 (12%)</td>
+                            </tr>
+                             <tr>
+                                <td>5</td>
+                                <td>Falha no motor</td>
+                                <td>12 (9%)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="colDash colDash47">
+                    <p class="titleDash m-0">SLA - Tempo de resposta</p>
+                </div>
+            </div>
+            <div class="lineDash">
+                <div class="colDash">
+                    <p class="titleDash m-0">Alertas e Insights</p>
+                    <div class="containerAlerta">
+                        <div class="imgAlerta">
+                            <i class="bi bi-exclamation-octagon"></i>
+                        </div>
+                        <div class="alertaDash">
+                            <h6 class="titleAlert m-0">Aumento de falhas de porta na região SP Centro</h6>
+                            <p class="textAlert m-0">Recomendação: verificar necessidade de manutenção preventiva</p>
+                        </div>
+                    </div>
+                    <div class="containerAlerta">
+                        <div class="imgAlerta">
+                            <i class="bi bi-exclamation-octagon"></i>
+                        </div>
+                        <div class="alertaDash">
+                            <h6 class="titleAlert m-0">Elevador #12345 com recorrência de falhas</h6>
+                            <p class="textAlert m-0">Recomendação: análise tecnicoa detalhada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
         <footer></footer>
     </div>
-    <script>
-        fetch('navbar.html')
-            .then(r => r.text())
-            .then(html => {
-                const template = document.createElement('template');
-                template.innerHTML = html.trim();
-                document.getElementById('navbar-placeholder').appendChild(template.content);
-            });
-    </script>      
+    <script type="module">
+        import { carregarNavbar } from "../js/scripts.js";
+
+        // Executa a função assim que a página carrega
+        carregarNavbar();
+    </script>
 </body>
 </html>

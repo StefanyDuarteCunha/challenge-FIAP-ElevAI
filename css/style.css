@@ -2,6 +2,8 @@
 :root {
     --azulElevAi: #0D2345;
     --azulDestaque: #1c3f90;
+    --cinzaClaro: #f8fafa;
+    --cinzaMedio: #b3b3b3;
     --fonteLato: "Lato", sans-serif;
 }
 
@@ -66,20 +68,6 @@
 }
 
 
-/* ----------- global ----------- */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-.titlePage {
-    font-family: var(--fonteLato);
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-
 /* ----------- Celulares menores ----------- */
 @media (max-width: 500px) {
     .bodyNav {
@@ -106,7 +94,7 @@ html, body {
     }
 
     #page-content {
-        margin-left: 728% !important;
+        margin-left: 28% !important;
     }
 }
 
@@ -167,4 +155,120 @@ html, body {
     #page-content {
         margin-left: 20% !important;
     }
+}
+
+
+
+/* ----------- global ----------- */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.titlePage {
+    font-family: var(--fonteLato);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+
+/* ----------- Page - Dashboard ----------- */
+
+.containerAlerta, .lineDash30, .lineDash47, .headerDash, .campoPeriodo, .inputContainer  {
+    display: flex;
+} 
+
+.headerDash {
+    justify-content: space-between; /* Empurra o H1 para a esquerda e o período para a direita */
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.campoPeriodo {
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o label e os inputs rigidamente à direita */
+    gap: 0.5rem; /* Espaço entre a palavra "Período" e as caixas de data */
+    font-size: 0.85rem;
+}
+
+.inputContainer {
+    align-items: center;
+    gap: 1rem; /* Controla o espaço entre os inputs e o "a" */
+}
+
+.inputDate {
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 1.5rem;
+    padding: 0.2rem 1rem;
+    color: grey;
+}
+
+.colDash {
+    background-color: var(--cinzaClaro);
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    ;
+}
+
+.colDash30, .colDash47 {
+    display: inline-block;
+}
+
+.colDash30 {
+    width: 30%;
+}
+
+.lineDash30, .lineDash47 {
+    gap: 5%;
+}
+
+.colDash47 {
+    width: 47.5%;
+}
+
+.subtitleDash {
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.dadoDash {
+    font-size: 2.5rem;
+}
+
+.legendaDash {
+    font-size: 0.65rem;
+}
+
+.titleDash {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.containerAlerta {
+    align-items: center;
+    margin: 0.8rem 0;
+    padding: 0.8rem;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 1.5rem;
+} 
+
+.containerAlerta:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.imgAlerta {
+    color: red;
+    text-align: center;
+    width: 5%;
+}
+
+.titleAlert, .textAlert {
+    font-size: 0.85rem;
+}
+
+.titleAlert {
+    font-weight: bold;
 }

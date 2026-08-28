@@ -22,14 +22,11 @@
         <main></main>
         <footer></footer>
     </div>
-    <script>
-        fetch('navbar.html')
-            .then(r => r.text())
-            .then(html => {
-                const template = document.createElement('template');
-                template.innerHTML = html.trim();
-                document.getElementById('navbar-placeholder').appendChild(template.content);
-            });
-    </script>      
+    <script type="module">
+        import { carregarNavbar } from "../js/scripts.js";
+
+        // Executa a função assim que a página carrega
+        carregarNavbar();
+    </script>  
 </body>
 </html>
