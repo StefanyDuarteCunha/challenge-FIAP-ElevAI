@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script src="scripts.js"></script>
 </head>
 <body>
     <div id="navbar-placeholder"></div>
@@ -20,9 +23,9 @@
             <div class="campoPeriodo">
                 <label for="dataInicio">Período: </label>
                 <div class="inputContainer">
-                    <input type="date" id="data-inicio" name="inicio" value="2026-05-11" class="inputDate">
+                    <input type="date" id="data-inicio" name="inicio" value="2026-05-11" class="inputStyle">
                     <span>a</span>
-                    <input type="date" id="data-fim" name="fim" value="2026-05-11" class="inputDate">
+                    <input type="date" id="data-fim" name="fim" value="2026-05-11" class="inputStyle">
                 </div>
             </div>
         </header>
@@ -47,52 +50,70 @@
             <div class="lineDash lineDash47">
                 <div class="colDash colDash47">
                     <p class="titleDash m-0">Ocorrências por criticidade</p>
+                    <div class="containerGrafico d-flex justify-content-center">
+                        <canvas id="graficoRosca"></canvas>
+                    </div>
                 </div>
                 <div class="colDash colDash47">
                     <p class="titleDash m-0">Ocorrências por região</p>
+                    <div class="containerImagem d-flex justify-content-center">
+                        <img src="../img/mapaDash.png" alt="Mapa da região de atendimento">
+                    </div>
                 </div>
             </div>
             <div class="lineDash">
                 <div class="colDash">
                     <p class="titleDash m-0">Evolução das ocorrências</p>
+                    <div class="containerGraficoLinhas d-flex justify-content-center">
+                        <canvas id="graficoLinhas"></canvas>
+                    </div>
                 </div>
             </div>
             <div class="lineDash lineDash47">
                 <div class="colDash colDash47">
                     <p class="titleDash m-0">Top 5 - Tipos de ocorrências</p>
-                    <table>
-                        <thead></thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Parada entre andares</td>
-                                <td>30 (23%)</td>
-                            </tr>
-                             <tr>
-                                <td>2</td>
-                                <td>Falha na porta</td>
-                                <td>23 (19%)</td>
-                            </tr>
-                             <tr>
-                                <td>3</td>
-                                <td>Falta de energia</td>
-                                <td>20 (16%)</td>
-                            </tr>
-                             <tr>
-                                <td>4</td>
-                                <td>Alarme acionado</td>
-                                <td>16 (12%)</td>
-                            </tr>
-                             <tr>
-                                <td>5</td>
-                                <td>Falha no motor</td>
-                                <td>12 (9%)</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="containerTable">
+                        <table>
+                            <colgroup>
+                                <col style="width: 20%;">
+                                <col style="width: 50%;">
+                                <col style="width: 30%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Parada entre andares</td>
+                                    <td>30 (23%)</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Falha na porta</td>
+                                    <td>23 (19%)</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Falta de energia</td>
+                                    <td>20 (16%)</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Alarme acionado</td>
+                                    <td>16 (12%)</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Falha no motor</td>
+                                    <td>12 (9%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="colDash colDash47">
                     <p class="titleDash m-0">SLA - Tempo de resposta</p>
+                    <div class="containerGraficoSLA d-flex justify-content-center">
+                        <canvas id="graficoRoscaSLA"></canvas>
+                    </div>
                 </div>
             </div>
             <div class="lineDash">
@@ -119,13 +140,18 @@
                 </div>
             </div>
         </main>
-        <footer></footer>
+        <footer>
+            <p class="m-0">&copy; 2026 • <strong>ElevAI</strong> • Inteligência que eleva a sua operação</p> 
+        </footer>
     </div>
     <script type="module">
-        import { carregarNavbar } from "../js/scripts.js";
+        import { carregarNavbar, graficoRosca, graficoRoscaSLA, graficoLinhas } from "../js/scripts.js";
 
         // Executa a função assim que a página carrega
         carregarNavbar();
+        graficoRosca();
+        graficoRoscaSLA();
+        graficoLinhas();
     </script>
 </body>
 </html>

@@ -18,9 +18,159 @@
     <div id="page-content">
         <header>
             <h1 class="titlePage">Gestão da Equipe de Técnicos</h1>
+            <h6 class="subtitlePage">Gerencie sua equipe técnica em campo</h6>
         </header>
-        <main></main>
-        <footer></footer>
+        <main>
+            <div class="lineEquipe">
+                <div class="colEquipe16">
+                    <p class="dadoEquipe m-0">128</p>
+                    <p class="legendaEquipe m-0">Técnicos ativos</p>
+                </div>
+                <div class="colEquipe16Atendimento">
+                    <p class="dadoEquipe m-0">42</p>
+                    <p class="legendaEquipe m-0">Em atendimento</p>
+                </div>
+                <div class="colEquipe16Disponivel">
+                    <p class="dadoEquipe m-0">24</p>
+                    <p class="legendaEquipe m-0">Disponíveis</p>
+                </div>
+                <div class="colEquipe16Deslocamento">
+                    <p class="dadoEquipe m-0">18</p>
+                    <p class="legendaEquipe m-0">Em deslocamento</p>
+                </div>
+                <div class="colEquipe16">
+                    <p class="dadoEquipe m-0">92%</p>
+                    <p class="legendaEquipe m-0">SLA médio</p>
+                </div>
+            </div>
+            <div class="lineEquipe">
+                <div class="colEquipe58">
+                    <div class="containerBtnTecnicos">
+                        <button type="button" class="botaoNavPage ativo">Lista de Técnicos</button>
+                        <div class="form-group form-groupBtn">
+                            <label for="filtroTecnico"></label>
+                            <select id="filtroTecnico" class="form-select inputStyle">
+                                <option value="todos">Todos</option>
+                                <option value="disponivel">Disponível</option>
+                                <option value="em-atendimento">Em atendimento</option>
+                                <option value="em-adeslocamento">Em deslocamento</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="relatorioTecnicos">
+                        <table>
+                            <colgroup>
+                                <col style="width: 5%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 10%;">
+                                <col style="width: 10%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Técnico</th>
+                                    <th>Região</th>
+                                    <th>Status</th>
+                                    <th>Chamados</th>
+                                    <th>SLA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="bi bi-person-circle iconPersonTable"></i></td>
+                                    <td>João Pereira</td>
+                                    <td>São Paulo - SP</td>
+                                    <td><span class="tecDeslocamento">Deslocamento</span></td>
+                                    <td>5</td>
+                                    <td>96%</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-person-circle iconPersonTable"></i></td>
+                                    <td>Maria Souza</td>
+                                    <td>Campinas - SP</td>
+                                    <td><span class="tecDisponivel">Disponível</span></td>
+                                    <td>4</td>
+                                    <td>95%</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-person-circle iconPersonTable"></i></td>
+                                    <td>Carlos Lima</td>
+                                    <td>Belo Horizonte - MG</td>
+                                    <td><span class="tecDeslocamento">Deslocamento</span></td>
+                                    <td>2</td>
+                                    <td>95%</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-person-circle iconPersonTable"></i></td>
+                                    <td>Ana Oliveira</td>
+                                    <td>Niterói - RJ</td>
+                                    <td><span class="tecAtendimento">Atendimento</span></td>
+                                    <td>1</td>
+                                    <td>93%</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-person-circle iconPersonTable"></i></td>
+                                    <td>Pedro Alves</td>
+                                    <td>Curitiba - PR</td>
+                                    <td><span class="tecAtendimento">Atendimento</span></td>
+                                    <td>5</td>
+                                    <td>91%</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-person-circle iconPersonTable"></i></td>
+                                    <td>Gabriel Costa</td>
+                                    <td>Santos - SP</td>
+                                    <td><span class="tecDisponivel">Disponível</span></td>
+                                    <td>3</td>
+                                    <td>90%</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-person-circle iconPersonTable"></i></td>
+                                    <td>Rafael Santos</td>
+                                    <td>Brasilia - DF</td>
+                                    <td><span class="tecDeslocamento">Deslocamento</span></td>
+                                    <td>2</td>
+                                    <td>89%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="verCards mt-3 mb-2">Ver todos (128) <i class="bi bi-arrow-right"></i></p>
+                </div>
+                <div class="colEquipe37">
+                    <h5 class="titleRecomendacoes">Localização em tempo real</h5>
+                    <div class="mapaTecnicos">
+                        <div class="legendaTecMapa">
+                            <p class="m-0"><i class="bi bi-record-circle-fill circleVerde"></i> Disponível</p>
+                            <p class="m-0"><i class="bi bi-record-circle-fill circleAzul"></i> Em atendimento</p>
+                            <p class="m-0"><i class="bi bi-record-circle-fill circleAmarelo"></i> Em deslocamento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="recomendacoes">
+                <h5 class="titleRecomendacoes">Recomendação ElevAI</h5>
+                <h6 class="subtitlePage">Ocorrência #784512 - Elevador #235689</h6>
+                <div class="cardRecomendacao">
+                    <p class="mt-0 mb-3">Melhor técnico recomendado:</p>
+                    <div class="tecnicoRecomendacao">
+                        <i class="bi bi-person-circle iconPerson"></i>
+                        <p class="m-0">João Pereira</p>
+                        <div>
+                            <p class="m-0"><i class="bi bi-circle circleItem"></i> 2,4 km de distância</p>
+                            <p class="m-0"><i class="bi bi-circle circleItem"></i> Skills compatíveis - conhecimento em elétrica, especialista em painéis elétricos</p>
+                            <p class="m-0"><i class="bi bi-circle circleItem"></i> Ocupação da agenda: 60% antes deste agendamento | 75% com este agendamento</p>
+                        </div>
+                        <button type="button" class="botaoNovo">Aplicar sugestão</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p class="m-0">&copy; 2026 • <strong>ElevAI</strong> • Inteligência que eleva a sua operação</p> 
+        </footer>
     </div>
     <script type="module">
         import { carregarNavbar } from "../js/scripts.js";
