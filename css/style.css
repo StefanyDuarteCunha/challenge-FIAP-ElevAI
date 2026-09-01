@@ -6,6 +6,11 @@
     --cinzaClaro: #f8fafa;
     --cinzaMedio: #b3b3b3;
     --cinzaEscuro: #828282;
+    --amareloEscuro: rgb(107, 107, 8);
+    --amareloPadrao: rgb(246, 185, 8);
+    --amareloClaro: rgb(246, 246, 204);
+    --vermelhoClaro: rgb(242, 218, 218);
+    --verdeClaro: rgb(216, 243, 216);
     --fonteLato: "Lato", sans-serif;
 }
 
@@ -138,6 +143,11 @@ footer {
     border-radius: 0.5rem;
     border: none;
     padding: 0.5rem 1rem;
+}
+
+.botaoNovo a {
+    text-decoration: none;
+    color: white;
 }
 
 .botaoNovo:hover {
@@ -501,23 +511,23 @@ footer {
 }
 
 .colPlanAtivos {
-    background-color: rgb(216, 243, 216);
+    background-color: var(--verdeClaro);
     color: green;
 }
 
 .colPlanAtivos:hover {
     background-color: green;
-    color: rgb(216, 243, 216);
+    color: var(--verdeClaro);
 }
 
 .colPlanAtrasados {
-    background-color: rgb(242, 218, 218);
+    background-color: var(--vermelhoClaro);
     color: red;
 }
 
 .colPlanAtrasados:hover {
     background-color: red;
-    color: rgb(242, 218, 218);
+    color: var(--vermelhoClaro);
 }
 
 .dadoManutencao {
@@ -531,7 +541,7 @@ footer {
 .iconRecomendacoesManutencao {
     border-radius: 30rem;
     color: green;
-    background-color: rgb(216, 243, 216);
+    background-color: var(--verdeClaro);
     padding: 1rem;
     font-size: 2rem;
 }
@@ -669,23 +679,23 @@ footer {
 }
 
 .colPecas21Alerta {
-    background-color: rgb(246, 246, 204);
-    color: rgb(107, 107, 8);
+    background-color: var(--amareloClaro);
+    color: var(--amareloEscuro);
 }
 
 .colPecas21Alerta:hover {
-    background-color: rgb(107, 107, 8);
-    color: rgb(246, 246, 204);
+    background-color: var(--amareloEscuro);
+    color: var(--amareloClaro);
 }
 
 .colPecas21Criticas {
-    background-color: rgb(242, 218, 218);
+    background-color: var(--vermelhoClaro);
     color: red;
 }
 
 .colPecas21Criticas:hover {
     background-color: red;
-    color: rgb(242, 218, 218);
+    color: var(--vermelhoClaro);
 }
 
 .dadoPecas {
@@ -757,7 +767,7 @@ footer {
 
 .statusBaixo {
     color: red;
-    background-color: rgb(242, 218, 218);
+    background-color: var(--vermelhoClaro);
 }
 
 .barraNavegacaoTable, .numNavegacaoTable {
@@ -875,13 +885,13 @@ footer {
 }
 
 .colEquipe16Disponivel, .tecDisponivel {
-    background-color: rgb(216, 243, 216);
+    background-color: var(--verdeClaro);
     color: green;
 }
 
 .colEquipe16Disponivel:hover {
     background-color: green;
-    color: rgb(216, 243, 216);
+    color: var(--verdeClaro);
 }
 
 .circleVerde {
@@ -889,17 +899,17 @@ footer {
 }
 
 .colEquipe16Deslocamento, .tecDeslocamento {
-    background-color: rgb(246, 246, 204);
-    color: rgb(107, 107, 8);
+    background-color: var(--amareloClaro);
+    color: var(--amareloEscuro);
 }
 
 .colEquipe16Deslocamento:hover {
-    background-color: rgb(107, 107, 8);
-    color: rgb(246, 246, 204);
+    background-color: var(--amareloEscuro);
+    color: var(--amareloClaro);
 }
 
 .circleAmarelo {
-    color: rgb(107, 107, 8);;
+    color: var(--amareloEscuro);;
 }
 
 .dadoEquipe {
@@ -1014,6 +1024,176 @@ footer {
     flex: 1; /* ambos terão o mesmo tamanho */
     position: relative; 
 }
+
+
+
+/* ----------- Page - KPIs ----------- */
+.lineKpi, .colKpi47, .mapaAtendimento {
+    display: flex;
+}
+
+.lineKpi {
+    margin: 2rem 0;
+    gap: 5%;
+}
+
+.colKpi21, .colKpi47 {
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background-color: var(--cinzaClaro);
+    border: 1px solid var(--cinzaMedio);
+}
+
+.colKpi21 {
+    width: 21.25%;
+}
+
+.colKpi47 {
+    width: 47%;
+    height: 30rem;
+}
+
+.lineGraph {
+    height: 90%;
+}
+
+.colKpi21:hover {
+    background-color: var(--azulHover);
+}
+
+.subtitleKpi {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--cinzaEscuro);
+}
+
+.dadoKpi {
+    font-size: 2.5rem;
+}
+
+.legendaKpi {
+    font-size: 0.8rem;
+    color: green;
+}
+
+.lineIMG {
+    background-image: url('../img/mapaKpis.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90%;
+    border-radius: 1.5rem; 
+    flex: 1; /* ambos terão o mesmo tamanho */
+    position: relative; 
+}
+
+
+
+/* ----------- Page - Atendimentos ----------- */
+.lineAtendimento, .colAtendimento47, .colAtendimento30, .identificacaoElevador, .containerDadosAtendimento, .filterCardsAtendimento {
+    display: flex;
+}
+
+.lineAtendimento {
+    margin: 2rem 0;
+    gap: 5%;
+}
+
+.colAtendimento47, .colAtendimento30 {
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background-color: var(--cinzaClaro);
+    border: 1px solid var(--cinzaMedio);
+}
+
+.colAtendimento47 {
+    width: 47.5%;
+}
+
+.colAtendimento30 {
+    width: 30%;
+}
+
+.colAtendimento30:hover {
+    background-color: var(--azulHover);
+}
+
+.identificacaoElevador, .containerDadosAtendimento, .filterCardsAtendimento {
+    gap: 20%;
+    align-items: center;
+}
+
+.tagElevador{
+    font-size: 1.1 rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.atendimentoCritico, .atendimentoAlto, .atendimentoMedio, .atendimentoBaixo {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+.atendimentoCritico {
+    background-color: red;
+}
+
+.atendimentoAlto {
+    background-color: rgb(221, 121, 6);
+}
+
+.atendimentoMedio {
+    background-color: var(--amareloPadrao);
+}
+
+.atendimentoBaixo {
+    background-color: green;
+}
+
+.dadosAtendimento {
+    font-size: 0.9rem;
+    color: var(--cinzaEscuro);
+}
+
+.tempoAtendimento {
+    color: red;
+    font-weight: bold;
+}
+
+.infoAtendimento {
+    font: 1rem;
+    font-weight: bold;
+}
+
+.botaoAtendimento {
+    margin: 1rem;
+    width: fit-content;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.mapaAtendimento {
+    background-image: url('../img/mapaCaminho.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90%;
+    border-radius: 1.5rem; 
+    flex: 1; /* ambos terão o mesmo tamanho */
+    position: relative; 
+}
+
+
 
 /* ----------- Tablet ----------- */
 @media (max-width: 1200px) {

@@ -1,4 +1,4 @@
-
+/* ----------- Global ----------- */
 // função utilizada para carregar a navbar em todas as outras telas - todas as telas
 export function carregarNavbar() {
     fetch('navbar.html')
@@ -31,6 +31,7 @@ function ativarLinkAtual() {
 
 
 
+/* ----------- Tela - Dashboard ----------- */
 // função utilizada para criar gráfico rosca - tela Dashboard
 export function graficoRosca() {
     const ctx = document.getElementById('graficoRosca');
@@ -206,6 +207,7 @@ export function graficoLinhas() {
 
 
 
+/* ----------- Tela - Relatório ----------- */
 // função utilizada para manter botão ativo e alternar conteúdo - tela Relatório
 export function botaoNavPagesRelatorio() {
     const btnPadrao = document.getElementById('botao-padrao');
@@ -238,6 +240,7 @@ export function botaoNavPagesRelatorio() {
 
 
 
+/* ----------- Tela - Peças ----------- */
 // função utilizada para criar gráfico linha - tela Peças
 export function graficoLinhasPecas() {
     const ctx = document.getElementById('graficoLinhasPecas').getContext('2d');
@@ -334,6 +337,194 @@ export function graficoBarraV() {
                     ticks: {
                         display: false   // remove os números do eixo X
                     },
+                    grid: {
+                        display: false   // opcional: remove as linhas de grade
+                    }
+                },
+                y: {
+                    grid: {
+                        display: false   // opcional: remove as linhas de grade
+                    }
+                }
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+}
+
+
+
+/* ----------- Tela - KPIs ----------- */
+// função utilizada para criar gráfico rosca - tela KPIs
+export function graficoRoscaKpi() {
+    const ctx = document.getElementById('graficoRoscaKpi');
+
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Crítica', 'Alta', 'Média', 'Baixa'],
+            datasets: [{
+                data: [126, 264, 495, 384],
+                backgroundColor: [
+                    '#ff2d2d',
+                    '#ff6b2c',
+                    '#ffc107',
+                    '#28a745'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,  // trás responsividade ao gráfico
+            cutout: '60%',  // modifica o tamanho interno da rosquinha
+            maintainAspectRatio: false,  // o gráfico para de utilizar a sua proporção padrão e remove espaços excessivos de paddding
+            layout: {
+                padding: 0
+            },
+            plugins: {
+                datalabels: {
+                    color: "#fff",
+                    font: {
+                        size: 12
+                    },
+                    formatter: (value) => value   // mostra o número
+                },
+                legend: {
+                    display: true,
+                    position: "right",
+                    align: 'center',
+                    labels: {
+                        responsive: true,
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        padding: 20,
+                        boxWidth: 20,
+                        font: {
+                            size: 12
+                        }
+                    }
+                }
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+}
+
+
+
+// função utilizada para criar gráfico linha - tela KPIs
+export function graficoLinhasKpi() {
+    const ctx = document.getElementById('graficoLinhasKpi').getContext('2d');
+
+    // Criar um degradê na área de plotagem
+    const gradient = ctx.createLinearGradient(0, 0, 0, ctx.canvas.height);  // informação ctx.canvas.height coloca um degrade que acompanha o tamanho do gráfico
+    gradient.addColorStop(0, 'rgba(0, 123, 255, 0.8)');  // cor mais forte perto da linha
+    gradient.addColorStop(1, 'rgba(0, 123, 255, 0)');    // transparente no eixo X
+
+    const dados = {
+        labels: ["01/08", "02/08", "03/08", "04/08", "05/08", "06/08", "07/08", "08/08", "09/08", "10/08", "11/08", "12/08", "13/08", "14/08", "15/08", "16/08", "17/08", "18/08", "19/08", "20/08", "21/08", "22/08", "23/08", "24/08", "25/08", "26/08", "27/08", "28/08", "29/08", "30/08", "31/08"],
+        datasets: [{
+            data: [66, 81, 95, 72, 62, 75, 69, 65, 63, 74, 68, 67, 76, 96, 97, 84, 94, 90, 88, 73, 80, 85, 71, 99, 77, 93, 60, 100, 92, 86, 78], 
+            borderColor: '#007bff', 
+            backgroundColor: gradient,
+            tension: 0.3,
+            fill: true  // usado para que o gradiente funcione
+        }]
+    };
+
+    new Chart(ctx, {
+        type: 'line',
+        data: dados,
+        options: {
+            responsive: true,  // trás responsividade ao gráfico
+            plugins: {
+                legend: {
+                    display: false,
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                    },
+                    ticks: {
+                        // Força o gráfico a mostrar no máximo 10 rótulos
+                        maxTicksLimit: 10
+                    },
+                    grid: {
+                        display: false // Remove as linhas verticais
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                    },
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 10   // intervalo de 100 em 100
+                    },
+                    grid: {
+                        display: false // Remove as linhas verticais
+                    },
+                    min: 50,          // Faz o gráfico começar estritamente em 50
+                    max: 100,         // Mantém o limite superior em 100
+                }
+            },
+            maintainAspectRatio: false,
+            layout: {
+                padding: 0
+            },
+        }
+    });
+}
+
+
+
+// função utilizada para criar gráfico barra vertical - tela KPIs
+export function graficoBarraVkpis() {
+    const ctx = document.getElementById('graficoBarraVkpis');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Falha na porta interna", "Pane elétrica", "Parada entre andares", "Alarme acionado", "Falha na porta externa"],
+            datasets: [{
+                data: [286, 186, 154, 132, 96],
+                backgroundColor: '#1c3f90',
+                borderWidth: 1,
+                barThickness: 20
+            }]
+        },
+        options: {
+            indexAxis: 'y', // transforma em gráfico horizontal
+            responsive: true,  // trás responsividade ao gráfico
+            maintainAspectRatio: false,  // o gráfico para de utilizar a sua proporção padrão e remove espaços excessivos de paddding
+            layout: {
+                padding: 0
+            },
+            plugins: {
+                datalabels: {
+                    color: "#fff",
+                    font: {
+                        size: 12
+                    },
+                    formatter: (value) => value   // mostra o número
+                },
+                legend: {
+                    display: false,
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        display: false   // remove os números do eixo X
+                    },
+                    grid: {
+                        display: false   // opcional: remove as linhas de grade
+                    }
+                },
+                y: {
                     grid: {
                         display: false   // opcional: remove as linhas de grade
                     }
