@@ -1,0 +1,343 @@
+/* ----------- Page - Equipamentos ----------- */
+
+.subtitlePage {
+  color: var(--cinzaMedio);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.cabecalhoEquip {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.acoesCabecalho {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sinoNotificacao {
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.badgeSino {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.5rem;
+  background-color: #dc2626;
+  color: white;
+  font-size: 0.6rem;
+  border-radius: 50%;
+  padding: 0.1rem 0.35rem;
+}
+
+/* linha com os 5 cartões de resumo */
+.linhaResumoEquip {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cartaoResumo {
+  flex: 1;
+  background-color: var(--cinzaClaro);
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.tituloCartao {
+  font-size: 0.75rem;
+  color: var(--cinzaMedio);
+  margin: 0 0 0.35rem 0;
+}
+
+.valorCartao {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.legendaCartao {
+  font-size: 0.7rem;
+  margin: 0.2rem 0 0 0;
+}
+
+.legendaPositiva {
+  color: #16a34a;
+}
+
+/* abas Lista / Mapa / Análise */
+.abasVisualizacao {
+  display: flex;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--cinzaMedio);
+  margin-bottom: 1rem;
+}
+
+.abaVisualizacao {
+  padding: 0.5rem 0.25rem;
+  font-size: 0.85rem;
+  color: var(--cinzaMedio);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.abaVisualizacao.abaAtiva {
+  color: var(--azulElevAi);
+  font-weight: 700;
+  border-bottom: 2px solid var(--azulElevAi);
+}
+
+.painelSemDados {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--cinzaMedio);
+}
+
+/* barra de busca e filtros */
+.barraFiltrosEquip {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.campoBusca {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1.5rem;
+  padding: 0.4rem 1rem;
+}
+
+.campoBusca input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.seletorFiltro {
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1.5rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.botaoFiltros {
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1.5rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  background-color: white;
+  white-space: nowrap;
+}
+
+/* tabela de equipamentos */
+.tabelaEquipamentos {
+  width: 100%;
+  font-size: 0.8rem;
+  border-collapse: collapse;
+}
+
+.tabelaEquipamentos thead th {
+  text-align: left;
+  color: var(--cinzaMedio);
+  font-weight: 600;
+  padding: 0.5rem 0.4rem;
+  border-bottom: 1px solid var(--cinzaMedio);
+}
+
+.tabelaEquipamentos thead th:last-child,
+.tabelaEquipamentos tbody td:last-child {
+  text-align: center;
+}
+
+.tabelaEquipamentos tbody td {
+  padding: 0.6rem 0.4rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  vertical-align: middle;
+}
+
+.textoSecundario {
+  color: var(--cinzaMedio);
+  font-size: 0.7rem;
+}
+
+.badgeStatus {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 1rem;
+  white-space: nowrap;
+}
+
+.statusOperacao {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+.statusManutencao {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+.statusOcorrencia {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+.statusFora {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+.acoesLinha {
+  width: 110px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.iconeAcao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--cinzaMedio);
+  cursor: pointer;
+  font-size: 0.95rem;
+  vertical-align: middle;
+  margin: 0 0.15rem;
+}
+
+.iconeAcao:hover {
+  color: var(--azulElevAi);
+}
+
+/* rodapé da tabela com paginação */
+.rodapeTabela {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 2rem 0;
+  font-size: 0.8rem;
+  color: var(--cinzaMedio);
+}
+
+.paginacao {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.paginaItem {
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 0.4rem;
+  padding: 0.15rem 0.55rem;
+  cursor: pointer;
+}
+
+.paginaItem.paginaAtiva {
+  background-color: var(--azulElevAi);
+  color: white;
+  border-color: var(--azulElevAi);
+}
+
+/* linha com os 3 cartões de gráfico */
+.linhaGraficos {
+  display: flex;
+  gap: 1rem;
+}
+
+.cartaoGrafico {
+  flex: 1;
+  background-color: var(--cinzaClaro);
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.tituloGrafico {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.corpoGrafico {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.graficoRosca {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.textoRosca {
+  background-color: white;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.legendaRoscaCentro {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: var(--cinzaMedio);
+}
+
+.listaLegenda {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+.itemLegenda {
+  margin-bottom: 0.4rem;
+}
+
+.corLegenda {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+}
+
+.listaRegioes {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem 0;
+  font-size: 0.75rem;
+}
+
+.itemRegiao {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+}
+
+.linkVerTodas {
+  font-size: 0.75rem;
+  color: var(--azulDestaque);
+  text-decoration: none;
+}

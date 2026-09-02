@@ -1,0 +1,316 @@
+/* ----------- Page - Biblioteca ----------- */
+
+.cabecalhoBiblioteca {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.campoBuscaDoc {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1.5rem;
+    padding: 0.4rem 1rem;
+    width: 260px;
+}
+
+.campoBuscaDoc input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.85rem;
+}
+
+
+/* duas colunas principais: categorias + conteúdo */
+.areaBiblioteca {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.colunaCategorias {
+    width: 22%;
+}
+
+.colunaDocumentos {
+    width: 78%;
+}
+
+.cartaoCategorias {
+    background-color: var(--cinzaClaro);
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.tituloLateral {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.listaCategorias {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.itemCategoria {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.itemCategoria:hover {
+    background-color: rgba(128, 128, 128, 0.12);
+}
+
+.itemCategoriaAtivo {
+    background-color: var(--azulElevAi);
+    color: white;
+    font-weight: 700;
+}
+
+.contadorCategoria {
+    color: inherit;
+    opacity: 0.7;
+}
+
+
+/* cartão do assistente ElevAI */
+.cartaoAssistente {
+    background-color: var(--cinzaClaro);
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+}
+
+.textoAssistente {
+    font-size: 0.75rem;
+    color: var(--cinzaMedio);
+    margin-bottom: 0.75rem;
+}
+
+.linhaPergunta {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.campoPergunta {
+    flex: 1;
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1.5rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+}
+
+.botaoPerguntar {
+    background-color: var(--azulElevAi);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+
+/* filtros acima da tabela de documentos */
+.barraFiltrosDoc {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.seletorFiltroDoc {
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1.5rem;
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+    color: #444;
+}
+
+
+/* tabela de documentos */
+.tabelaDocumentos {
+    width: 100%;
+    font-size: 0.8rem;
+    border-collapse: collapse;
+}
+
+.tabelaDocumentos thead th {
+    text-align: left;
+    color: var(--cinzaMedio);
+    font-weight: 600;
+    padding: 0.5rem 0.4rem;
+    border-bottom: 1px solid var(--cinzaMedio);
+}
+
+.tabelaDocumentos tbody td {
+    padding: 0.6rem 0.4rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    vertical-align: middle;
+}
+
+.linhaDocumento {
+    cursor: pointer;
+}
+
+.linhaDocumento:hover {
+    background-color: rgba(128, 128, 128, 0.08);
+}
+
+.linhaDocumentoAtiva {
+    background-color: rgba(28, 63, 144, 0.08);
+}
+
+.iconeDocumento {
+    color: #dc2626;
+    margin-right: 0.4rem;
+}
+
+.acoesDocumento {
+    display: flex;
+    gap: 0.6rem;
+}
+
+
+/* rodapé com paginação (reaproveita .rodapeTabela e .paginacao de equipamentos.css) */
+
+
+/* linha inferior: visualizador + painel de detalhes */
+.linhaVisualizador {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.painelVisualizador {
+    width: 68%;
+    background-color: var(--cinzaClaro);
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+}
+
+.painelDetalhes {
+    width: 32%;
+    background-color: var(--cinzaClaro);
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+}
+
+.cabecalhoVisualizador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.nomeArquivoVisualizador {
+    font-size: 0.75rem;
+    color: var(--cinzaMedio);
+}
+
+.controlesVisualizador {
+    display: flex;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--cinzaMedio);
+}
+
+.areaPreview {
+    background-color: #0f1b33;
+    border-radius: 0.75rem;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.conteudoPreview {
+    text-align: center;
+}
+
+.tituloPreview {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0.75rem 0 0.25rem 0;
+}
+
+.legendaPreview {
+    font-size: 0.75rem;
+    color: var(--cinzaMedio);
+}
+
+
+/* abas Detalhes / Informações */
+.abasDetalhes {
+    display: flex;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--cinzaMedio);
+    margin-bottom: 0.75rem;
+}
+
+.abaDetalhe {
+    font-size: 0.8rem;
+    color: var(--cinzaMedio);
+    padding-bottom: 0.4rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.abaDetalhe.abaDetalheAtiva {
+    color: var(--azulElevAi);
+    font-weight: 700;
+    border-bottom: 2px solid var(--azulElevAi);
+}
+
+.nomeDocumentoDetalhe {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.listaMetadados {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.rotuloMetadado {
+    display: block;
+    color: var(--cinzaMedio);
+    margin-bottom: 0.15rem;
+}
+
+.blocoDescricao {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.listaTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.tag {
+    background-color: rgba(28, 63, 144, 0.1);
+    color: var(--azulDestaque);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 1rem;
+}
