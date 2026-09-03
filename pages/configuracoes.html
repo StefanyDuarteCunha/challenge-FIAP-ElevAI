@@ -1,32 +1,233 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-	<link href="../css/style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../img/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Biblioteca</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/configuracoes.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Configurações</title>
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
     <div id="page-content">
-        <header>
-            <h1 class="titlePage">Configurações</h1>
-        </header>
-        <main></main>
-        <footer></footer>
-    </div>
-    <script type="module">
-        import { carregarNavbar } from "../js/scripts.js";
+      <header>
+        <h1 class="titlePage">Configurações</h1>
+        <p class="subtitlePage">Gerencie as configurações do sistema.</p>
+      </header>
 
-        // Executa a função assim que a página carrega
-        carregarNavbar();
-    </script>   
-</body>
+      <main>
+        <!-- abas de navegação das seções de configuração -->
+        <div class="abasConfig">
+          <span class="abaConfig abaConfigAtiva" data-aba="geral">Geral</span>
+          <span class="abaConfig" data-aba="usuarios">Usuários</span>
+          <span class="abaConfig" data-aba="permissoes">Permissões</span>
+          <span class="abaConfig" data-aba="integracoes">Integrações</span>
+          <span class="abaConfig" data-aba="notificacoes">Notificações</span>
+          <span class="abaConfig" data-aba="seguranca">Segurança</span>
+          <span class="abaConfig" data-aba="auditoria">Auditoria</span>
+        </div>
+
+        <!-- painel: Geral -->
+        <div class="painelConfig" data-painel="geral">
+          <div class="linhaConfig">
+            <!-- coluna principal: dados da empresa e configurações gerais -->
+            <div class="colunaPrincipalConfig">
+              <div class="linhaCartoesConfig">
+                <!-- cartão: informações da empresa -->
+                <div class="cartaoConfig">
+                  <p class="tituloCartaoConfig">Informações da empresa</p>
+
+                  <label class="rotuloCampo" for="campoNomeEmpresa"
+                    >Nome da empresa</label
+                  >
+                  <input
+                    class="inputConfig"
+                    type="text"
+                    id="campoNomeEmpresa"
+                    value="OTIS Elevadores do Brasil"
+                  />
+
+                  <label class="rotuloCampo" for="campoCnpj">CNPJ</label>
+                  <input
+                    class="inputConfig"
+                    type="text"
+                    id="campoCnpj"
+                    value="29.739.737/0001-01"
+                  />
+
+                  <label class="rotuloCampo" for="campoEmail">E-mail</label>
+                  <input
+                    class="inputConfig"
+                    type="email"
+                    id="campoEmail"
+                    value="contato@otis.com"
+                  />
+
+                  <label class="rotuloCampo" for="campoTelefone"
+                    >Telefone</label
+                  >
+                  <input
+                    class="inputConfig"
+                    type="text"
+                    id="campoTelefone"
+                    value="(11) 3138-7000"
+                  />
+
+                  <label class="rotuloCampo" for="campoEndereco"
+                    >Endereço</label
+                  >
+                  <input
+                    class="inputConfig"
+                    type="text"
+                    id="campoEndereco"
+                    value="Rua do Rocio, 291 - Vila Olímpia, São Paulo - SP"
+                  />
+                </div>
+
+                <!-- cartão: configurações gerais -->
+                <div class="cartaoConfig">
+                  <p class="tituloCartaoConfig">Configurações gerais</p>
+
+                  <label class="rotuloCampo" for="campoIdioma">Idioma</label>
+                  <select class="seletorConfig" id="campoIdioma">
+                    <option value="pt-BR" selected>Português (Brasil)</option>
+                    <option value="en-US">English (US)</option>
+                    <option value="es-ES">Español</option>
+                  </select>
+
+                  <label class="rotuloCampo" for="campoFuso"
+                    >Fuso horário</label
+                  >
+                  <select class="seletorConfig" id="campoFuso">
+                    <option value="brasilia" selected>
+                      (BRT) UTC-03:00 Brasília
+                    </option>
+                    <option value="manaus">(AMT) UTC-04:00 Manaus</option>
+                    <option value="noronha">
+                      (FNT) UTC-02:00 Fernando de Noronha
+                    </option>
+                  </select>
+
+                  <label class="rotuloCampo" for="campoFormatoData"
+                    >Formato de data</label
+                  >
+                  <select class="seletorConfig" id="campoFormatoData">
+                    <option value="dd/mm/aaaa" selected>DD/MM/AAAA</option>
+                    <option value="mm/dd/aaaa">MM/DD/AAAA</option>
+                    <option value="aaaa-mm-dd">AAAA-MM-DD</option>
+                  </select>
+
+                  <label class="rotuloCampo" for="campoMoeda">Moeda</label>
+                  <select class="seletorConfig" id="campoMoeda">
+                    <option value="BRL" selected>BRL - Real</option>
+                    <option value="USD">USD - Dólar</option>
+                    <option value="EUR">EUR - Euro</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- cartão: logo da empresa -->
+              <div class="cartaoConfig">
+                <p class="tituloCartaoConfig">Logo da empresa</p>
+                <div class="linhaLogoEmpresa">
+                  <div class="previaLogoEmpresa" id="previaLogoEmpresa">
+                    OTIS
+                  </div>
+                  <button
+                    class="btn btn-outline-secondary rounded-pill"
+                    type="button"
+                    id="botaoAlterarLogo"
+                  >
+                    Alterar logo
+                  </button>
+                </div>
+              </div>
+
+              <button
+                class="btn btn-primary rounded-pill botaoSalvarConfig"
+                type="button"
+                id="botaoSalvarConfig"
+              >
+                Salvar alterações
+              </button>
+            </div>
+
+            <!-- coluna lateral: resumo do sistema e suporte -->
+            <div class="colunaLateralConfig">
+              <div class="cartaoConfig">
+                <p class="tituloCartaoConfig">Resumo do sistema</p>
+                <ul class="listaResumoSistema" id="listaResumoSistema"></ul>
+
+                <p class="rotuloArmazenamento">
+                  Armazenamento
+                  <span id="textoPercentualArmazenamento"></span>
+                </p>
+                <div class="barraArmazenamento">
+                  <div
+                    class="preenchimentoArmazenamento"
+                    id="preenchimentoArmazenamento"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="cartaoConfig cartaoSuporte">
+                <p class="tituloCartaoConfig">Suporte ElevAI</p>
+                <p class="textoSuporte">Precisa de ajuda?</p>
+                <p class="textoSuporte">
+                  Acesse nossa central de ajuda ou fale com um suporte.
+                </p>
+                <button
+                  class="btn btn-primary rounded-pill"
+                  type="button"
+                  id="botaoAbrirChat"
+                >
+                  Abrir chat
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- painéis das demais seções, ainda em desenvolvimento -->
+        <div class="painelConfig d-none" data-painel="usuarios">
+          <p class="painelSemDados">Gestão de usuários em desenvolvimento.</p>
+        </div>
+        <div class="painelConfig d-none" data-painel="permissoes">
+          <p class="painelSemDados">Gestão de permissões em desenvolvimento.</p>
+        </div>
+        <div class="painelConfig d-none" data-painel="integracoes">
+          <p class="painelSemDados">Integrações em desenvolvimento.</p>
+        </div>
+        <div class="painelConfig d-none" data-painel="notificacoes">
+          <p class="painelSemDados">
+            Configurações de notificações em desenvolvimento.
+          </p>
+        </div>
+        <div class="painelConfig d-none" data-painel="seguranca">
+          <p class="painelSemDados">Configurações de segurança em desenvolvimento.</p>
+        </div>
+        <div class="painelConfig d-none" data-painel="auditoria">
+          <p class="painelSemDados">Registro de auditoria em desenvolvimento.</p>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+    <script type="module" src="../js/configuracoes.js"></script>
+  </body>
 </html>
