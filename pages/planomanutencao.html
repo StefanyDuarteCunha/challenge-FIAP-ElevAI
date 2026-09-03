@@ -18,9 +18,133 @@
     <div id="page-content">
         <header>
             <h1 class="titlePage">Plano de Manutenções</h1>
+            <h6 class="subtitlePage">Planeje e acompanhe manutenções preventivas</h6>
         </header>
-        <main></main>
-        <footer></footer>
+        <main>
+            <div class="lineManutencao">
+                <div class="colPlanAtivos">
+                    <p class="dadoManutencao m-0">86</p>
+                    <p class="legendaManutencao m-0">Planos ativos</p>
+                </div>
+                <div class="colManutencao">
+                    <p class="dadoManutencao m-0">1.248</p>
+                    <p class="legendaManutencao m-0">Equipamentos cobertos</p>
+                </div>
+                <div class="colManutencao">
+                    <p class="dadoManutencao m-0">312</p>
+                    <p class="legendaManutencao m-0">Agendamentos</p>
+                </div>
+                <div class="colPlanAtrasados">
+                    <p class="dadoManutencao m-0">18</p>
+                    <p class="legendaManutencao m-0">Atrasadas</p>
+                </div>
+            </div>
+            <div class="containerBotoes">
+                <button type="button" class="botaoNavPage" id="visao-geral">Visão Geral</button>
+                <button type="button" class="botaoNavPage ativo" id="cronograma">Cronograma</button>
+                <button type="button" class="botaoNavPage" id="equipamentos">Equipamentos</button>
+                <button type="button" class="botaoNavPage" id="regioes">Regiões</button>
+            </div>
+            <div class="containerCronograma">
+                <div div="containerCalendar">
+                    <p>Espaço para conteúdo da tela</p>
+                </div>
+                <div class="containerEsquerda">
+                    <div>
+                        <button type="button" class="botaoNovo btnCards">+ Novo Plano</button>
+                    </div>
+                    <div class="containerCards">
+                        <h5 class="titleRecomendacoes">Próximas manutenções</h5>
+                        <div class="cardA">
+                            <table>
+                                <tbody>
+                                    <colgroup>
+                                    <col style="width: 20%;">
+                                    <col style="width: 80%;">
+                                </colgroup>
+                                    <tr>
+                                        <td><i class="bi bi-building-fill-check"></i></td>
+                                        <td>Elevador #123456</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="bi bi-circle-fill"></i></td>
+                                        <td>17/09/2026 - 10h00</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Preventiva - Portas</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="cardB">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 20%;">
+                                    <col style="width: 80%;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="bi bi-building-fill-check"></i></td>
+                                        <td>Elevador #654321</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="bi bi-circle-fill"></i></td>
+                                        <td>20/09/2026 - 15h00</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Preventiva - Motor</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="cardC">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 20%;">
+                                    <col style="width: 80%;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="bi bi-building-fill-check"></i></td>
+                                        <td>Elevador #456789</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="bi bi-circle-fill"></i></td>
+                                        <td>25/09/2026 - 17h00</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Preventiva - Painel</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="verCards mt-3 mb-0">Ver todas (312) <i class="bi bi-arrow-right"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="recomendacoes">
+                <h5 class="titleRecomendacoes">Recomendação ElevAI</h5>
+                <div class="containerRecomendacoesManutencao">
+                    <div class="recomendacoesGapRight">
+                        <i class="bi bi-lightbulb iconRecomendacoesManutencao"></i>
+                    </div>
+                    <div class="recomendacoesGapRight">
+                        <p class="legendaManutencao m-0">Melhor horário sugerido para o Elevador #12345</p>
+                        <p class="recomendacaoTexto mb-1 mt-1">Sábado, 19/09/2026 - 14h às 16h</p>
+                        <p class="legendaManutencao m-0">Menor fluxo de pessoas e menor impacto operacional</p>
+                    </div>
+                    <div class="recomendacoesGapLeft">
+                        <button type="button" class="botaoNovo">Aplicar sugestão</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p class="m-0">&copy; 2026 • <strong>ElevAI</strong> • Inteligência que eleva a sua operação</p> 
+        </footer>
     </div>
     <script type="module">
         import { carregarNavbar } from "../js/scripts.js";

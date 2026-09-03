@@ -18,15 +18,339 @@
     <div id="page-content">
         <header>
             <h1 class="titlePage">Relatórios</h1>
+            <h6 class="subtitlePage">Gere relatórios personalizados e exporte dados</h6>
         </header>
-        <main></main>
-        <footer></footer>
+        <main>
+            <div class="containerBotoes">
+                <button type="button" class="botaoNavPage ativo" id="botao-padrao">Relatórios padrão</button>
+                <button type="button" class="botaoNavPage" id="botao-meus-relatorios">Meus relatórios</button>
+            </div>
+            <div class="filterCampos">
+                <div class="containerCampos">
+                    <label for="dataInicio">Período: </label>
+                    <div class="relatorioContainer">
+                        <input type="date" id="data-inicio" name="inicio" value="2026-05-11" class="inputStyle">
+                        <span>a</span>
+                        <input type="date" id="data-fim" name="fim" value="2026-05-11" class="inputStyle">
+                    </div>
+                </div>
+                <div class="form-group containerCampos">
+                    <label for="filtroRegiao">Região</label>
+                    <select id="filtroRegiao" class="form-select inputStyle">
+                        <option value="todos">Todos</option>
+                        <option value="acre">Acre</option>
+                        <option value="alagoas">Alagoas</option>
+                        <option value="amapa">Amapá</option>
+                        <option value="amazonas">Amazonas</option>
+                        <option value="bahia">Bahia</option>
+                        <option value="ceara">Ceará</option>
+                        <option value="distrito-federal">Distrito Federal</option>
+                        <option value="espirito-santo">Espírito Santo</option>
+                        <option value="goias">Goiás</option>
+                        <option value="maranhao">Maranhão</option>
+                        <option value="mato-grosso">Mato Grosso</option>
+                        <option value="mato-grosso-do-sul">Mato Grosso do Sul</option>
+                        <option value="minas-gerais">Minas Gerais</option>
+                        <option value="para">Pará</option>
+                        <option value="paraiba">Paraíba</option>
+                        <option value="parana">Paraná</option>
+                        <option value="pernambuco">Pernambuco</option>
+                        <option value="piaui">Piauí</option>
+                        <option value="rio-de-janeiro">Rio de Janeiro</option>
+                        <option value="rio-grande-do-norte">Rio Grande do Norte</option>
+                        <option value="rio-grande-do-sul">Rio Grande do Sul</option>
+                        <option value="rondonia">Rondônia</option>
+                        <option value="roraima">Roraima</option>
+                        <option value="santa-catarina">Santa Catarina</option>
+                        <option value="sao-paulo">São Paulo</option>
+                        <option value="sergipe">Sergipe</option>
+                        <option value="tocantins">Tocantins</option>
+                    </select>
+                </div>
+                <div class="form-group containerCampos">
+                    <label for="filtroCliente">Cliente</label>
+                    <select id="filtroCliente" class="form-select inputStyle">
+                        <option value="todos">Todos</option>
+                        <option value="aeroporto-de-congonhas">Aeroporto de Congonhas (SP)</option>
+                        <option value="arena-corinthians">Arena Corinthians (SP)</option>
+                        <option value="birmann-21">Birmann 21 (SP)</option>
+                        <option value="cristo-redentor">Cristo Redentor (RJ)</option>
+                        <option value="edificio-copan">Edifício Copan (SP)</option>
+                        <option value="estadio-do-maracana">Estádio do Maracanã (RJ)</option>
+                        <option value="museu-da-lingua-portuguesa">Museu da Língua Portuguesa (SP)</option>
+                        <option value="shopping-pantanal">Shopping Pantanal (MT)</option>
+                        <option value="torre-norte-cenesp">Torre Norte - CENESP (SP)</option>
+                        <option value="wtorre-nações-unidas">WTorre Nações Unidas (SP)</option>
+                    </select>
+                </div>
+                <div class="form-group containerCampos">
+                    <label for="filtroCategoria">Categoria</label>
+                    <select id="filtroCategoria" class="form-select inputStyle">
+                        <option value="todos">Todos</option>
+                        <option value="auditoria">Auditoria</option>
+                        <option value="cliente">Clientes</option>
+                        <option value="compras">Compras</option>
+                        <option value="contratos">Contratos</option>
+                        <option value="equipe">Equipe</option>
+                        <option value="estoque">Estoque</option>
+                        <option value="faturamento">Faturamento</option>
+                        <option value="financeiro">Financeiro</option>
+                        <option value="fornecedores">Fornecedores</option>
+                        <option value="indicadores">Indicadores</option>
+                        <option value="inspecoes">Inspeções</option>
+                        <option value="laudos">Laudos Técnicos</option>
+                        <option value="manutencao">Manutenção</option>
+                        <option value="operacional">Operacional</option>
+                        <option value="qualidade">Qualidade</option>
+                    </select>
+                </div>
+                <button type="button" class="botaoNovo">+ Novo relatório</button>
+            </div>
+            <div class="relatorioTable" id="tabela-padrao">
+                <table>
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 10%;">
+                        <col style="width: 30%;">
+                        <col style="width: 20%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Relatório</th>
+                            <th>Categoria</th>
+                            <th>Descrição</th>
+                            <th>Última geração</th>
+                            <th>Formato</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Relatório de Ocorrências</td>
+                            <td>Operacional</td>
+                            <td>Resumo de ocorrências por período</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de Atendimentos</td>
+                            <td>Operacional</td>
+                            <td>Detalhamento de atendimentos realizados</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de SLA</td>
+                            <td>Qualidade</td>
+                            <td>Análise de cumprimento de SLA</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de Manutenções</td>
+                            <td>Manutenção</td>
+                            <td>Manutenções preventivas e corretivas</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de Técnicos</td>
+                            <td>Operacional</td>
+                            <td>Produtividade e desempenho da equipe</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de Peças</td>
+                            <td>Estoque</td>
+                            <td>Movimentação e consumo de peças</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório Financeiro</td>
+                            <td>Financeiro</td>
+                            <td>Custos e faturamento por período</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de Satisfação</td>
+                            <td>Qualidade</td>
+                            <td>Avaliação da satisfação dos clientes</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="relatorioTable escondido" id="tabela-meus-relatorios">
+                <table>
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 10%;">
+                        <col style="width: 30%;">
+                        <col style="width: 20%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Relatório</th>
+                            <th>Categoria</th>
+                            <th>Descrição</th>
+                            <th>Última geração</th>
+                            <th>Formato</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Relatório de Auditorias</td>
+                            <td>Auditoria</td>
+                            <td>Resumo das auditorias realizadas no período</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de Compras</td>
+                            <td>Compras</td>
+                            <td>Consolidado de pedidos e aquisições</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de Contratos Ativos</td>
+                            <td>Contratos</td>
+                            <td>Listagem e status dos contratos vigentes</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de Contratos Encerrados</td>
+                            <td>Contratos</td>
+                            <td>Listagem e status dos contratos encerrados</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de Equipe</td>
+                            <td>Equipe</td>
+                            <td>Desempenho e produtividade dos colaboradores</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de Movimentação de Estoque</td>
+                            <td>Estoque</td>
+                            <td>Entradas, saídas e consumo de materiais</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de Indicadores Operacionais</td>
+                            <td>Indicadores</td>
+                            <td>Métricas de desempenho e eficiência operacional</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de NPS</td>
+                            <td>Clientes</td>
+                            <td>Avaliação e feedback dos clientes</td>
+                            <td>31/07/2026 08:30</td>
+                            <td>PDF / Excel</td>
+                            <td>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-file-earmark-arrow-down"></i></button>
+                                <button type="button" class="botaoTabelaRelatorio"><i class="bi bi-share"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="relatorioAutomativo">
+                <h5 class="titleRelatorioAutomativo"><i class="bi bi-file-earmark-bar-graph"></i> Relatório automático ElevAI</h5>
+                <h6 class="subtitlePage">Receba relatórios automaticamente por e-mail</h6>
+                <div class="checkAutomativo">
+                    <p class="m-0"><i class="bi bi-envelope-arrow-up"></i> <b>Relatório de SLA</b> - Enviado toda segunda-feira às 08:00</p>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p class="m-0">&copy; 2026 • <strong>ElevAI</strong> • Inteligência que eleva a sua operação</p>
+        </footer>
     </div>
     <script type="module">
-        import { carregarNavbar } from "../js/scripts.js";
+        import { carregarNavbar, botaoNavPagesRelatorio } from "../js/scripts.js";
 
         // Executa a função assim que a página carrega
         carregarNavbar();
+        botaoNavPagesRelatorio();
     </script>    
 </body>
 </html>

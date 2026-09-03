@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script src="scripts.js"></script>
     <title>KPIs</title>
 </head>
 <body>
@@ -18,15 +21,152 @@
     <div id="page-content">
         <header>
             <h1 class="titlePage">KPIs</h1>
+            <h6 class="subtitlePage mb-4">Acompanhe os principais indicadores de desempenho</h6>
         </header>
-        <main></main>
-        <footer></footer>
+        <main>
+            <div class="filterCampos">
+                <div class="containerCampos">
+                    <label for="dataInicio">Período: </label>
+                    <div class="relatorioContainer">
+                        <input type="date" id="data-inicio" name="inicio" value="2026-05-11" class="inputStyle">
+                        <span>a</span>
+                        <input type="date" id="data-fim" name="fim" value="2026-05-11" class="inputStyle">
+                    </div>
+                </div>
+                <div class="form-group containerCampos">
+                    <label for="filtroRegiao">Região</label>
+                    <select id="filtroRegiao" class="form-select inputStyle">
+                        <option value="todos">Todos</option>
+                        <option value="acre">Acre</option>
+                        <option value="alagoas">Alagoas</option>
+                        <option value="amapa">Amapá</option>
+                        <option value="amazonas">Amazonas</option>
+                        <option value="bahia">Bahia</option>
+                        <option value="ceara">Ceará</option>
+                        <option value="distrito-federal">Distrito Federal</option>
+                        <option value="espirito-santo">Espírito Santo</option>
+                        <option value="goias">Goiás</option>
+                        <option value="maranhao">Maranhão</option>
+                        <option value="mato-grosso">Mato Grosso</option>
+                        <option value="mato-grosso-do-sul">Mato Grosso do Sul</option>
+                        <option value="minas-gerais">Minas Gerais</option>
+                        <option value="para">Pará</option>
+                        <option value="paraiba">Paraíba</option>
+                        <option value="parana">Paraná</option>
+                        <option value="pernambuco">Pernambuco</option>
+                        <option value="piaui">Piauí</option>
+                        <option value="rio-de-janeiro">Rio de Janeiro</option>
+                        <option value="rio-grande-do-norte">Rio Grande do Norte</option>
+                        <option value="rio-grande-do-sul">Rio Grande do Sul</option>
+                        <option value="rondonia">Rondônia</option>
+                        <option value="roraima">Roraima</option>
+                        <option value="santa-catarina">Santa Catarina</option>
+                        <option value="sao-paulo">São Paulo</option>
+                        <option value="sergipe">Sergipe</option>
+                        <option value="tocantins">Tocantins</option>
+                    </select>
+                </div>
+                <div class="form-group containerCampos">
+                    <label for="filtroCliente">Cliente</label>
+                    <select id="filtroCliente" class="form-select inputStyle">
+                        <option value="todos">Todos</option>
+                        <option value="aeroporto-de-congonhas">Aeroporto de Congonhas (SP)</option>
+                        <option value="arena-corinthians">Arena Corinthians (SP)</option>
+                        <option value="birmann-21">Birmann 21 (SP)</option>
+                        <option value="cristo-redentor">Cristo Redentor (RJ)</option>
+                        <option value="edificio-copan">Edifício Copan (SP)</option>
+                        <option value="estadio-do-maracana">Estádio do Maracanã (RJ)</option>
+                        <option value="museu-da-lingua-portuguesa">Museu da Língua Portuguesa (SP)</option>
+                        <option value="shopping-pantanal">Shopping Pantanal (MT)</option>
+                        <option value="torre-norte-cenesp">Torre Norte - CENESP (SP)</option>
+                        <option value="wtorre-nações-unidas">WTorre Nações Unidas (SP)</option>
+                    </select>
+                </div>
+                <div class="form-group containerCampos">
+                    <label for="filtroCategoria">Categoria</label>
+                    <select id="filtroCategoria" class="form-select inputStyle">
+                        <option value="todos">Todos</option>
+                        <option value="auditoria">Auditoria</option>
+                        <option value="cliente">Clientes</option>
+                        <option value="compras">Compras</option>
+                        <option value="contratos">Contratos</option>
+                        <option value="equipe">Equipe</option>
+                        <option value="estoque">Estoque</option>
+                        <option value="faturamento">Faturamento</option>
+                        <option value="financeiro">Financeiro</option>
+                        <option value="fornecedores">Fornecedores</option>
+                        <option value="indicadores">Indicadores</option>
+                        <option value="inspecoes">Inspeções</option>
+                        <option value="laudos">Laudos Técnicos</option>
+                        <option value="manutencao">Manutenção</option>
+                        <option value="operacional">Operacional</option>
+                        <option value="qualidade">Qualidade</option>
+                    </select>
+                </div>
+                <button type="button" class="botaoNovo"><i class="bi bi-box-arrow-in-down"></i> Exportar</button>
+            </div>
+            <div class="lineKpi">
+                <div class="colKpi21">
+                    <p class="subtitleKpi m-0">MTTR</p>
+                    <p class="dadoKpi m-0">2h18min</p>
+                    <p class="legendaKpi m-0"><i class="bi bi-caret-down-fill"></i> 12% vs período anterior</p>
+                </div>
+                <div class="colKpi21">
+                    <p class="subtitleKpi m-0">SLA</p>
+                    <p class="dadoKpi m-0">92,4%</p>
+                    <p class="legendaKpi m-0"><i class="bi bi-caret-up-fill"></i> 5,7% vs período anterior</p>
+                </div>
+                <div class="colKpi21">
+                    <p class="subtitleKpi m-0">Disponibilidade média</p>
+                    <p class="dadoKpi m-0">95,1%</p>
+                    <p class="legendaKpi m-0"><i class="bi bi-caret-up-fill"></i> 3,7% vs período anterior</p>
+                </div>
+                <div class="colKpi21">
+                    <p class="subtitleKpi m-0">Taxa de reincidência</p>
+                    <p class="dadoKpi m-0">4,6%</p>
+                    <p class="legendaKpi m-0"><i class="bi bi-caret-down-fill"></i> 0,8% vs período anterior</p>
+                </div>
+            </div>
+            <div class="lineKpi">
+                <div class="colKpi47">
+                    <p class="subtitleKpi mt-0 mb-4">Evolução do SLA (%)</p>
+                    <div class="containerGraficoLinhas d-flex justify-content-center lineGraph">
+                        <canvas id="graficoLinhasKpi"></canvas>
+                    </div>
+                </div>
+                <div class="colKpi47">
+                    <p class="subtitleKpi mt-0 mb-4">Ocorrências por criticidade</p>
+                    <div class="containerGraficoLinhas d-flex justify-content-center lineGraph">
+                        <canvas id="graficoRoscaKpi"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="lineKpi">
+                <div class="colKpi47">
+                    <p class="subtitleKpi mt-0 mb-4">Top 5 - Tipo de ocorrências</p>
+                    <div class="containerGraficoLinhas d-flex justify-content-center lineGraph">
+                        <canvas id="graficoBarraVkpis"></canvas>
+                    </div>
+                </div>
+                <div class="colKpi47">
+                    <p class="subtitleKpi mt-0 mb-4">Disponibilidade por região</p>
+                    <div class="lineIMG">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p class="m-0">&copy; 2026 • <strong>ElevAI</strong> • Inteligência que eleva a sua operação</p> 
+        </footer>
     </div>
     <script type="module">
-        import { carregarNavbar } from "../js/scripts.js";
+        import { carregarNavbar, graficoLinhasKpi, graficoRoscaKpi, graficoBarraVkpis } from "../js/scripts.js";
 
         // Executa a função assim que a página carrega
         carregarNavbar();
+        graficoLinhasKpi();
+        graficoRoscaKpi();
+        graficoBarraVkpis();
     </script>    
 </body>
 </html>
