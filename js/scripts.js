@@ -188,17 +188,24 @@ export function graficoLinhas() {
             scales: {
                 x: {
                     title: {
-                        display: true,
-                    }
+                        display: false,
+                    },
+                    grid: {
+                        display: false // Remove as linhas horizontais
+                    },
                 },
                 y: {
                     title: {
-                        display: true,
+                        display: false,
                     },
-                    beginAtZero: true,
                     ticks: {
                         stepSize: 100   // intervalo de 100 em 100
-                    }
+                    },
+                    grid: {
+                        display: false // Remove as linhas verticais
+                    },
+                    min: 70,          // Faz o gráfico começar estritamente em 50
+                    max: 370,         // Mantém o limite superior em 100
                 }
             }
         }

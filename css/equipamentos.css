@@ -1,9 +1,11 @@
 /* ----------- Page - Equipamentos ----------- */
 
 .subtitlePage {
-  color: var(--cinzaMedio);
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
+  font-family: var(--fonteLato);
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cinzaEscuro);
 }
 
 .cabecalhoEquip {
@@ -50,9 +52,13 @@
   padding: 1rem 1.25rem;
 }
 
+.cartaoResumo:hover {
+  background-color: var(--azulHover);
+}
+
 .tituloCartao {
   font-size: 0.75rem;
-  color: var(--cinzaMedio);
+  color: var(--cinzaEscuro);
   margin: 0 0 0.35rem 0;
 }
 
@@ -77,6 +83,7 @@
   gap: 1.5rem;
   border-bottom: 1px solid var(--cinzaMedio);
   margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .abaVisualizacao {
@@ -91,6 +98,11 @@
   color: var(--azulElevAi);
   font-weight: 700;
   border-bottom: 2px solid var(--azulElevAi);
+}
+
+.abaVisualizacao:hover {
+  border-bottom: 2px solid var(--azulDestaque);
+  color: var(--azulDestaque);
 }
 
 .painelSemDados {
@@ -246,6 +258,10 @@
   background-color: var(--azulElevAi);
   color: white;
   border-color: var(--azulElevAi);
+}
+
+.paginaItem.hover:hover{
+  background-color: var(--azulHover);
 }
 
 /* linha com os 3 cartões de gráfico */

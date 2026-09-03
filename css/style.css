@@ -118,7 +118,8 @@ footer {
 }
 
 .botaoNavPage {
-    color: var(--cinzaEscuro);
+    font-size: 0.85rem;
+    color: var(--cinzaMedio);
     background-color: white;
     padding: 1rem;
     border: none;
@@ -143,6 +144,7 @@ footer {
     border-radius: 0.5rem;
     border: none;
     padding: 0.5rem 1rem;
+    font-size: 0.8rem;
 }
 
 .botaoNovo a {
@@ -177,11 +179,11 @@ footer {
     border: 1px solid var(--cinzaMedio);
     border-radius: 1rem;
     padding: 2rem;
-    margin: 3rem 0;
+    margin: .5rem 0 1rem;
 }
 
 .titleRecomendacoes {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     color: var(--azulElevAi);
     font-weight: bold;
 }
@@ -192,7 +194,8 @@ footer {
 }
 
 .cardRecomendacao {
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
+    font-size: 0.9rem;
 }
 
 .cardRecomendacao:hover {
@@ -218,18 +221,18 @@ footer {
 }
 
 .lineDash30, .lineDash47 {
-    gap: 5%;
+    gap: 1%;
 }
 
 .colDash {
     background-color: var(--cinzaClaro);
     border: 1px solid var(--cinzaMedio);
     border-radius: 1.5rem;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
 }
 
-.colDash30:hover {
+.colDash30.hover:hover {
     background-color: var(--azulHover);
 }
 
@@ -238,7 +241,7 @@ footer {
 }
 
 .colDash30 {
-    width: 30%;
+    width: 32.6%;
 }
 
 .colDash47 {
@@ -247,20 +250,23 @@ footer {
 }
 
 .subtitleDash {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-weight: bold;
+    color: var(--cinzaEscuro);
 }
 
 .dadoDash {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
 .legendaDash {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    color: var(--cinzaEscuro);
 }
 
 .titleDash {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
     padding-bottom: 1.5rem;
 }
@@ -291,13 +297,13 @@ footer {
     font-weight: bold;
 }
 
-.containerGrafico, .containerGraficoSLA, .containerGraficoLinhas, .containerImagem {
+.containerGrafico, .containerGraficoSLA, .containerImagem, .containerGraficoLinhas {
     margin: 0 auto;
-    height: auto;
 }
 
 .containerGrafico, .containerImagem {
     width: 75%;
+    height: 80%;
 }
 
 .containerGraficoSLA {
@@ -306,7 +312,8 @@ footer {
 }
 
 .containerGraficoLinhas {
-    height: 30rem;
+    width: 100%;
+    height: 82%;
 }
 
 .containerImagem img {
@@ -318,7 +325,7 @@ footer {
 
 .containerTable {
     width: 100%;
-    text-align: center; 
+    text-align: center;
 }
 
 .containerTable table {
@@ -333,7 +340,7 @@ footer {
 
 .containerTable table td {  /* Células */
     padding: 0.75rem 1rem;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: #333;
     word-break: break-word; /* ESSENCIAL */
 }
@@ -380,7 +387,7 @@ footer {
 }
 
 .filterCampos {
-    gap: 2rem;
+    gap: 0.9rem;
     margin: auto;
     justify-content: center;
     align-items: end;
@@ -391,7 +398,7 @@ footer {
     color: var(--cinzaEscuro);
     background-color: var(--cinzaClaro);
     padding: 0.25rem 0.5rem;
-    font-size: 1rem;
+    font-size: .85rem;
     border-radius: 0.5rem;
     border: 1px solid var(--cinzaEscuro);
 }
@@ -407,7 +414,7 @@ footer {
 }
 
 .relatorioTable table {
-    margin: 0 auto 2rem;
+    margin: 0 auto;
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
@@ -417,8 +424,8 @@ footer {
 }
 
 .relatorioTable table td {  /* Células */
-    padding: 0.75rem 1rem;
-    font-size: 0.95rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
     color: #333;
     word-break: break-word; 
 }
@@ -441,7 +448,8 @@ footer {
     color: var(--azulElevAi);
     text-align: center;
     background-color: #f4f4f4;
-    padding: 1rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .relatorioTable table td:last-child {  /* Última coluna (quantidade + %) */
@@ -455,23 +463,23 @@ footer {
     border: 1px solid var(--cinzaMedio);
     border-radius: 1rem;
     padding: 2rem;
-    margin: 3rem 0;
+    margin: 1rem 0;
 }
 
 .titleRelatorioAutomativo {
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: var(--azulElevAi);
     font-weight: bold;
 }
 
 .checkAutomativo {
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 60%;
     align-items: center;
     gap: 8px;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     padding: 0.5rem 1rem;
 }
 
@@ -488,17 +496,17 @@ footer {
 }
 
 .lineManutencao {
-    margin: 2rem 0;
-    gap: 5%;
+    margin: .5rem 0;
+    gap: 1%;
 }
 
 .colManutencao, .colPlanAtivos, .colPlanAtrasados  {
     border: 1px solid var(--cinzaMedio);
     border-radius: 1.5rem;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1.0rem 1.25rem;
+    margin-bottom: 1rem;
     display: inline-block;
-    width: 21.25%;
+    width: 24.25%;
 }
 
 .colManutencao {
@@ -531,11 +539,16 @@ footer {
 }
 
 .dadoManutencao {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
 .legendaManutencao {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+}
+
+.legendaManutencao.grey {
+    color: var(--cinzaEscuro);
 }
 
 .iconRecomendacoesManutencao {
@@ -592,6 +605,7 @@ footer {
 .verCards {
     color: var(--azulDestaque);
     font-weight: bold;
+    font-size: 0.8rem;
 }
 
 .verCards:hover {
@@ -600,10 +614,11 @@ footer {
 }
 
 .cardA, .cardB, .cardC {
-    border-radius: 2rem;
-    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+    padding: 0.7rem 1.5rem;
     width: 100%;
     margin-bottom: 1rem;
+    font-size: 0.8rem;
 }
 
 .cardA {
@@ -645,20 +660,20 @@ footer {
 }
 
 .linePecas {
-    margin: 2rem 0;
-    gap: 5%;
+    margin: 2rem 0 0.5rem;
+    gap: 1%;
 }
 
 .colPecas21, .colPecas21Criticas, .colPecas21Alerta, .colPecas20, .colPecas35 {
     border: 1px solid var(--cinzaMedio);
     border-radius: 1.5rem;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1.0rem 1.25rem;
+    margin-bottom: 1rem;
     display: inline-block;
 }
 
 .colPecas21, .colPecas21Criticas, .colPecas21Alerta {
-    width: 21.25%;
+    width: 24.25%;
 }
 
 .colPecas20 {
@@ -666,7 +681,7 @@ footer {
 }
 
 .colPecas35 {
-    width: 35%;
+    width: 39%;
 }
 
 .colPecas21, .colPecas20, .colPecas35 {
@@ -699,11 +714,16 @@ footer {
 }
 
 .dadoPecas {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
 .legendaPecas {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+}
+
+.legendaPecas.grey {
+    color: var(--cinzaEscuro);
 }
 
 .pecasTable {
@@ -712,7 +732,7 @@ footer {
 }
 
 .pecasTable table {
-    margin: 0 auto 2rem;
+    margin: 0 auto 1rem;
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
@@ -722,8 +742,8 @@ footer {
 }
 
 .pecasTable table td {  /* Células */
-    padding: 0.75rem 1rem;
-    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
     color: #333;
     word-break: break-word; 
 }
@@ -747,6 +767,7 @@ footer {
     text-align: center;
     background-color: #f4f4f4;
     padding: 1rem;
+    font-size: 0.85rem;
 }
 
 .pecasTable table td {
@@ -756,8 +777,9 @@ footer {
 
 .statusNormal, .statusBaixo {
     border-radius: 1.5rem;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
+    padding: 0.25rem 1rem;
+    font-weight: 600;
+    font-size: 0.8rem;
 }
 
 .statusNormal {
@@ -777,14 +799,14 @@ footer {
 
 .numerosBarra {
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    margin: 0 1.5rem 1rem;
+    font-size: 0.7rem;
+    margin: 0 0.5rem 1rem;
     border-radius: 0.5rem;
     text-align: center;
 }
 
 .numerosBarra:hover {
-    background-color: var(--cinzaEscuro);
+    background-color: var(--azulHover);
 }
 
 .numerosBarra.ativo {
@@ -802,8 +824,9 @@ footer {
 }
 
 .subtitlePecas {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
     font-weight: bold;
+    color: var(--cinzaEscuro);
 }
 
 .textPecasA {
@@ -830,20 +853,23 @@ footer {
     display: flex;
 }
 
-.lineEquipe {
-    margin: 2rem 0;
-    gap: 5%;
+.lineEquipe, .marginLine {
+    gap: 1%;
+}
+
+.marginLine {
+    margin: 2rem 0 0;
 }
 
 .colEquipe16, .colEquipe16Atendimento, .colEquipe16Disponivel, .colEquipe16Deslocamento, .colEquipe58, .colEquipe37 {
     border: 1px solid var(--cinzaMedio);
     border-radius: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     display: inline-block;
 }
 
 .colEquipe16, .colEquipe16Atendimento, .colEquipe16Disponivel, .colEquipe16Deslocamento, .colEquipe37 {
-    padding: 1.5rem;
+    padding: 1.0rem 1.25rem;
 }
 
 .colEquipe58 {
@@ -851,11 +877,11 @@ footer {
 }
 
 .colEquipe16, .colEquipe16Atendimento, .colEquipe16Disponivel, .colEquipe16Deslocamento {
-    width: 16%;
+    width: 19.2%;
 }
 
 .colEquipe58 {
-    width: 58%;
+    width: 62%;
 }
 
 .colEquipe37 {
@@ -913,11 +939,16 @@ footer {
 }
 
 .dadoEquipe {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
 .legendaEquipe {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+}
+
+.legendaEquipe.grey {
+    color: var(--cinzaEscuro);
 }
 
 .containerBtnTecnicos {
@@ -934,11 +965,11 @@ footer {
 }
 
 .iconPerson {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .iconPersonTable {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .circleItem {
@@ -958,7 +989,7 @@ footer {
 }
 
 .relatorioTecnicos table {
-    margin: 0 auto 2rem;
+    margin: 0 auto 1rem;
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
@@ -968,8 +999,8 @@ footer {
 }
 
 .relatorioTecnicos table td {  /* Células */
-    padding: 0.75rem 1rem;
-    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
     color: #333;
     word-break: break-word; 
 }
@@ -992,7 +1023,7 @@ footer {
     color: var(--azulElevAi);
     text-align: center;
     background-color: #f4f4f4;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .relatorioTecnicos table td:last-child {  /* Última coluna (quantidade + %) */
@@ -1033,31 +1064,31 @@ footer {
 }
 
 .lineKpi {
-    margin: 2rem 0;
-    gap: 5%;
+    margin: 0.5rem 0;
+    gap: 1%;
 }
 
 .colKpi21, .colKpi47 {
     border: 1px solid var(--cinzaMedio);
     border-radius: 1.5rem;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1.0rem 1.25rem;
+    margin-bottom: 1rem;
     display: inline-block;
     background-color: var(--cinzaClaro);
     border: 1px solid var(--cinzaMedio);
 }
 
 .colKpi21 {
-    width: 21.25%;
+    width: 24.25%;
 }
 
 .colKpi47 {
-    width: 47%;
-    height: 30rem;
+    width: 49.5%;
+    height: 20rem;
 }
 
 .lineGraph {
-    height: 90%;
+    height: 80%;
 }
 
 .colKpi21:hover {
@@ -1065,18 +1096,26 @@ footer {
 }
 
 .subtitleKpi {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-weight: bold;
     color: var(--cinzaEscuro);
 }
 
 .dadoKpi {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
 .legendaKpi {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+}
+
+.legendaKpi.green {
     color: green;
+}
+
+.legendaKpi.red {
+    color: red;
 }
 
 .lineIMG {
@@ -1098,26 +1137,26 @@ footer {
 }
 
 .lineAtendimento {
-    margin: 2rem 0;
-    gap: 5%;
+    margin: .5rem 0;
+    gap: 1%;
 }
 
 .colAtendimento47, .colAtendimento30 {
     border: 1px solid var(--cinzaMedio);
     border-radius: 1.5rem;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1.0rem 1.25rem;
+    margin-bottom: 1rem;
     display: inline-block;
     background-color: var(--cinzaClaro);
     border: 1px solid var(--cinzaMedio);
 }
 
 .colAtendimento47 {
-    width: 47.5%;
+    width: 49.5%;
 }
 
 .colAtendimento30 {
-    width: 30%;
+    width: 32.6%;
 }
 
 .colAtendimento30:hover {
@@ -1125,13 +1164,13 @@ footer {
 }
 
 .identificacaoElevador, .containerDadosAtendimento, .filterCardsAtendimento {
-    gap: 20%;
+    gap: 45%;
     align-items: center;
 }
 
 .tagElevador{
-    font-size: 1.1 rem;
-    font-weight: bold;
+    font-size: 0.85rem;
+    font-weight: 600;
     display: inline-block;
 }
 
@@ -1140,6 +1179,7 @@ footer {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     display: inline-block;
+    font-size: 0.75rem;
 }
 
 .atendimentoCritico {
@@ -1159,7 +1199,7 @@ footer {
 }
 
 .dadosAtendimento {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--cinzaEscuro);
 }
 
@@ -1169,7 +1209,7 @@ footer {
 }
 
 .infoAtendimento {
-    font: 1rem;
+    font-size: 0.8rem;
     font-weight: bold;
 }
 
@@ -1193,6 +1233,40 @@ footer {
     position: relative; 
 }
 
+.cartaoAssistente {
+    background-color: var(--cinzaClaro);
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.linhaPergunta {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.campoPergunta {
+    flex: 1;
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1.5rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+}
+
+.botaoPerguntar {
+    background-color: var(--azulElevAi);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+
+.botaoPerguntar:hover{
+    background-color: var(--azulDestaque);
+}
 
 
 /* ----------- Tablet ----------- */

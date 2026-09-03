@@ -26,16 +26,93 @@
   <body>
     <div id="navbar-placeholder"></div>
     <div id="page-content">
-        <header>
-            <h1 class="titlePage">Gestão de Equipamentos</h1>
-        </header>
-        <main></main>
-        <footer>
-            <p class="m-0">&copy; 2026 • <strong>ElevAI</strong> • Inteligência que eleva a sua operação</p> 
-        </footer>
-    </div>
-    <script type="module">
-        import { carregarNavbar } from "../js/scripts.js";
+      <header class="cabecalhoEquip">
+        <div>
+          <h1 class="titlePage">Equipamentos</h1>
+          <p class="subtitlePage">
+            Gerencie e acompanhe todos os elevadores e escadas rolantes.
+          </p>
+        </div>
+        <div class="acoesCabecalho">
+          <span class="sinoNotificacao">
+            <i class="bi bi-bell"></i>
+            <span class="badgeSino">1</span>
+          </span>
+          <button class="btn btn-primary rounded-pill" type="button">
+            <i class="bi bi-plus-lg"></i> Novo equipamento
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <!-- cartões de resumo -->
+        <div class="linhaResumoEquip">
+          <div class="cartaoResumo">
+            <p class="tituloCartao">Total de equipamentos</p>
+            <p class="valorCartao">1.248</p>
+            <p class="legendaCartao legendaPositiva">↑ 4,2% vs mês anterior</p>
+          </div>
+          <div class="cartaoResumo">
+            <p class="tituloCartao">Em operação</p>
+            <p class="valorCartao">
+              1.186 <i class="bi bi-check-circle-fill legendaPositiva"></i>
+            </p>
+            <p class="legendaCartao">95,0% do total</p>
+          </div>
+          <div class="cartaoResumo">
+            <p class="tituloCartao">Com ocorrência</p>
+            <p class="valorCartao">62</p>
+            <p class="legendaCartao">5,0% do total</p>
+          </div>
+          <div class="cartaoResumo">
+            <p class="tituloCartao">Em manutenção</p>
+            <p class="valorCartao">18</p>
+            <p class="legendaCartao">1,4% do total</p>
+          </div>
+          <div class="cartaoResumo">
+            <p class="tituloCartao">Fora de operação</p>
+            <p class="valorCartao">12</p>
+            <p class="legendaCartao">1,0% do total</p>
+          </div>
+        </div>
+
+        <!-- abas de visualização -->
+        <div class="abasVisualizacao">
+          <span class="abaVisualizacao abaAtiva" data-aba="lista">Lista</span>
+          <span class="abaVisualizacao" data-aba="mapa">Mapa</span>
+          <span class="abaVisualizacao" data-aba="analise">Análise</span>
+        </div>
+
+        <div class="painelVisualizacao" data-painel="lista">
+          <!-- busca e filtros -->
+          <div class="barraFiltrosEquip">
+            <div class="campoBusca">
+              <i class="bi bi-search"></i>
+              <input
+                type="text"
+                id="campoBuscaEquip"
+                placeholder="Buscar por código, local ou cliente..."
+              />
+            </div>
+            <select id="filtroTipo" class="seletorFiltro">
+              <option value="todos">Todos os tipos</option>
+              <option value="Elevador">Elevador</option>
+              <option value="Escada Rolante">Escada Rolante</option>
+            </select>
+            <select class="seletorFiltro">
+              <option>Todas as regiões</option>
+            </select>
+            <select id="filtroStatus" class="seletorFiltro">
+              <option value="todos">Todos os status</option>
+              <option value="operacao">Em operação</option>
+              <option value="manutencao">Em manutenção</option>
+              <option value="ocorrencia">Com ocorrência</option>
+              <option value="fora">Fora de operação</option>
+            </select>
+            <button class="botaoFiltros" type="button">
+              <i class="bi bi-sliders"></i> Filtros
+            </button>
+          </div>
 
           <!-- tabela de equipamentos -->
           <table class="tabelaEquipamentos">
@@ -59,10 +136,10 @@
             <div class="paginacao">
               <span class="paginaItem"><i class="bi bi-chevron-left"></i></span>
               <span class="paginaItem paginaAtiva">1</span>
-              <span class="paginaItem">2</span>
-              <span class="paginaItem">3</span>
-              <span class="paginaItem">4</span>
-              <span class="paginaItem">5</span>
+              <span class="paginaItem hover">2</span>
+              <span class="paginaItem hover">3</span>
+              <span class="paginaItem hover">4</span>
+              <span class="paginaItem hover">5</span>
               <span>...</span>
               <span class="paginaItem">156</span>
               <span class="paginaItem"
@@ -122,7 +199,9 @@
           <p class="painelSemDados">Painel de análise em desenvolvimento.</p>
         </div>
       </main>
-      <footer></footer>
+      <footer>
+        <p class="mt-4 mb-0">&copy; 2026 • <strong>ElevAI</strong> • Inteligência que eleva a sua operação</p>
+      </footer>
     </div>
     <script type="module" src="../js/equipamentos.js"></script>
   </body>
