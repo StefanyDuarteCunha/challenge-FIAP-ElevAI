@@ -264,7 +264,7 @@ footer {
     height: auto;
 }
 
-a.navIndexText, a.navIndexButton {
+a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     text-decoration: none;
     color: white;
 }
@@ -709,6 +709,7 @@ a.navIndexText, a.navIndexButton {
     width: 60%;
     padding: 1rem;
     border-radius: 2rem;
+    margin-bottom: 3rem;
 }
 
 .cardBeneficios {
@@ -2261,6 +2262,11 @@ a.navIndexText, a.navIndexButton {
 
     .subtitleIndex, .subtitleSolucao {
         font-size: 1.5rem;
+    }
+
+    .textoSolucao, .textAIndex {
+        font-weight: 500;
+        font-size: 1rem;
     }
 
     .textAIndex, .subtitleLogin {
