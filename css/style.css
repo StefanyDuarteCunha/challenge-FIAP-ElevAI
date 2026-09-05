@@ -240,7 +240,7 @@ footer {
 }
 
 /* ----------- Page - Index ----------- */
-.navIndex, .containerIndexButton, .lineIndex, .cardIndex, .lineIndexB, .containerTitle, .navOrganizacao {
+.navIndex, .containerIndexButton, .lineIndex, .cardIndex, .lineIndexB, .containerTitle, .navOrganizacao, .navIndexLinks {
     display: flex;
 }
 
@@ -307,7 +307,6 @@ a.navIndexText, a.navIndexButton {
     color: var(--azulEscuro);
     cursor: default;
 }
-
 
 .navIndexButtonB {
     background-color: rgba(0, 0, 0, 0.5);
@@ -590,14 +589,16 @@ a.navIndexText, a.navIndexButton {
 .titleSolucao {
     font-size: 2rem;
     font-family: var(--fonteLato);
-    color: var(--azulDestaque);
+    color: var(--azulVibrante);
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .subtitleSolucao {
     font-size: 2rem;
     color: white;
     font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .textoSolucao {
@@ -605,6 +606,7 @@ a.navIndexText, a.navIndexButton {
     color: white;
     font-family: var(--fonteLato);
     font-weight: 100;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .cardSolucao {
@@ -616,6 +618,7 @@ a.navIndexText, a.navIndexButton {
     padding: 1rem;
     font-family: var(--fonteLato);
     font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .cardSolucao:hover {
@@ -750,7 +753,7 @@ a.navIndexText, a.navIndexButton {
     background-color: white;
     border-radius: 1rem;
     width: 24.25%;
-    margin-bottom: 2REM;
+    margin-bottom: 2rem;
 }
 
 .cardPublicoTexto {
@@ -828,6 +831,7 @@ a.navIndexText, a.navIndexButton {
 
 .caixaFale70 {
     width: 70%;
+    margin: 4rem auto;
 }
 
 .conteudoCaixaFale {
@@ -2223,6 +2227,135 @@ a.navIndexText, a.navIndexButton {
         gap: 10%;
         align-items: center;
     }
+
+    .navIndexLinks {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .navIndexButton, .navIndexButtonB {
+        margin-left: 2rem;
+        text-align: center;
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .navIndexText {
+        font-size: 0.8rem;
+        padding: 0.1rem 0.5rem;
+    }
+
+    .navIndexLogo {
+        width: 25%;
+    }
+    
+    .indexTitleContainer, .titleSolucaoContainer {
+        width: 90%;
+        font-weight: 100;
+        padding: 3rem 2rem;
+    }
+
+    .titleIndex, .titleLogin {
+        font-size: 2rem;
+    }
+
+    .subtitleIndex, .subtitleSolucao {
+        font-size: 1.5rem;
+    }
+
+    .textAIndex, .subtitleLogin {
+        font-size: 0.9rem;
+    }
+    
+    .containerTitle, .lineIndex, .lineIndexB, .conteudoSolucao, .lineRecursos, .lineBeneficios, .faleImagemFundo, .lineFale, .cardContainerPublico, .loginImagemFundo {
+        flex-direction: column;
+    }
+
+    .cardIndex {
+        font-size: 0.9rem;
+        width: 70%;
+        margin-top: 1rem;
+    }
+
+    .conteudoSolucao, .lineRecursos {
+        justify-content: center;
+        margin: auto;
+    }
+
+    .cardContainerSolucao, .cardImagemSolucao, .lineRecursos, .conteudoBenefícios, .lineBeneficios {
+        width: 90%;
+    }
+
+    .conteudoBenefícios {
+        margin: 2rem 1rem;
+        justify-items: center;
+    }
+
+    .cardImagemSolucao {
+        border-radius: 2rem;
+    }
+
+    .cardImagemSolucao img {
+        padding: 2rem;
+    }
+
+    .ImagemFundo {
+        background-image: url('../img/fundoIndex.png');
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        height: auto; 
+        position: relative;
+    }
+
+    .ImagemFundo::before, .ImagemFundo::after {
+        width: 100%;
+        height: 2rem;
+    }
+
+    .cardRecursos, .cardBeneficios {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .cardFale, .conteudoCaixaFale, .caixaFale30, .caixaFale70, .campoFale, .cardPublico, .caixaLogin, .conteudoCaixaLogin {
+        width: 100%;
+    }
+
+    .caixaLogin {
+        padding: 0 2rem;
+    }
+
+    .conteudoCaixaLogin.title {
+        margin-top: 2rem;
+    }
+
+    .conteudoCaixaLogin.background{
+        padding: 1rem 2rem;
+    }
+
+
+    .caixaFale30, .caixaFale70 {
+        padding: 0 1rem;
+        margin: 1rem 0;
+    }
+
+    .cardRecursos, .pbold {
+        font-size: 0.7rem;
+    }
+
+    .iconIndex, .iconFlutuante {
+        font-size: 1rem;
+    }
+
+    .cardFale {
+        font-size: 0.8rem;
+        margin: 2rem 0;
+    }
+
+    .caixaLogin.esquerda {
+        border-left: none;
+    }
 }
 
 
@@ -2268,6 +2401,49 @@ a.navIndexText, a.navIndexButton {
 
     #page-content {
         margin-left: 28% !important;
+    }
+
+    .navIndex {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .navIndexLinks {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.8rem;
+    }
+
+    .navIndexButton, .navIndexButtonB {
+        width: 100%;
+        text-align: center;
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+        margin: 0 auto;
+    }
+
+    .navIndexText {
+        font-size: 0.8rem;
+        padding: 0.1rem;
+    }
+
+    .navIndexLogo {
+        width: 25%;
+    }
+
+    .cardIndex {
+        font-size: 0.9rem;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .containerIndexButton {
+        flex-direction: column;
+    }
+
+    .spaceLogin, .loginButton {
+        margin: 0.5rem 0;
     }
 }
 
