@@ -247,6 +247,112 @@ export function botaoNavPagesRelatorio() {
 
 
 
+/* ----------- Tela - Atendimento ----------- */
+// função utilizada para manter botão ativo e alternar conteúdo - tela Atendimento
+export function botaoNavPageAtendimento() {
+    const btnFila = document.getElementById('botao-fila');
+    const btnHistoric = document.getElementById('botao-historico');
+    const telaFila = document.getElementById('tela-fila');
+    const telaHistorico = document.getElementById('tela-historico');
+
+    // Evento para o botão "Fila de Atendimento"
+    btnFila.addEventListener('click', () => {
+        // Ajusta os botões
+        btnFila.classList.add('ativo');
+        btnHistoric.classList.remove('ativo');
+
+        // Ajusta as divs (mostra padrão, esconde meus)
+        telaFila.classList.remove('escondido');
+        telaHistorico.classList.add('escondido');
+    });
+
+    // Evento para o botão "Histórico de atendimento"
+    btnHistoric.addEventListener('click', () => {
+        // Ajusta os botões
+        btnHistoric.classList.add('ativo');
+        btnFila.classList.remove('ativo');
+
+        // Ajusta as divs (esconde padrão, mostra meus)
+        telaFila.classList.add('escondido');
+        telaHistorico.classList.remove('escondido');
+    });
+}
+
+
+/* ----------- Tela - Plano de Manutenção ----------- */
+// função utilizada para manter botão ativo e alternar conteúdo - tela Plano de Manutenção
+export function botaoNavPageManutencao() {
+    const btnVisaoGeral = document.getElementById('btn-visao-geral');
+    const btnCronograma = document.getElementById('btn-cronograma');
+    const btnEquipamentos = document.getElementById('btn-equipamentos');
+    const btnRegioes = document.getElementById('btn-regioes');
+    const telaVisaoGeral = document.getElementById('tela-visao-geral');
+    const telaCronograma = document.getElementById('tela-cronograma');
+    const telaEquipamentos = document.getElementById('tela-equipamentos');
+    const telaRegioes = document.getElementById('tela-regioes');
+
+    // Evento para o botão "Visão Geral"
+    btnVisaoGeral.addEventListener('click', () => {
+        // Ajusta os botões
+        btnVisaoGeral.classList.add('ativo');
+        btnCronograma.classList.remove('ativo');
+        btnEquipamentos.classList.remove('ativo');
+        btnRegioes.classList.remove('ativo');
+
+        // Ajusta as divs (mostra padrão, esconde meus)
+        telaVisaoGeral.classList.remove('escondido');
+        telaCronograma.classList.add('escondido');
+        telaEquipamentos.classList.add('escondido');
+        telaRegioes.classList.add('escondido');
+    });
+
+    // Evento para o botão "Cronograma"
+    btnCronograma.addEventListener('click', () => {
+        // Ajusta os botões
+        btnVisaoGeral.classList.remove('ativo');
+        btnCronograma.classList.add('ativo');
+        btnEquipamentos.classList.remove('ativo');
+        btnRegioes.classList.remove('ativo');
+
+        // Ajusta as divs (mostra padrão, esconde meus)
+        telaVisaoGeral.classList.add('escondido');
+        telaCronograma.classList.remove('escondido');
+        telaEquipamentos.classList.add('escondido');
+        telaRegioes.classList.add('escondido');
+    });
+
+    // Evento para o botão "Equipamentos"
+    btnEquipamentos.addEventListener('click', () => {
+        // Ajusta os botões
+        btnVisaoGeral.classList.remove('ativo');
+        btnCronograma.classList.remove('ativo');
+        btnEquipamentos.classList.add('ativo');
+        btnRegioes.classList.remove('ativo');
+
+        // Ajusta as divs (mostra padrão, esconde meus)
+        telaVisaoGeral.classList.add('escondido');
+        telaCronograma.classList.add('escondido');
+        telaEquipamentos.classList.remove('escondido');
+        telaRegioes.classList.add('escondido');
+    });
+
+    // Evento para o botão "Regiões"
+    btnRegioes.addEventListener('click', () => {
+        // Ajusta os botões
+        btnVisaoGeral.classList.remove('ativo');
+        btnCronograma.classList.remove('ativo');
+        btnEquipamentos.classList.remove('ativo');
+        btnRegioes.classList.add('ativo');
+
+        // Ajusta as divs (mostra padrão, esconde meus)
+        telaVisaoGeral.classList.add('escondido');
+        telaCronograma.classList.add('escondido');
+        telaEquipamentos.classList.add('escondido');
+        telaRegioes.classList.remove('escondido');
+    });
+}
+
+
 /* ----------- Tela - Peças ----------- */
 // função utilizada para criar gráfico linha - tela Peças
 export function graficoLinhasPecas() {

@@ -18,17 +18,64 @@
     <div id="page-content">
         <header>
             <h1 class="titlePage">Ocorrências</h1>
+            <h6 class="subtitlePage">Detalhamento das ocorrências e acompanhamento da evolução</h6>
         </header>
-        <main></main>
+        <main>
+            <div class="lineOcorrencia">
+                <div class="colOcorrencia47">
+                    <div class="cardOcorrencia">
+                        <h5 class="titleCardOcorrencia mt-0 mb-4">Informações do equipamento</h5>
+                        <div class="elevadorOcorrencia">
+                            <p class="mt-0 mb-2"><span class="titleOcorrencia">Código do elevador:</span> #125669</p>
+                            <p class="criticoOcorrencia mt-0 mb-2">Crítico</p>
+                        </div>
+                        <p class="mt-0 mb-2"><span class="titleOcorrencia">Endereço:</span> Avenida Paulista, n° 1000 - São Paulo/SP</p>
+                        <p class="mt-0 mb-2"><span class="titleOcorrencia">Tipo:</span> Elevador de Passageiro</p>
+                        <p class="mt-0 mb-2"><span class="titleOcorrencia">Marca / Modelo:</span> Gen2 Premier</p>
+                    </div>
+                    <div class="cardOcorrencia">
+                        <h5 class="titleCardOcorrencia mt-0 mb-4">Análise Inteligente</h5>
+                        <div class="elevadorOcorrencia">
+                            <p class="titleOcorrencia mt-0 mb-2">Classificação sugerida:</p>
+                            <p class="criticoOcorrencia mt-0 mb-2">Crítico</p>
+                        </div>
+                        <p class="mt-0 mb-2"><span class="titleOcorrencia">Possível causa:</span> Falha no sistema de nivelamento</p>
+                        <p class="titleOcorrencia mt-0 mb-2">Peças relacionadas</p>
+                        <div class="pecasOcorrencia">
+                            <p class="tagPeca mt-0 mb-2">Sensor de nível</p>
+                            <p class="tagPeca mt-0 mb-2">Placa de controle</p>
+                            <p class="tagPeca mt-0 mb-2">Sensor de freio</p>
+                        </div>
+                        <p class="mt-0 mb-1"><span class="titleOcorrencia">Impacto estimado:</span> Alto — 2 pessoas presas</p>
+                        <div class="elevadorOcorrencia">
+                            <p class="titleOcorrencia mt-0 mb-0">Score de criticidade</p>
+                            <p class="titleOcorrencia mt-0 mb-0"><span class="numDestaque">85</span>/100</p>
+                        </div>
+                        <p class="mt-0 mb-2"><span class="titleOcorrencia">Tempo de resposta recomendado:</span> 01h30</p>
+                    </div>
+                </div>
+                <div class="colOcorrencia47 cardOcorrencia">
+                    <h5 class="titleCardOcorrencia mt-0 mb-4">Descrição da ocorrência</h5>
+                    <p class="titleOcorrencia mt-0 mb-2">Descrição informada pelo cliente</p>
+                    <p>Elevador parou entre os andares após um pico de luz. Tem 2 pessoas dentro, mas as portas não abrem.</p>
+                    <p class="titleOcorrencia mt-0 mb-2">Anexos (fotos / vídeos)</p>
+                    <div class="elevadorOcorrencia">
+                        <img src="../img/hall.png" alt="Foto do elevador">
+                    </div>
+                </div>
+            </div>
+        </main>
+
         <footer>
             <p class="m-0">&copy; 2026 • <strong>ElevAI</strong> • Inteligência que eleva a sua operação</p> 
         </footer>
     </div>
     <script type="module">
-        import { carregarNavbar } from "../js/scripts.js";
-
+        import { carregarNavbar, botaoNavPageAtendimento } from "../js/scripts.js";
         // Executa a função assim que a página carrega
         carregarNavbar();
-    </script>  
+        botaoNavPageAtendimento ();
+    </script> 
+    <script type="module" src="../js/equipamentos.js"></script>
 </body>
-</html>
+</html>            

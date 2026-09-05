@@ -98,7 +98,7 @@
 
 
 
-/* ----------- global ----------- */
+/* ----------- Global ----------- */
 html, body {
     margin: 0;
     padding: 0;
@@ -219,7 +219,25 @@ footer {
     border-radius: 2rem;
 }
 
+.elevador {
+    width: 18rem;
+    height: auto;
+    margin: auto;
+    display: block;
+}
 
+.config {
+    width: 18rem;
+    height: auto;
+    margin: 1rem auto 10rem;
+    display: block;
+}
+
+.painelSemDados {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--cinzaMedio);
+}
 
 /* ----------- Page - Index ----------- */
 .navIndex, .containerIndexButton, .lineIndex, .cardIndex, .lineIndexB, .containerTitle, .navOrganizacao {
@@ -2049,6 +2067,99 @@ a.navIndexText, a.navIndexButton {
     background-color: var(--azulDestaque);
 }
 
+.divOculta {
+    margin-bottom: 2rem;
+}
+
+
+
+/* ----------- Page - Ocorrências ----------- */
+.lineOcorrencia {
+    display: flex;
+    margin: 2rem 0 4rem;
+    gap: 1%;
+}
+
+.colOcorrencia47 {
+    width: 49.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+
+.cardOcorrencia {
+    font-family: var(--fonteLato);
+    background-color: var(--cinzaClaro);
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+}
+
+.titleCardOcorrencia {
+    font-weight: bold;
+    font-family: var(--fonteLato);
+    color: var(--azulElevAi);
+    font-size: 1rem;
+}
+
+.titleOcorrencia {
+    font-weight: bold;
+    color: var(--azulElevAi);
+    font-size: 0.9rem;
+}
+
+.elevadorOcorrencia {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.elevadorOcorrencia p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.numDestaque {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: red;
+}
+
+.colOcorrencia47 img {
+    width: 44%;
+    height: auto;
+    border-radius: 0.75rem;
+    object-fit: cover;
+    margin: 0.5rem auto 2rem;
+    border: 1px solid var(--cinzaMedio30);
+}
+
+.pecasOcorrencia {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+
+.tagPeca {
+    border: 1px solid rgb(216, 219, 225);
+    padding: 0.25rem 1rem;
+    background-color: rgba(216, 219, 225, 0.3);
+    border-radius: 2rem;
+}
+
+.tagPeca:hover {
+    background-color: var(--azulHover)
+}
+
+.criticoOcorrencia {
+    color: red;
+    background-color: var(--vermelhoClaro);
+    padding: 0.15rem 1rem;
+    border-radius: 1rem;
+}
+
+
 
 /* ----------- Tablet ----------- */
 @media (max-width: 1200px) {
@@ -2090,6 +2201,11 @@ a.navIndexText, a.navIndexButton {
 
     .recomendacoesGapLeft {
         margin-left: 1rem;
+    }
+
+    .identificacaoElevador, .containerDadosAtendimento, .filterCardsAtendimento {
+        gap: 10%;
+        align-items: center;
     }
 }
 

@@ -40,12 +40,12 @@
                 </div>
             </div>
             <div class="containerBotoes">
-                <button type="button" class="botaoNavPage" id="visao-geral">Visão Geral</button>
-                <button type="button" class="botaoNavPage ativo" id="cronograma">Cronograma</button>
-                <button type="button" class="botaoNavPage" id="equipamentos">Equipamentos</button>
-                <button type="button" class="botaoNavPage" id="regioes">Regiões</button>
+                <button type="button" class="botaoNavPage" id="btn-visao-geral">Visão Geral</button>
+                <button type="button" class="botaoNavPage ativo" id="btn-cronograma">Cronograma</button>
+                <button type="button" class="botaoNavPage" id="btn-equipamentos">Equipamentos</button>
+                <button type="button" class="botaoNavPage" id="btn-regioes">Regiões</button>
             </div>
-            <div class="containerCronograma">
+            <div class="containerCronograma" id="tela-cronograma">
                 <div class="calendar">
                     <div class="calendar-top">
                         <button class="cal-btn"><i class="bi bi-chevron-left"></i></button>
@@ -189,6 +189,18 @@
                     </div>
                 </div>
             </div>
+            <div class="escondido" id="tela-visao-geral">
+                <p class="painelSemDados">Visão Geral em desenvolvimento.</p>
+                <img src="../img/elevador.png" alt="Em manutenção" class="elevador">
+            </div>
+            <div class="escondido" id="tela-equipamentos">
+                <p class="painelSemDados">Visão por equipamentos em desenvolvimento.</p>
+                <img src="../img/elevador.png" alt="Em manutenção" class="elevador">
+            </div>
+            <div class="escondido" id="tela-regioes">
+                <p class="painelSemDados">Visão por regiões em desenvolvimento.</p>
+                <img src="../img/elevador.png" alt="Em manutenção" class="elevador">
+            </div>
             <div class="recomendacoes">
                 <h5 class="titleRecomendacoes">Recomendação ElevAI</h5>
                 <div class="containerRecomendacoesManutencao">
@@ -211,10 +223,11 @@
         </footer>
     </div>
     <script type="module">
-        import { carregarNavbar } from "../js/scripts.js";
+        import { carregarNavbar, botaoNavPageManutencao } from "../js/scripts.js";
 
         // Executa a função assim que a página carrega
         carregarNavbar();
+        botaoNavPageManutencao();
     </script>   
 </body>
 </html>
