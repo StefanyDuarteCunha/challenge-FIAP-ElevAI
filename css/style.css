@@ -2074,20 +2074,33 @@ a.navIndexText, a.navIndexButton {
 
 
 /* ----------- Page - Ocorrências ----------- */
+.lineOcorrencia, .classificacaoOcorrencia, .elevadorOcorrencia, .pecasOcorrencia {
+    display: flex;
+}
+
 .lineOcorrencia {
-    display: flex;
-    margin: 2rem 0 4rem;
+    margin: 2rem 0;
     gap: 1%;
+    align-items: stretch;
 }
 
-.colOcorrencia47 {
-    width: 49.5%;
-    display: flex;
-    flex-direction: column;
-    gap: 2%;
+.colOcorrencia35 {
+    width: 35%;
 }
 
-.cardOcorrencia {
+.colOcorrencia64 {
+    width: 64%;
+}
+
+.colOcorrencia {
+    width: 100%;
+}
+
+.classificacaoOcorrencia .elevadorOcorrencia , .elevadorOcorrencia .tagsOcorrencia, .elevadorOcorrencia .titleCardOcorrencia {
+    width: 50%;
+}
+
+.colOcorrencia35, .colOcorrencia64, .colOcorrencia {
     font-family: var(--fonteLato);
     background-color: var(--cinzaClaro);
     border: 1px solid var(--cinzaMedio);
@@ -2109,9 +2122,8 @@ a.navIndexText, a.navIndexButton {
 }
 
 .elevadorOcorrencia {
-    display: flex;
     align-items: center;
-    gap: 1rem;
+    width: 100%;
 }
 
 .elevadorOcorrencia p {
@@ -2120,24 +2132,24 @@ a.navIndexText, a.navIndexButton {
 }
 
 .numDestaque {
-    font-size: 1.8rem;
     font-weight: bold;
     color: red;
 }
 
-.colOcorrencia47 img {
-    width: 44%;
-    height: auto;
+.elevadorOcorrencia img {
+    width: 20%;
+    aspect-ratio: 8 / 10;
     border-radius: 0.75rem;
     object-fit: cover;
-    margin: 0.5rem auto 2rem;
     border: 1px solid var(--cinzaMedio30);
 }
 
+.colOcorrencia .elevadorOcorrencia {
+    align-items: start;
+}
+
 .pecasOcorrencia {
-    display: flex;
     gap: 1rem;
-    justify-content: center;
     margin: 0.5rem 0;
 }
 
@@ -2146,6 +2158,7 @@ a.navIndexText, a.navIndexButton {
     padding: 0.25rem 1rem;
     background-color: rgba(216, 219, 225, 0.3);
     border-radius: 2rem;
+    font-size: 0.75rem;
 }
 
 .tagPeca:hover {
@@ -2159,6 +2172,9 @@ a.navIndexText, a.navIndexButton {
     border-radius: 1rem;
 }
 
+.elevadorOcorrencia.gap {
+    gap: 2rem;
+}
 
 
 /* ----------- Tablet ----------- */
