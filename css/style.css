@@ -2,9 +2,12 @@
 :root {
     --azulElevAi: #0D2345;
     --azulDestaque: #1c3f90;
+    --azulVibrante: #1a48dc;
+    --azulEscuro: #051228;
     --azulHover: #e9f2ff;
     --cinzaClaro: #f8fafa;
     --cinzaMedio: #b3b3b3;
+    --cinzaMedio30: rgba(179, 179, 179, 0.3);
     --cinzaEscuro: #828282;
     --amareloEscuro: rgb(107, 107, 8);
     --amareloPadrao: rgb(246, 185, 8);
@@ -17,23 +20,33 @@
 
 
 /* ----------- barra rolagem ----------- */
-::-webkit-vscrollbar {
-  width: 0.63rem; /* Largura da barra de rolagem */
+* {
+  scrollbar-width: thin; /* Define a barra como fina (auto ou thin) */
+  scrollbar-color: var(--azulElevAi) #00000000; /* Cor do puxador e da trilha */
 }
 
-::-webkit-scrollbar-track {
-  background: none; /* Cor do fundo/trilho da barra */
+/* Padrão WebKit (Chrome, Edge, Safari) */
+*::-webkit-scrollbar {
+  width: 0.1px;  /* Largura da barra vertical */
+  height: 0; /* Altura da barra horizontal */
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--azulElevAi); /* Cor da parte que se move (o puxador) */
-  border-radius: 0.31rem; /* Arredondamento das bordas */
+*::-webkit-scrollbar-track, *::-webkit-scrollbar-thumb {
+  background: var(--azulDestaque); /* Cor do fundo/trilha da barra */ /* Cor do puxador da barra */
+  border-radius: 0;
 }
 
-::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
   background: var(--azulDestaque); /* Cor do puxador ao passar o mouse */
 }
 
+.editor::-webkit-scrollbar-track {
+    margin: 0; /* remove recuo interno */
+}
+
+.monaco-editor .margin {
+    width: 0 !important; /* remove a margem lateral */
+}
 
 
 /* ----------- navbar ----------- */
@@ -76,7 +89,7 @@
 .titleNav a.ativo {
     background-color: var(--azulDestaque);
     border-radius: 1rem;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .iconNav {
@@ -89,7 +102,10 @@
 html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
     height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .titlePage {
@@ -175,8 +191,8 @@ footer {
 }
 
 .recomendacoes {
-    background-color: var(--cinzaClaro);
     border: 1px solid var(--cinzaMedio);
+    background-color: var(--cinzaClaro);
     border-radius: 1rem;
     padding: 2rem;
     margin: .5rem 0 1rem;
@@ -204,6 +220,669 @@ footer {
 }
 
 
+
+/* ----------- Page - Index ----------- */
+.navIndex, .containerIndexButton, .lineIndex, .cardIndex, .lineIndexB, .containerTitle, .navOrganizacao {
+    display: flex;
+}
+
+.bodyIndex {
+    background-color: var(--azulEscuro);
+}
+
+.navIndex {
+    background-color: var(--azulEscuro);
+    margin: 0;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+}
+
+.navOrganizacao {
+    align-items: center;
+}
+
+.navIndexLogo {
+    width: 130px;
+    height: auto;
+}
+
+a.navIndexText, a.navIndexButton {
+    text-decoration: none;
+    color: white;
+}
+
+.navIndexText {
+    background-color: var(--azulEscuro);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: var(--fonteLato);
+}
+
+.navIndexText:hover {
+    color: var(--azulDestaque);
+    background-color: var(--azulHover);
+}
+
+.navIndexLinks {
+    justify-content: center;
+    flex: 1;
+    gap: 5rem;
+}
+
+.navIndexButton, .navIndexButtonB {
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.navIndexButton {
+    background-color: var(--azulVibrante);
+}
+
+.navIndexButton.inactive, .navIndexButton.inactive:hover {
+    background-color: var(--azulEscuro);
+    color: var(--azulEscuro);
+    cursor: default;
+}
+
+
+.navIndexButtonB {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+}
+
+.navIndexButton:hover, .navIndexButtonB:hover {
+    background-color: var(--azulHover);
+    color: var(--azulElevAi);
+}
+
+.containerIndexButton {
+    gap: 1rem;
+}
+
+.containerTitle {
+    background: linear-gradient(to bottom, rgba(5, 18, 40, 0), var(--azulEscuro));
+}
+
+.titleIndex {
+    color: white;
+    font-size: 5rem;
+}
+
+.titleIndex span {
+    color: var(--azulVibrante);
+}
+
+.subtitleIndex {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.textAIndex {
+    color: white;
+    font-size: 1.2rem;
+    font-family: var(--fonteLato);
+    font-weight: 100;
+}
+
+.indexTitleContainer {
+    width: 50%;
+    font-weight: 100;
+    padding: 4rem 5rem 4rem;
+}
+
+.ImagemFundo {
+    background-image: url('../img/fundoIndex.png');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: auto; 
+    position: relative;
+}
+
+.ImagemFundo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    background: linear-gradient(to bottom, var(--azulEscuro), rgba(5, 18, 40, 0));
+    pointer-events: none; /* não atrapalha cliques */
+    z-index: 1;
+}
+
+.ImagemFundo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    background: linear-gradient(to bottom, rgba(5, 18, 40, 0), var(--azulEscuro));
+    pointer-events: none; /* não atrapalha cliques */
+    z-index: 1;
+}
+
+.cardIndex {
+    color: var(--azulHover);
+    font-size: 0.9rem;
+    font-family: var(--fonteLato);
+    font-weight: 300;
+    align-items: center;
+    width: 24.25%;
+    border: 1px solid #00000000;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    z-index: 2;
+}
+
+.cardIndex:hover {
+    border: 0.1px solid var(--azulDestaque);
+}
+
+.cardIndex.background {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.iconIndexButton {
+    margin-left: 0.25rem;
+}
+
+.iconIndex {
+    background-color: #192e58;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    color: var(--azulHover);
+}
+
+.subtitleBIndex {
+    color: var(--azulVibrante);
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-left: 2rem;
+}
+
+.textBIndex {
+    color: var(--azulHover);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.textCIndex {
+    color: var(--azulHover);
+    font-size: 1rem;
+}
+
+.lineIndex, .containerTitle {
+    gap: 1%;
+    padding: 0 2rem 1rem;
+}
+
+.lineIndexB {
+    padding: 0 2rem;
+    justify-content: space-between;
+}
+
+.footerWhite {
+    padding-top: 1rem;
+    color: white;
+}
+
+
+
+/* ----------- Page - Login ----------- */
+.bodyLogin, .loginImagemFundo, .cardImagemSolucao {
+    display: flex;
+}
+
+.bodyLogin {
+    background-color: var(--azulEscuro);
+    min-height: 100vh;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.mainLogin {
+    min-height: 82vh;
+    flex: 1;
+}
+
+.loginImagemFundo {
+    background-image: url('../img/fundoIndex.png');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: auto; 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    margin: auto;
+}
+
+.loginImagemFundo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    background: linear-gradient(to bottom, var(--azulEscuro), rgba(5, 18, 40, 0));
+    pointer-events: none; /* não atrapalha cliques */
+}
+
+.loginImagemFundo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    background: linear-gradient(to bottom, rgba(5, 18, 40, 0), var(--azulEscuro));
+    pointer-events: none; /* não atrapalha cliques */
+}
+
+.caixaLogin {
+    width: 50%;
+    padding: 0 5rem;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixaLogin.esquerda {
+    border-left: 1px solid white;
+}
+
+.conteudoCaixaLogin {
+    width: 90%;
+    margin: auto;
+}
+
+.conteudoCaixaLogin.background {
+    padding: 3rem;
+    border-radius: 1rem;
+    background: linear-gradient(to bottom, 
+        rgba(5, 18, 40, 0.8) 0%,     /* Mais escuro no topo da caixinha */
+        rgba(5, 18, 40, 0.2) 40%,    /* Bem suave e transparente antes do meio */
+        rgba(5, 18, 40, 0.2) 60%,    /* Mantém transparente no meio */
+        rgba(5, 18, 40, 0.8) 100%    /* Volta a escurecer na base da caixinha */
+    ), rgba(5, 18, 40, 0.5);          /* Cor sólida de fundo que você já usava */
+}
+
+
+.titleLogin {
+    color: white;
+    font-size: 5rem;
+}
+
+.titleLogin span {
+    color: var(--azulVibrante);
+}
+
+.subtitleLogin {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.loginButton {
+    margin-top: 2rem;
+}
+
+.loginLabel {
+    color: white;
+
+}
+
+.spaceLogin {
+    margin: 1rem 0;
+}
+
+
+
+/* ----------- Page - Solução ----------- */
+.bodySolucao {
+    background-color: var(--azulEscuro);
+}
+
+.conteudoSolucao, .cardSolucao {
+    display: flex;
+}
+
+.conteudoSolucao {
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0 0 3rem;
+}
+
+.titleSolucaoContainer {
+    padding: 8rem 4rem;
+    width: 50%;
+    z-index: 2;
+}
+
+.titleSolucao {
+    font-size: 2rem;
+    font-family: var(--fonteLato);
+    color: var(--azulDestaque);
+    font-weight: 700;
+}
+
+.subtitleSolucao {
+    font-size: 2rem;
+    color: white;
+    font-weight: 300;
+}
+
+.textoSolucao {
+    font-size: 1rem;
+    color: white;
+    font-family: var(--fonteLato);
+    font-weight: 100;
+}
+
+.cardSolucao {
+    color: var(--azulHover);
+    font-size: 0.9rem;
+    align-items: center;
+    border: 1px solid #00000000;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    font-family: var(--fonteLato);
+    font-weight: 300;
+}
+
+.cardSolucao:hover {
+    border: 0.1px solid var(--azulDestaque);
+}
+
+.cardContainerSolucao {
+    width: 28%;
+}
+
+.cardImagemSolucao {
+    width: 60%;
+    height: auto;
+    align-items: center;
+    justify-content: end;
+    border-radius: 2rem 0 0 2rem;
+    background: linear-gradient(to bottom, 
+        rgba(9, 25, 52, 0.7) 0%,     /* Mais escuro no topo da caixinha */
+        rgba(9, 25, 52, 0.2) 40%,    /* Bem suave e transparente antes do meio */
+        rgba(9, 25, 52, 0.2) 60%,    /* Mantém transparente no meio */
+        rgba(9, 25, 52, 0.7) 100%    /* Volta a escurecer na base da caixinha */
+    ), rgba(9, 25, 52, 0.5);  
+    margin-bottom: 2rem;
+}
+
+.cardImagemSolucao img {
+    padding: 3rem 0 3rem 3rem;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-right: 0;
+} 
+
+.pbold {
+    font-weight: 700;
+}
+
+
+
+/* ----------- Page - Recursos ----------- */
+.conteudoRecursos {
+    margin: 0 3rem;
+}
+
+.lineRecursos {
+    display: flex;
+    gap: 1%;
+    margin-bottom: 1rem;
+}
+
+.cardRecursos {
+    color: var(--azulHover);
+    font-size: 0.8rem;
+    font-family: var(--fonteLato);
+    font-weight: 300;
+    align-items: center;
+    width: 24.25%;
+    border: 1px solid #00000000;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    z-index: 2;
+    background-color: rgba(128, 128, 128, 0.1);
+    text-align: center;
+}
+
+.cardRecursos .pbold {
+    font-size: 1rem;
+}
+
+.cardRecursos:hover {
+    border: 0.1px solid var(--azulDestaque);
+}
+
+
+/* ----------- Page - Benefícios ----------- */
+.lineBeneficios, .cardBeneficios {
+    display: flex;
+}
+
+.conteudoBenefícios {
+    margin-left: 3rem;
+    background: linear-gradient(to bottom, 
+        rgba(9, 25, 52, 0.8) 0%,     /* Mais escuro no topo da caixinha */
+        rgba(9, 25, 52, 0.4) 40%,    /* Bem suave e transparente antes do meio */
+        rgba(9, 25, 52, 0.4) 60%,    /* Mantém transparente no meio */
+        rgba(9, 25, 52, 0.8) 100%    /* Volta a escurecer na base da caixinha */
+    ), rgba(9, 25, 52, 0.5);  
+    width: 60%;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.cardBeneficios {
+    color: var(--azulHover);
+    font-size: 0.9rem;
+    font-family: var(--fonteLato);
+    font-weight: 300;
+    align-items: center;
+    border: 1px solid #00000000;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    z-index: 2;
+    width: 50%;
+    border: 0.1px solid #00000000;
+}
+
+.destaque {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cardBeneficios:hover {
+    border: 0.1px solid var(--azulDestaque);
+}
+
+
+
+/* ----------- Page - Público ----------- */
+.conteudoPublico {
+    margin: 0 3rem;
+}
+
+.cardContainerPublico {
+    display: flex;
+    gap: 1%;
+    flex-direction: row;
+    width: 100%;
+}
+
+.cardPublico {
+    display: inline-block;
+    background-color: white;
+    border-radius: 1rem;
+    width: 24.25%;
+    margin-bottom: 2REM;
+}
+
+.cardPublicoTexto {
+    display: inline-block;
+    padding:  1rem 1.5rem;
+    font-size: 0.9rem;
+    font-family: var(--fonteLato);
+}
+
+.cardPublico img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.iconGreen {
+    color: green;
+    margin: 0 0.25rem;
+}
+
+.cardPublico > div:first-child {
+    position: relative;   /* permite posicionar o ícone dentro */
+    overflow: hidden;     /* evita que o ícone ultrapasse o card */
+}
+
+.iconFlutuante {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    box-shadow: 0 2px 4px var(--cinzaMedio30);
+    background-color: var(--azulVibrante);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    color: var(--azulHover);
+}
+
+
+
+/* ----------- Page - Fale Conosco ----------- */
+.contCaracteres {
+    font-size: 0.7rem;
+    color: var(--cinzaEscuro);
+    font-weight: bold;
+    text-align: end;
+}
+
+.lineFale, .forms-login, .loginButton.end, .faleImagemFundo, .cardFale {
+    display: flex;
+}
+
+.lineFale {
+    gap: 1rem;
+    width: 100%;
+}
+
+.forms-login {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.caixaFale30, .caixaFale70 {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 0 4rem;
+}
+
+.caixaFale30 {
+    width: 30%;
+}
+
+.caixaFale70 {
+    width: 70%;
+}
+
+.conteudoCaixaFale {
+    width: 90%;
+    margin: auto;
+    padding: 3rem;
+    border-radius: 1rem;
+    background: linear-gradient(to bottom, 
+        rgba(5, 18, 40, 0.8) 0%,     /* Mais escuro no topo da caixinha */
+        rgba(5, 18, 40, 0.2) 40%,    /* Bem suave e transparente antes do meio */
+        rgba(5, 18, 40, 0.2) 60%,    /* Mantém transparente no meio */
+        rgba(5, 18, 40, 0.8) 100%    /* Volta a escurecer na base da caixinha */
+    ), rgba(5, 18, 40, 0.5);          /* Cor sólida de fundo que você já usava */
+}
+
+.campoFale {
+    width: 50%;
+}
+
+.loginButton.end {
+    justify-content: end;
+}
+
+.faleImagemFundo {
+    background-image: url('../img/fundoIndex.png');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: auto; 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    align-items: start;
+}
+
+.faleImagemFundo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    background: linear-gradient(to bottom, var(--azulEscuro), rgba(5, 18, 40, 0));
+    pointer-events: none; /* não atrapalha cliques */
+}
+
+.faleImagemFundo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    background: linear-gradient(to bottom, rgba(5, 18, 40, 0), var(--azulEscuro));
+    pointer-events: none; /* não atrapalha cliques */
+}
+
+.cardFale {
+    color: var(--azulHover);
+    font-size: 0.9rem;
+    align-items: center;
+    border: 1px solid #00000000;
+    border-radius: 1.5rem;
+    font-family: var(--fonteLato);
+    font-weight: 300;
+    width: 100%;
+}
+
+.cardFale:hover {
+    border: 0.1px solid var(--azulDestaque);
+}
+
+
 /* ----------- Page - Dashboard ----------- */
 .containerAlerta, .lineDash30, .lineDash47, .headerDash, .campoPeriodo, .inputContainer, .containerGraficoRosca {
     display: flex;
@@ -225,7 +904,6 @@ footer {
 }
 
 .colDash {
-    background-color: var(--cinzaClaro);
     border: 1px solid var(--cinzaMedio);
     border-radius: 1.5rem;
     padding: 1rem 1.25rem;
@@ -561,7 +1239,7 @@ footer {
 
 .containerRecomendacoesManutencao {
     width: 80%;
-    margin: 2rem 0;
+    margin: 0.5rem 0;
     align-items: center;
 }
 
@@ -578,6 +1256,7 @@ footer {
     justify-content: space-between;
     align-items: center; /* Alinha o label e os inputs rigidamente à direita */
     gap: 2rem; /* Espaço entre a palavra "Período" e as caixas de data */
+    margin-bottom: 1rem;
 }
 
 .containerEsquerda {
@@ -591,15 +1270,11 @@ footer {
 }
 
 .containerCards {
-    background-color: var(--cinzaClaro);
-    border: 1px solid var(--cinzaMedio);
+    background-color: #fff;
+    box-shadow: 0 2px 4px var(--cinzaMedio30);
     border-radius: 1rem;
     padding: 2rem;
     margin-top: 1rem;
-}
-
-.containerCalendar {
-    width: 75%;
 }
 
 .verCards {
@@ -622,34 +1297,141 @@ footer {
 }
 
 .cardA {
-    background-color: #d5e8f9;
-    color: blue;
     margin-top: 1rem;
 }
 
-.cardA:hover {
+.cardA, .cal-cell.blue {
+    background-color: #d5e8f9;
+    color: blue;
+}
+
+.cardA:hover, .cal-cell.blue:hover {
     color: #d5e8f9;
     background-color: blue;
 }
 
-.cardB {
+.cardB, .cal-cell.purple {
     background-color: #e7d8fc;
     color: purple;
 }
 
-.cardB:hover {
+.cardB:hover, .cal-cell.purple:hover {
     color: #e7d8fc;
     background-color: purple;
 }
 
-.cardC {
+.cardC, .cal-cell.green {
     background-color: #bfefd3;
     color: green;
 }
 
-.cardC:hover {
+.cardC:hover, .cal-cell.green:hover {
     color: #bfefd3;
     background-color: green;
+}
+
+.calendar {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    width: 75%;
+    box-shadow: 0 2px 4px var(--cinzaMedio30);
+}
+
+.calendar-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.cal-month {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.cal-btn {
+    background: var(--cinzaClaro);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cal-btn:hover {
+    background: var(--azulHover);
+}
+
+.cal-filter {
+    width: auto;
+    font-size: 0.85rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.cal-header {
+    text-align: center;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    color: var(--cinzaEscuro);
+    background: #f7f7f7;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.cal-cell {
+    min-height: 4rem;
+    background: #fafafa;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.cal-cell.empty {
+    background: transparent;
+    border: none;
+}
+
+.cal-cell:hover {
+    background-color: var(--azulHover);
+}
+
+.day-number {
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--cinzaEscuro);
+}
+
+.event {
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 6px;
+    color: #fff;
+    margin-top: 4px;
+    text-align: left;
+}
+
+.event.padrao {
+    background: #007bff;
+}
+
+.event.escadas {
+    background: #6f42c1;
+}
+
+.event.energia {
+    background: #198754;
 }
 
 
@@ -1042,7 +1824,7 @@ footer {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 4px var(--cinzaMedio30);
 }
 
 .mapaTecnicos {
@@ -1148,7 +1930,6 @@ footer {
     margin-bottom: 1rem;
     display: inline-block;
     background-color: var(--cinzaClaro);
-    border: 1px solid var(--cinzaMedio);
 }
 
 .colAtendimento47 {
@@ -1219,7 +2000,7 @@ footer {
     position: absolute;
     bottom: 0.5rem;
     right: 0.5rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 4px var(--cinzaMedio30);
 }
 
 .mapaAtendimento {
