@@ -74,4 +74,4 @@ Todos enfrentam desafios como priorização, alto volume de chamados, baixa prev
 - Bootstrap
 
 ## 📌 Status do projeto
-Em andamento
+Em andamento - https://challenge-fiap-elev-ai.vercel.app/
