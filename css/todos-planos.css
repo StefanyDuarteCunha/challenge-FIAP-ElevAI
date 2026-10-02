@@ -1,0 +1,92 @@
+/* Estilos exclusivos da página Todos os planos */
+.listaTodosPlanos {
+    margin-top: 1.5rem;
+}
+
+.filtrosTodosPlanos {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.filtrosTodosPlanos input,
+.filtrosTodosPlanos select {
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1.5rem;
+    background-color: white;
+    font-size: 0.85rem;
+    min-width: 0;
+}
+
+.filtrosTodosPlanos input {
+    flex: 1;
+}
+
+.filtrosTodosPlanos .botaoNovo {
+    display: inline-block;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Permite rolar a tabela em telas pequenas */
+.rolagemTodosPlanos {
+    overflow-x: auto;
+}
+
+.tabelaTodosPlanos {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.tabelaTodosPlanos th,
+.tabelaTodosPlanos td {
+    padding: 1rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--cinzaMedio30);
+}
+
+.tabelaTodosPlanos th {
+    background-color: var(--cinzaClaro);
+    border-bottom: 1px solid var(--cinzaMedio);
+}
+
+.statusListaPlano {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border-radius: 1rem;
+    white-space: nowrap;
+    font-size: 0.8rem;
+}
+
+.listaPlanoEmDia {
+    color: #146c2e;
+    background-color: var(--verdeClaro);
+}
+
+.listaPlanoAtrasado {
+    color: #b4232c;
+    background-color: var(--vermelhoClaro);
+}
+
+.voltarTodosPlanos {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--azulDestaque);
+    text-decoration: none;
+}
+
+#mensagemTodosPlanos {
+    margin-top: 1rem;
+    color: #606060;
+}
+
+@media (max-width: 700px) {
+    .filtrosTodosPlanos {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

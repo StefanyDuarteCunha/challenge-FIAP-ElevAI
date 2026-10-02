@@ -1,0 +1,112 @@
+/* Página de usuários */
+.cabecalhoUsuarios {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tituloUsuarios {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.textoUsuarios {
+  color: var(--cinzaMedio);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Busca e filtros */
+.barraFiltrosUsuarios {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.campoBuscaUsuario {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1.5rem;
+  padding: 0.4rem 1rem;
+  background-color: white;
+}
+
+.campoBuscaUsuario input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.85rem;
+}
+
+.seletorFiltroUsuario {
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1.5rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  background-color: white;
+}
+
+/* Tabela */
+.tabelaUsuarios {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.tabelaUsuarios th {
+  text-align: left;
+  color: var(--cinzaMedio);
+  font-weight: 600;
+  padding: 0.6rem 0.4rem;
+  border-bottom: 1px solid var(--cinzaMedio);
+}
+
+.tabelaUsuarios td {
+  padding: 0.75rem 0.4rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+.statusUsuario {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+}
+
+.statusAtivo {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.statusInativo {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+/* Formulário de novo usuário */
+.formularioUsuario {
+  max-width: 700px;
+  background-color: var(--cinzaClaro);
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.acoesFormularioUsuario {
+  display: flex;
+  gap: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .cabecalhoUsuarios,
+  .barraFiltrosUsuarios {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
