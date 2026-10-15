@@ -2362,6 +2362,14 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     .caixaLogin.esquerda {
         border-left: none;
     }
+
+    .lineDash30.flex1200 {
+        flex-direction: column;
+    }
+
+    .colDash30.flex1200 {
+        width: 100%;
+    }
 }
 
 
@@ -2391,9 +2399,15 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     #page-content {
         margin-left: 25% !important;
     }
+
+    .lineDash30.flex900, .lineDash47.flex900, .headerDash.flex900 {
+        flex-direction: column;
+    }
+
+    .colDash30.flex900, .colDash47.flex900 {
+        width: 100%;
+    }
 }
-
-
 
 /* ----------- Celulares menores ----------- */
 @media (max-width: 700px) {

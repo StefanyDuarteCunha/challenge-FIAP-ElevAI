@@ -19,7 +19,7 @@
 <body>
     <div id="navbar-placeholder"></div>
     <div id="page-content">
-        <header class="headerDash">
+        <header class="headerDash flex900">
             <div>
                 <h1 class="titlePage">Dashboard Geral</h1>
                 <p class="subtitlePage">Panorama geral do sistema</p>
@@ -34,45 +34,45 @@
             </div>
         </header>
         <main>
-            <div class="lineDash30">
-                <div class="colDash colDash30 hover">
+            <div class="lineDash30 flex900">
+                <div class="colDash colDash30 flex900 hover">
                     <p class="subtitleDash m-0">Ocorrências abertas</p>
                     <p class="dadoDash m-0">128</p>
                     <p class="legendaDash m-0">+12% do período anterior</p>
                 </div>
-                <div class="colDash colDash30 hover">
+                <div class="colDash colDash30 flex900 hover">
                     <p class="subtitleDash m-0">Atendimentos hoje</p>
                     <p class="dadoDash m-0">342</p>
                     <p class="legendaDash m-0">-8% do período anterior</p>
                 </div>
-                <div class="colDash colDash30 hover">
+                <div class="colDash colDash30 flex900 hover">
                     <p class="subtitleDash m-0">Tempo médio de resposta</p>
                     <p class="dadoDash m-0">1h24m</p>
                     <p class="legendaDash m-0">-30min do período anterior</p>
                 </div>
             </div>
-            <div class="lineDash lineDash30">
-                <div class="colDash colDash30">
+            <div class="lineDash lineDash30 flex1200">
+                <div class="colDash colDash30 flex1200">
                     <p class="titleDash m-0">Ocorrências por criticidade</p>
                     <div class="containerGrafico d-flex justify-content-center">
                         <canvas id="graficoRosca"></canvas>
                     </div>
                 </div>
-                <div class="colDash colDash30">
+                <div class="colDash colDash30 flex1200">
                     <p class="titleDash m-0">Ocorrências por região</p>
                     <div class="containerImagem d-flex justify-content-center">
                         <img src="../img/mapaDash.png" alt="Mapa da região de atendimento">
                     </div>
                 </div>
-                <div class="colDash colDash30">
+                <div class="colDash colDash30 flex1200">
                     <p class="titleDash m-0">SLA - Tempo de resposta</p>
                     <div class="containerGraficoSLA d-flex justify-content-center">
                         <canvas id="graficoRoscaSLA"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="lineDash lineDash47">
-                <div class="colDash colDash47">
+            <div class="lineDash lineDash47 flex900">
+                <div class="colDash colDash47 flex900">
                     <p class="titleDash m-0">Top 5 - Tipos de ocorrências</p>
                     <div class="containerTable">
                         <table>
@@ -111,7 +111,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="colDash colDash47">
+                <div class="colDash colDash47 flex900">
                     <p class="titleDash m-0">Evolução das ocorrências</p>
                     <div class="containerGraficoLinhas d-flex justify-content-center">
                         <canvas id="graficoLinhas"></canvas>
