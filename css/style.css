@@ -18,10 +18,12 @@
     --clamp18: clamp(1.2rem, 1.09vw + 0.98rem, 1.8rem);
     --clamp1: clamp(0.8rem, 0.36vw + 0.73rem, 1rem);
     --clamp08: clamp(0.7rem, 0.18vw + 0.66rem, 0.8rem);
+    --clamp08a: clamp(0.6rem, 0.36vw + 0.53rem, 0.8rem);
     --clamp085: clamp(0.5rem, 0.64vw + 0.37rem, 0.85rem);
     --clamp09: clamp(0.75rem, 0.27vw + 0.7rem, 0.9rem);
     --clamp11: clamp(0.9rem, 0.36vw + 0.83rem, 1.1rem);
     --clamp12: clamp(0.9rem, 0.55vw + 0.79rem, 1.2rem);
+    --clamp12a: clamp(0.5rem, 1.27vw + 0.25rem, 1.2rem);
     --clamp5: clamp(2rem, 5.45vw + 0.91rem, 5rem);
     --clamp25: clamp(1.5rem, 1.82vw + 1.14rem, 2.5rem);
     --clamp075: clamp(0.65rem, 0.18vw + 0.61rem, 0.75rem);
@@ -1002,6 +1004,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     color: red;
     text-align: center;
     width: 5%;
+    font-size: var(--clamp12a);
 }
 
 .titleAlert, .textAlert {
@@ -1784,7 +1787,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .iconPerson {
-    font-size: var(--clamp2);
+    font-size: 2rem;
 }
 
 .iconPersonTable {
@@ -1805,6 +1808,8 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 .relatorioTecnicos {
     width: 100%;
     text-align: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos móveis */
 }
 
 .relatorioTecnicos table {
@@ -1813,15 +1818,16 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     border-collapse: separate;
     border-spacing: 0;
     border-radius: 0.75rem;
-    overflow: hidden;
     background: #d2d1d1;
+    border-collapse: collapse;
 }
 
 .relatorioTecnicos table td {  /* Células */
     padding: 0.5rem 1rem;
-    font-size: var(--clamp08);
+    font-size: var(--clamp08a);
     color: #333;
     word-break: break-word; 
+    white-space: nowrap;
 }
 
 .relatorioTecnicos table tr:nth-child(even) {  /* Aspecto Zebra - uma linha de cada cor */
@@ -1843,6 +1849,8 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     text-align: center;
     background-color: #f4f4f4;
     padding: 0.5rem;
+    font-size: var(--clamp08);
+    white-space: nowrap;
 }
 
 .relatorioTecnicos table td:last-child {  /* Última coluna (quantidade + %) */
@@ -2032,7 +2040,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .botaoAtendimento {
-    margin: 1rem;
+    margin: 0.1rem;
     width: fit-content;
     position: absolute;
     bottom: 0.5rem;
@@ -2089,6 +2097,14 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     margin-bottom: 2rem;
 }
 
+.divOculta.flex {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos móveis */
+}
+
+.tabelaEquipamentos.flex {
+    font-size: var(--clamp08a);
+}
 
 
 /* ----------- Page - Ocorrências ----------- */
@@ -2180,6 +2196,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     background-color: rgba(216, 219, 225, 0.3);
     border-radius: 2rem;
     font-size: var(--clamp075);
+    text-align: center;
 }
 
 .tagPeca:hover {
@@ -2273,12 +2290,16 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         font-weight: 500;
     }
     
-    .containerTitle, .lineIndex, .lineIndexB, .conteudoSolucao, .lineRecursos, .lineBeneficios, .faleImagemFundo, .lineFale, .cardContainerPublico, .loginImagemFundo, .lineDash30.flex1200, .lineOcorrencia.flex1200 {
+    .containerTitle, .lineIndex, .lineIndexB, .conteudoSolucao, .lineRecursos, .lineBeneficios, .faleImagemFundo, .lineFale, .cardContainerPublico, .loginImagemFundo, .lineDash30.flex1200, .lineOcorrencia.flex1200, .lineEquipe.flex1200 {
         flex-direction: column;
     }
 
-    .colDash30.flex1200, .colOcorrencia35.flex1200, .colOcorrencia64.flex1200 {
+    .colDash30.flex1200, .colOcorrencia35.flex1200, .colOcorrencia64.flex1200, .colEquipe58.flex1200, .colEquipe37.flex1200 {
         width: 100%;
+    }
+
+    .colEquipe37.flex1200 {
+        height: 25rem;
     }
 
     .colOcorrencia64.flex1200 {
@@ -2389,12 +2410,49 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         margin-left: 25% !important;
     }
 
-    .lineDash30.flex900, .lineDash47.flex900, .headerDash.flex900, .classificacaoOcorrencia.flex900, .elevadorOcorrencia.flex900 {
+    .lineDash30.flex900, .lineDash47.flex900, .headerDash.flex900, .classificacaoOcorrencia.flex900, .elevadorOcorrencia.flex900, .lineAtendimento.flex900, .colAtendimento30.flex900, .tecnicoRecomendacao.flex900 {
         flex-direction: column;
     }
 
-    .colDash30.flex900, .colDash47.flex900, .tagsOcorrencia.flex900, .titleCardOcorrencia.flex900 {
+
+    .colDash30.flex900, .colDash47.flex900, .tagsOcorrencia.flex900, .titleCardOcorrencia.flex900, .colAtendimento47.flex900, .colAtendimento30.flex900 {
         width: 100%;
+    }
+
+    .recomendacoes {
+        padding: 1.5rem;
+    }
+
+    .cardRecomendacao {
+        padding: 0;
+    }
+
+    .lineDash30.flex900 {
+        text-align: center;
+    }
+
+    .botaoNovo.flex900 {
+        margin-top: 1rem;
+    }
+
+    .mapa {
+        height: 15rem;
+    }
+
+    .botaoAtendimento {
+        left: 0.5rem;
+    }
+
+    .botaoNavPage {
+        padding: 0.4rem;
+    }
+
+    .colEquipe16, .colEquipe16Atendimento, .colEquipe16Disponivel, .colEquipe16Deslocamento, .colEquipe37 {
+        padding: 0.8rem;
+    }
+
+    .iconPerson {
+        font-size: 5rem;
     }
 }
 
@@ -2440,11 +2498,11 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         margin-top: 1rem;
     }
 
-    .containerIndexButton, .inputContainer.flex700, .elevadorOcorrencia.flex700 {
+    .containerIndexButton, .inputContainer.flex700, .elevadorOcorrencia.flex700, .lineEquipe.flex700 {
         flex-direction: column;
     }
 
-    .elevadorOcorrencia.flex700 {
+    .elevadorOcorrencia.flex700, .colEquipe16.flex700, .colEquipe16Atendimento.flex700, .colEquipe16Disponivel.flex700, .colEquipe16Deslocamento.flex700 {
         width: 100%;
         align-items: start;
     }
@@ -2455,6 +2513,27 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
     .spaceLogin, .loginButton {
         margin: 0.5rem 0;
+    }
+
+    .elevadorOcorrencia img {
+        width: 30%;
+    }
+
+    .colOcorrencia35, .colOcorrencia64, .colOcorrencia {
+        padding: 1rem;
+    }
+
+    .imgAlerta {
+        margin-right: 0.5rem;
+    } 
+
+    .colEquipe16, .colEquipe16Atendimento, .colEquipe16Disponivel, .colEquipe16Deslocamento, .colEquipe37 {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .recomendacoes {
+        padding: 1rem;
     }
 }
 
