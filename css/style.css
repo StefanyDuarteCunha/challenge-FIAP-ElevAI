@@ -15,6 +15,20 @@
     --vermelhoClaro: rgb(242, 218, 218);
     --verdeClaro: rgb(216, 243, 216);
     --fonteLato: "Lato", sans-serif;
+    --clamp18: clamp(1.2rem, 1.09vw + 0.98rem, 1.8rem);
+    --clamp1: clamp(0.8rem, 0.36vw + 0.73rem, 1rem);
+    --clamp08: clamp(0.7rem, 0.18vw + 0.66rem, 0.8rem);
+    --clamp085: clamp(0.5rem, 0.64vw + 0.37rem, 0.85rem);
+    --clamp09: clamp(0.75rem, 0.27vw + 0.7rem, 0.9rem);
+    --clamp11: clamp(0.9rem, 0.36vw + 0.83rem, 1.1rem);
+    --clamp12: clamp(0.9rem, 0.55vw + 0.79rem, 1.2rem);
+    --clamp5: clamp(2rem, 5.45vw + 0.91rem, 5rem);
+    --clamp25: clamp(1.5rem, 1.82vw + 1.14rem, 2.5rem);
+    --clamp075: clamp(0.65rem, 0.18vw + 0.61rem, 0.75rem);
+    --clamp07: clamp(0.6rem, 0.18vw + 0.56rem, 0.7rem);
+    --clamp16: clamp(1rem, 1.09vw + 0.78rem, 1.6rem);
+    --clamp2: clamp(1.3rem, 1.27vw + 1.05rem, 2rem);
+    --clamp15: clamp(0.95rem, 1vw + 0.75rem, 1.5rem);
 }
 
 
@@ -77,7 +91,7 @@
     text-decoration: none;
     display: block;
     margin-bottom: 0.5rem;
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
     padding: 0.5rem;
 }
 
@@ -110,13 +124,13 @@ html, body {
 
 .titlePage {
     font-family: var(--fonteLato);
-    font-size: 1.8rem;
+    font-size: var(--clamp18);
     font-weight: 700;
 }
 
 .subtitlePage {
     font-family: var(--fonteLato);
-    font-size: 1rem;
+    font-size: var(--clamp1);
     font-weight: 400;
     font-style: italic;
     color: var(--cinzaEscuro);
@@ -124,7 +138,7 @@ html, body {
 
 footer {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: var(--clamp08);
     font-style: italic;
 }
 
@@ -134,7 +148,7 @@ footer {
 }
 
 .botaoNavPage {
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
     color: var(--cinzaMedio);
     background-color: white;
     padding: 1rem;
@@ -160,7 +174,7 @@ footer {
     border-radius: 0.5rem;
     border: none;
     padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+    font-size: var(--clamp08);
 }
 
 .botaoNovo a {
@@ -187,7 +201,7 @@ footer {
     flex-direction: column;
     align-items: flex-start; /* Alinha o label e os inputs rigidamente à direita */
     gap: 0.5rem; /* Espaço entre a palavra "Período" e as caixas de data */
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
 }
 
 .recomendacoes {
@@ -199,19 +213,19 @@ footer {
 }
 
 .titleRecomendacoes {
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
     color: var(--azulElevAi);
     font-weight: bold;
 }
 
 .recomendacaoTexto {
-    font-size: 1rem;
+    font-size: var(--clamp1);
     font-weight: bold;
 }
 
 .cardRecomendacao {
     padding: 0.5rem 2rem;
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
 }
 
 .cardRecomendacao:hover {
@@ -273,7 +287,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     background-color: var(--azulEscuro);
     padding: 0.5rem 1rem;
     border-radius: 1rem;
-    font-size: 1.1rem;
+    font-size: var(--clamp11);
     font-weight: bold;
     font-family: var(--fonteLato);
 }
@@ -294,7 +308,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     border-radius: 0.5rem;
     border: none;
     padding: 0.5rem 1.5rem;
-    font-size: 1.1rem;
+    font-size: var(--clamp11);
     color: white;
 }
 
@@ -328,7 +342,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .titleIndex {
     color: white;
-    font-size: 5rem;
+    font-size: var(--clamp5);
 }
 
 .titleIndex span {
@@ -337,12 +351,12 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .subtitleIndex {
     color: white;
-    font-size: 2.5rem;
+    font-size: var(--clamp25);
 }
 
 .textAIndex {
     color: white;
-    font-size: 1.2rem;
+    font-size: var(--clamp12);
     font-family: var(--fonteLato);
     font-weight: 100;
 }
@@ -388,7 +402,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .cardIndex {
     color: var(--azulHover);
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
     font-family: var(--fonteLato);
     font-weight: 300;
     align-items: center;
@@ -415,27 +429,27 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     background-color: #192e58;
     padding: 0.5rem 1rem;
     border-radius: 1rem;
-    font-size: 2.5rem;
+    font-size: var(--clamp25);
     margin-right: 1rem;
     color: var(--azulHover);
 }
 
 .subtitleBIndex {
     color: var(--azulVibrante);
-    font-size: 1.1rem;
+    font-size: var(--clamp11);
     font-weight: bold;
     padding-left: 2rem;
 }
 
 .textBIndex {
     color: var(--azulHover);
-    font-size: 1.1rem;
+    font-size: var(--clamp11);
     font-weight: bold;
 }
 
 .textCIndex {
     color: var(--azulHover);
-    font-size: 1rem;
+    font-size: var(--clamp1);
 }
 
 .lineIndex, .containerTitle {
@@ -538,7 +552,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .titleLogin {
     color: white;
-    font-size: 5rem;
+    font-size: var(--clamp5);
 }
 
 .titleLogin span {
@@ -547,7 +561,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .subtitleLogin {
     color: white;
-    font-size: 2.5rem;
+    font-size: var(--clamp25);
 }
 
 .loginButton {
@@ -587,7 +601,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .titleSolucao {
-    font-size: 2rem;
+    font-size: var(--clamp2);
     font-family: var(--fonteLato);
     color: var(--azulVibrante);
     font-weight: 700;
@@ -595,14 +609,14 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .subtitleSolucao {
-    font-size: 2rem;
+    font-size: var(--clamp2);
     color: white;
     font-weight: 300;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .textoSolucao {
-    font-size: 1rem;
+    font-size: var(--clamp1);
     color: white;
     font-family: var(--fonteLato);
     font-weight: 100;
@@ -611,7 +625,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .cardSolucao {
     color: var(--azulHover);
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
     align-items: center;
     border: 1px solid #00000000;
     border-radius: 1.5rem;
@@ -671,7 +685,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .cardRecursos {
     color: var(--azulHover);
-    font-size: 0.8rem;
+    font-size: var(--clamp08);
     font-family: var(--fonteLato);
     font-weight: 300;
     align-items: center;
@@ -685,7 +699,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .cardRecursos .pbold {
-    font-size: 1rem;
+    font-size: var(--clamp1);
 }
 
 .cardRecursos:hover {
@@ -714,7 +728,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .cardBeneficios {
     color: var(--azulHover);
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
     font-family: var(--fonteLato);
     font-weight: 300;
     align-items: center;
@@ -727,7 +741,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .destaque {
-    font-size: 1rem;
+    font-size: var(--clamp1);
     font-weight: bold;
 }
 
@@ -760,7 +774,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 .cardPublicoTexto {
     display: inline-block;
     padding:  1rem 1.5rem;
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
     font-family: var(--fonteLato);
 }
 
@@ -790,7 +804,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     background-color: var(--azulVibrante);
     padding: 0.5rem 1rem;
     border-radius: 1rem;
-    font-size: 2.5rem;
+    font-size: var(--clamp25);
     margin-right: 1rem;
     color: var(--azulHover);
 }
@@ -799,7 +813,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 /* ----------- Page - Fale Conosco ----------- */
 .contCaracteres {
-    font-size: 0.7rem;
+    font-size: var(--clamp07);
     color: var(--cinzaEscuro);
     font-weight: bold;
     text-align: end;
@@ -892,7 +906,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .cardFale {
     color: var(--azulHover);
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
     align-items: center;
     border: 1px solid #00000000;
     border-radius: 1.5rem;
@@ -951,23 +965,23 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .subtitleDash {
-    font-size: 0.75rem;
+    font-size: var(--clamp075);
     font-weight: bold;
     color: var(--cinzaEscuro);
 }
 
 .dadoDash {
-    font-size: 1.6rem;
+    font-size: var(--clamp16);
     font-weight: bold;
 }
 
 .legendaDash {
-    font-size: 0.7rem;
+    font-size: var(--clamp07);
     color: var(--cinzaEscuro);
 }
 
 .titleDash {
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
     font-weight: bold;
     padding-bottom: 1.5rem;
 }
@@ -991,7 +1005,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .titleAlert, .textAlert {
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
 }
 
 .titleAlert {
@@ -1041,7 +1055,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .containerTable table td {  /* Células */
     padding: 0.75rem 1rem;
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
     color: #333;
     word-break: break-word; /* ESSENCIAL */
 }
@@ -1099,7 +1113,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     color: var(--cinzaEscuro);
     background-color: var(--cinzaClaro);
     padding: 0.25rem 0.5rem;
-    font-size: .85rem;
+    font-size: var(--clamp085);
     border-radius: 0.5rem;
     border: 1px solid var(--cinzaEscuro);
 }
@@ -1126,7 +1140,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .relatorioTable table td {  /* Células */
     padding: 0.4rem 1rem;
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
     color: #333;
     word-break: break-word; 
 }
@@ -1150,7 +1164,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     text-align: center;
     background-color: #f4f4f4;
     padding: 0.5rem;
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
 }
 
 .relatorioTable table td:last-child {  /* Última coluna (quantidade + %) */
@@ -1168,7 +1182,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .titleRelatorioAutomativo {
-    font-size: 1rem;
+    font-size: var(--clamp1);
     color: var(--azulElevAi);
     font-weight: bold;
 }
@@ -1180,7 +1194,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     gap: 8px;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
     padding: 0.5rem 1rem;
 }
 
@@ -1240,12 +1254,12 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .dadoManutencao {
-    font-size: 1.6rem;
+    font-size: var(--clamp16);
     font-weight: bold;
 }
 
 .legendaManutencao {
-    font-size: 0.7rem;
+    font-size: var(--clamp07);
 }
 
 .legendaManutencao.grey {
@@ -1257,7 +1271,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     color: green;
     background-color: var(--verdeClaro);
     padding: 1rem;
-    font-size: 2rem;
+    font-size: var(--clamp2);
 }
 
 .containerRecomendacoesManutencao {
@@ -1303,7 +1317,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 .verCards {
     color: var(--azulDestaque);
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: var(--clamp08);
 }
 
 .verCards:hover {
@@ -1316,7 +1330,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     padding: 0.7rem 1.5rem;
     width: 100%;
     margin-bottom: 1rem;
-    font-size: 0.8rem;
+    font-size: var(--clamp08);
 }
 
 .cardA {
@@ -1373,7 +1387,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     text-align: center;
     margin: 0;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: var(--clamp1);
 }
 
 .cal-btn {
@@ -1391,7 +1405,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .cal-filter {
     width: auto;
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
 }
 
 .calendar-grid {
@@ -1407,7 +1421,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     color: var(--cinzaEscuro);
     background: #f7f7f7;
     border-radius: 0.5rem;
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
 }
 
 .cal-cell {
@@ -1430,7 +1444,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .day-number {
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: var(--clamp08);
     margin-bottom: 0.5rem;
     display: block;
     color: var(--cinzaEscuro);
@@ -1519,12 +1533,12 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .dadoPecas {
-    font-size: 1.6rem;
+    font-size: var(--clamp16);
     font-weight: bold;
 }
 
 .legendaPecas {
-    font-size: 0.7rem;
+    font-size: var(--clamp07);
 }
 
 .legendaPecas.grey {
@@ -1548,7 +1562,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .pecasTable table td {  /* Células */
     padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
     color: #333;
     word-break: break-word; 
 }
@@ -1572,7 +1586,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     text-align: center;
     background-color: #f4f4f4;
     padding: 1rem;
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
 }
 
 .pecasTable table td {
@@ -1584,7 +1598,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     border-radius: 1.5rem;
     padding: 0.25rem 1rem;
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: var(--clamp08);
 }
 
 .statusNormal {
@@ -1604,7 +1618,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .numerosBarra {
     padding: 0.5rem 1rem;
-    font-size: 0.7rem;
+    font-size: var(--clamp07);
     margin: 0 0.5rem 1rem;
     border-radius: 0.5rem;
     text-align: center;
@@ -1629,19 +1643,19 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .subtitlePecas {
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
     font-weight: bold;
     color: var(--cinzaEscuro);
 }
 
 .textPecasA {
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
     font-style: italic;
     color: var(--cinzaMedio);
 }
 
 .textPecasB {
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
     margin-bottom: 1rem;
 }
 
@@ -1744,12 +1758,12 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .dadoEquipe {
-    font-size: 1.6rem;
+    font-size: var(--clamp16);
     font-weight: bold;
 }
 
 .legendaEquipe {
-    font-size: 0.7rem;
+    font-size: var(--clamp07);
 }
 
 .legendaEquipe.grey {
@@ -1770,15 +1784,15 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .iconPerson {
-    font-size: 2rem;
+    font-size: var(--clamp2);
 }
 
 .iconPersonTable {
-    font-size: 1.5rem;
+    font-size: var(--clamp15);
 }
 
 .circleItem {
-    font-size: 0.7rem;
+    font-size: var(--clamp07);
     margin-right: 0.5rem;
 }
 
@@ -1805,7 +1819,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .relatorioTecnicos table td {  /* Células */
     padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+    font-size: var(--clamp08);
     color: #333;
     word-break: break-word; 
 }
@@ -1843,7 +1857,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     background-color: white;
     border-radius: 1rem;
     width: fit-content;
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -1901,18 +1915,18 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .subtitleKpi {
-    font-size: 0.75rem;
+    font-size: var(--clamp075);
     font-weight: bold;
     color: var(--cinzaEscuro);
 }
 
 .dadoKpi {
-    font-size: 1.6rem;
+    font-size: var(--clamp16);
     font-weight: bold;
 }
 
 .legendaKpi {
-    font-size: 0.7rem;
+    font-size: var(--clamp07);
 }
 
 .legendaKpi.green {
@@ -1973,7 +1987,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .tagElevador{
-    font-size: 0.85rem;
+    font-size: var(--clamp085);
     font-weight: 600;
     display: inline-block;
 }
@@ -1983,7 +1997,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: var(--clamp075);
 }
 
 .atendimentoCritico {
@@ -2003,7 +2017,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .dadosAtendimento {
-    font-size: 0.8rem;
+    font-size: var(--clamp08);
     color: var(--cinzaEscuro);
 }
 
@@ -2013,7 +2027,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 .infoAtendimento {
-    font-size: 0.8rem;
+    font-size: var(--clamp08);
     font-weight: bold;
 }
 
@@ -2055,7 +2069,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     border: 1px solid var(--cinzaMedio);
     border-radius: 1.5rem;
     padding: 0.4rem 1rem;
-    font-size: 0.75rem;
+    font-size: var(--clamp075);
 }
 
 .botaoPerguntar {
@@ -2066,7 +2080,6 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     width: 2.2rem;
     height: 2.2rem;
 }
-
 
 .botaoPerguntar:hover{
     background-color: var(--azulDestaque);
@@ -2117,13 +2130,16 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     font-weight: bold;
     font-family: var(--fonteLato);
     color: var(--azulElevAi);
-    font-size: 1rem;
+    font-size: var(--clamp1);
 }
 
 .titleOcorrencia {
     font-weight: bold;
     color: var(--azulElevAi);
-    font-size: 0.9rem;
+}
+
+.pOcorrencia {
+    font-size: var(--clamp09);
 }
 
 .elevadorOcorrencia {
@@ -2133,7 +2149,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .elevadorOcorrencia p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: var(--clamp09);
 }
 
 .numDestaque {
@@ -2163,7 +2179,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     padding: 0.25rem 1rem;
     background-color: rgba(216, 219, 225, 0.3);
     border-radius: 2rem;
-    font-size: 0.75rem;
+    font-size: var(--clamp075);
 }
 
 .tagPeca:hover {
@@ -2194,7 +2210,6 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         text-decoration: none;
         display: block;
         margin-bottom: 0.5rem;
-        font-size: 0.75rem;
         padding: 0.3rem;
     }
 
@@ -2238,11 +2253,9 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         margin-left: 2rem;
         text-align: center;
         padding: 0.4rem 1rem;
-        font-size: 0.8rem;
     }
 
     .navIndexText {
-        font-size: 0.8rem;
         padding: 0.1rem 0.5rem;
     }
 
@@ -2256,29 +2269,23 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         padding: 3rem 2rem;
     }
 
-    .titleIndex, .titleLogin {
-        font-size: 2rem;
-    }
-
-    .subtitleIndex, .subtitleSolucao {
-        font-size: 1.5rem;
-    }
-
     .textoSolucao, .textAIndex {
         font-weight: 500;
-        font-size: 1rem;
-    }
-
-    .textAIndex, .subtitleLogin {
-        font-size: 0.9rem;
     }
     
-    .containerTitle, .lineIndex, .lineIndexB, .conteudoSolucao, .lineRecursos, .lineBeneficios, .faleImagemFundo, .lineFale, .cardContainerPublico, .loginImagemFundo {
+    .containerTitle, .lineIndex, .lineIndexB, .conteudoSolucao, .lineRecursos, .lineBeneficios, .faleImagemFundo, .lineFale, .cardContainerPublico, .loginImagemFundo, .lineDash30.flex1200, .lineOcorrencia.flex1200 {
         flex-direction: column;
     }
 
+    .colDash30.flex1200, .colOcorrencia35.flex1200, .colOcorrencia64.flex1200 {
+        width: 100%;
+    }
+
+    .colOcorrencia64.flex1200 {
+        margin-top: 1.5rem;
+    }
+
     .cardIndex {
-        font-size: 0.9rem;
         width: 70%;
         margin-top: 1rem;
     }
@@ -2346,29 +2353,12 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         margin: 1rem 0;
     }
 
-    .cardRecursos, .pbold {
-        font-size: 0.7rem;
-    }
-
-    .iconIndex, .iconFlutuante {
-        font-size: 1rem;
-    }
-
     .cardFale {
-        font-size: 0.8rem;
         margin: 2rem 0;
     }
 
     .caixaLogin.esquerda {
         border-left: none;
-    }
-
-    .lineDash30.flex1200 {
-        flex-direction: column;
-    }
-
-    .colDash30.flex1200 {
-        width: 100%;
     }
 }
 
@@ -2383,7 +2373,6 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
     .titleNav a {
         margin-bottom: 0.5rem;
-        font-size: 0.60rem;
         padding: 0.1rem;
     }
 
@@ -2400,11 +2389,11 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         margin-left: 25% !important;
     }
 
-    .lineDash30.flex900, .lineDash47.flex900, .headerDash.flex900 {
+    .lineDash30.flex900, .lineDash47.flex900, .headerDash.flex900, .classificacaoOcorrencia.flex900, .elevadorOcorrencia.flex900 {
         flex-direction: column;
     }
 
-    .colDash30.flex900, .colDash47.flex900 {
+    .colDash30.flex900, .colDash47.flex900, .tagsOcorrencia.flex900, .titleCardOcorrencia.flex900 {
         width: 100%;
     }
 }
@@ -2413,10 +2402,6 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 @media (max-width: 700px) {
     .bodyNav {
         width: 28% !important;
-    }
-
-    .titleNav a {
-        font-size: 0.55rem;
     }
 
     #page-content {
@@ -2439,12 +2424,10 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         width: 100%;
         text-align: center;
         padding: 0.4rem 1rem;
-        font-size: 0.8rem;
         margin: 0 auto;
     }
 
     .navIndexText {
-        font-size: 0.8rem;
         padding: 0.1rem;
     }
 
@@ -2453,13 +2436,21 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     }
 
     .cardIndex {
-        font-size: 0.9rem;
         width: 100%;
         margin-top: 1rem;
     }
 
-    .containerIndexButton {
+    .containerIndexButton, .inputContainer.flex700, .elevadorOcorrencia.flex700 {
         flex-direction: column;
+    }
+
+    .elevadorOcorrencia.flex700 {
+        width: 100%;
+        align-items: start;
+    }
+
+    .elevadorOcorrencia.gap {
+        gap: 0;
     }
 
     .spaceLogin, .loginButton {
@@ -2473,10 +2464,6 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 @media (max-width: 500px) {
     .bodyNav {
         width: 30% !important;
-    }
-
-    .titleNav a {
-        font-size: 0.50rem;
     }
 
     #page-content {
