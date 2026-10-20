@@ -21,20 +21,20 @@
             <h6 class="subtitlePage">Planeje e acompanhe manutenções preventivas</h6>
         </header>
         <main>
-            <div class="lineManutencao marginLine">
-                <div class="colPlanAtivos">
+            <div class="lineManutencao marginLine flex900">
+                <div class="colPlanAtivos flex900">
                     <p class="dadoManutencao m-0">86</p>
                     <p class="legendaManutencao m-0">Planos ativos</p>
                 </div>
-                <div class="colManutencao">
+                <div class="colManutencao flex900">
                     <p class="dadoManutencao m-0">1.248</p>
                     <p class="legendaManutencao grey m-0">Equipamentos cobertos</p>
                 </div>
-                <div class="colManutencao">
+                <div class="colManutencao flex900">
                     <p class="dadoManutencao m-0">312</p>
                     <p class="legendaManutencao grey m-0">Agendamentos</p>
                 </div>
-                <div class="colPlanAtrasados">
+                <div class="colPlanAtrasados flex900">
                     <p class="dadoManutencao m-0">18</p>
                     <p class="legendaManutencao m-0">Atrasadas</p>
                 </div>
@@ -45,12 +45,14 @@
                 <button type="button" class="botaoNavPage" id="btn-equipamentos">Equipamentos</button>
                 <button type="button" class="botaoNavPage" id="btn-regioes">Regiões</button>
             </div>
-            <div class="containerCronograma" id="tela-cronograma">
-                <div class="calendar">
-                    <div class="calendar-top">
-                        <button class="cal-btn"><i class="bi bi-chevron-left"></i></button>
-                        <h3 class="cal-month">Setembro / 2026</h3>
-                        <button class="cal-btn"><i class="bi bi-chevron-right"></i></button>
+            <div class="containerCronograma flex1200" id="tela-cronograma">
+                <div class="calendar flex1200">
+                    <div class="calendar-top flex700">
+                        <div class="titleCalendar">
+                            <button class="cal-btn"><i class="bi bi-chevron-left"></i></button>
+                            <h3 class="cal-month">Setembro / 2026</h3>
+                            <button class="cal-btn"><i class="bi bi-chevron-right"></i></button>
+                        </div>
                         <select class="cal-filter inputStyle">
                             <option>Manutenção</option>
                             <option>Preventiva</option>
@@ -113,7 +115,7 @@
                         <div class="cal-cell empty"></div>
                     </div>
                 </div>
-                <div class="containerEsquerda">
+                <div class="containerEsquerda flex1200">
                     <div>
                         <button type="button" class="botaoNovo btnCards">+ Novo Plano</button>
                     </div>
@@ -202,17 +204,17 @@
                 <img src="../img/elevador.png" alt="Em manutenção" class="elevador">
             </div>
             <div class="recomendacoes">
-                <h5 class="titleRecomendacoes">Recomendação ElevAI</h5>
-                <div class="containerRecomendacoesManutencao">
-                    <div class="recomendacoesGapRight">
-                        <i class="bi bi-lightbulb iconRecomendacoesManutencao"></i>
+                <h5 class="titleRecomendacoes mt-0 mb-3">Recomendação ElevAI</h5>
+                <div class="containerRecomendacoesManutencao flex700">
+                    <div class="recomendacoesGapRight icon flex700">
+                        <i class="bi bi-lightbulb iconRecomendacoesManutencao flex700"></i>
                     </div>
-                    <div class="recomendacoesGapRight">
+                    <div class="recomendacoesGapRight text flex700">
                         <p class="legendaManutencao m-0">Melhor horário sugerido para o Elevador #12345</p>
                         <p class="recomendacaoTexto mb-1 mt-1">Sábado, 19/09/2026 - 14h às 16h</p>
                         <p class="legendaManutencao m-0">Menor fluxo de pessoas e menor impacto operacional</p>
                     </div>
-                    <div class="recomendacoesGapLeft">
+                    <div class="recomendacoesGapLeft flex700">
                         <button type="button" class="botaoNovo">Aplicar sugestão</button>
                     </div>
                 </div>

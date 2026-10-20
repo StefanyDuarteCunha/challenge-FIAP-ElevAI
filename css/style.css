@@ -30,6 +30,7 @@
     --clamp07: clamp(0.6rem, 0.18vw + 0.56rem, 0.7rem);
     --clamp16: clamp(1rem, 1.09vw + 0.78rem, 1.6rem);
     --clamp2: clamp(1.3rem, 1.27vw + 1.05rem, 2rem);
+    --clamp2a: clamp(0.7rem, 2.36vw + 0.23rem, 2rem);
     --clamp15: clamp(0.95rem, 1vw + 0.75rem, 1.5rem);
 }
 
@@ -193,9 +194,10 @@ footer {
     border-radius: 1.5rem;
     padding: 0.2rem 2rem;
     color: grey;
+    font-size: var(--clamp08);
 }
 
-.containerCampos {
+.containerCampos, .containerSelect {
     display: flex;
 } 
 
@@ -204,6 +206,10 @@ footer {
     align-items: flex-start; /* Alinha o label e os inputs rigidamente à direita */
     gap: 0.5rem; /* Espaço entre a palavra "Período" e as caixas de data */
     font-size: var(--clamp085);
+}
+
+.containerSelect {
+    gap: 0.5rem;
 }
 
 .recomendacoes {
@@ -945,7 +951,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 .colDash {
     border: 1px solid var(--cinzaMedio);
     border-radius: 1.5rem;
-    padding: 1rem 1.25rem;
+    padding: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -1019,13 +1025,18 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     margin: 0 auto;
 }
 
-.containerGrafico, .containerImagem {
+.containerGrafico {
+    width: 75%;
+    height: 100%;
+}
+
+.containerImagem {
     width: 75%;
     height: 80%;
 }
 
 .containerGraficoSLA {
-    width: 80%;
+    width: 100%;
     height: 80%;
 }
 
@@ -1049,7 +1060,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 .containerTable table {
     margin: 0 auto;
     width: 100%;
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 0;
     border-radius: 0.75rem;
     overflow: hidden;
@@ -1129,15 +1140,16 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 .relatorioTable {
     width: 100%;
     text-align: start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos móveis */
 }
 
 .relatorioTable table {
     margin: 0 auto;
     width: 100%;
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 0;
     border-radius: 0.75rem;
-    overflow: hidden;
     background: #d2d1d1;
 }
 
@@ -1145,7 +1157,8 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     padding: 0.4rem 1rem;
     font-size: var(--clamp085);
     color: #333;
-    word-break: break-word; 
+    word-break: break-word;
+    white-space: nowrap;
 }
 
 .relatorioTable table tr:nth-child(even) {  /* Aspecto Zebra - uma linha de cada cor */
@@ -1209,7 +1222,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 
 /* ----------- Page - Plano de manutenção ----------- */
-.lineManutencao, .containerRecomendacoesManutencao, .containerCronograma, .containerEsquerda {
+.lineManutencao, .containerRecomendacoesManutencao, .containerCronograma, .containerEsquerda, .titleCalendar {
     display: flex;
 }
 
@@ -1225,6 +1238,10 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     margin-bottom: 1rem;
     display: inline-block;
     width: 24.25%;
+}
+
+.titleCalendar {
+    align-items: center;
 }
 
 .colManutencao {
@@ -1274,21 +1291,24 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     color: green;
     background-color: var(--verdeClaro);
     padding: 1rem;
-    font-size: var(--clamp2);
+    font-size: var(--clamp2a);
 }
 
 .containerRecomendacoesManutencao {
-    width: 80%;
-    margin: 0.5rem 0;
+    width: 100%;
     align-items: center;
 }
 
-.recomendacoesGapRight {
-    margin-right: 2rem;
+.recomendacoesGapRight.icon {
+    width: 20%;
+}
+
+.recomendacoesGapRight.text {
+    width: 60%;
 }
 
 .recomendacoesGapLeft {
-    margin-left: 8rem;
+    width: 30%;
 }
 
 .containerCronograma {
@@ -1381,8 +1401,9 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 .calendar-top {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     margin-bottom: 0.25rem;
+    justify-content: center;
 }
 
 .cal-month {
@@ -1390,7 +1411,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     text-align: center;
     margin: 0;
     font-weight: 600;
-    font-size: var(--clamp1);
+    font-size: var(--clamp07);
 }
 
 .cal-btn {
@@ -1415,6 +1436,8 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos móveis */
 }
 
 .cal-header {
@@ -1551,12 +1574,14 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 .pecasTable {
     width: 100%;
     text-align: start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos móveis */
 }
 
 .pecasTable table {
     margin: 0 auto 1rem;
     width: 100%;
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 0;
     border-radius: 0.75rem;
     overflow: hidden;
@@ -1568,6 +1593,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     font-size: var(--clamp085);
     color: #333;
     word-break: break-word; 
+    white-space: nowrap;
 }
 
 .pecasTable table tr:nth-child(even) {  /* Aspecto Zebra - uma linha de cada cor */
@@ -1815,11 +1841,10 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 .relatorioTecnicos table {
     margin: 0 auto 1rem;
     width: 100%;
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 0;
     border-radius: 0.75rem;
     background: #d2d1d1;
-    border-collapse: collapse;
 }
 
 .relatorioTecnicos table td {  /* Células */
@@ -2222,6 +2247,14 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         padding: 1rem 0.85rem;
     }
 
+    .colDash.alt {
+        height: 20rem;
+    }
+
+    .containerGraficoSLA.alt, .containerGrafico.alt {
+        height: 80%;
+    }
+
     .titleNav a {
         color: white;
         text-decoration: none;
@@ -2246,14 +2279,6 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
     .containerGraficoRosca {
         width: 90% !important;
-    }
-
-    .recomendacoesGapRight {
-        margin-right: 1rem;
-    }
-
-    .recomendacoesGapLeft {
-        margin-left: 1rem;
     }
 
     .identificacaoElevador, .containerDadosAtendimento, .filterCardsAtendimento {
@@ -2290,11 +2315,11 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         font-weight: 500;
     }
     
-    .containerTitle, .lineIndex, .lineIndexB, .conteudoSolucao, .lineRecursos, .lineBeneficios, .faleImagemFundo, .lineFale, .cardContainerPublico, .loginImagemFundo, .lineDash30.flex1200, .lineOcorrencia.flex1200, .lineEquipe.flex1200 {
+    .containerTitle, .lineIndex, .lineIndexB, .conteudoSolucao, .lineRecursos, .lineBeneficios, .faleImagemFundo, .lineFale, .cardContainerPublico, .loginImagemFundo, .lineDash30.flex1200, .lineOcorrencia.flex1200, .lineEquipe.flex1200, .containerCronograma.flex1200, .filterCampos.flex1200 {
         flex-direction: column;
     }
 
-    .colDash30.flex1200, .colOcorrencia35.flex1200, .colOcorrencia64.flex1200, .colEquipe58.flex1200, .colEquipe37.flex1200 {
+    .colDash30.flex1200, .colOcorrencia35.flex1200, .colOcorrencia64.flex1200, .colEquipe58.flex1200, .colEquipe37.flex1200, .calendar.flex1200, .containerEsquerda.flex1200, .checkAutomativo.flex1200 {
         width: 100%;
     }
 
@@ -2368,6 +2393,9 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         padding: 1rem 2rem;
     }
 
+    .filterCampos.flex1200 {
+        align-items: start;
+    }
 
     .caixaFale30, .caixaFale70 {
         padding: 0 1rem;
@@ -2410,13 +2438,17 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         margin-left: 25% !important;
     }
 
-    .lineDash30.flex900, .lineDash47.flex900, .headerDash.flex900, .classificacaoOcorrencia.flex900, .elevadorOcorrencia.flex900, .lineAtendimento.flex900, .colAtendimento30.flex900, .tecnicoRecomendacao.flex900 {
+    .lineDash30.flex900, .lineDash47.flex900, .headerDash.flex900, .classificacaoOcorrencia.flex900, .elevadorOcorrencia.flex900, .lineAtendimento.flex900, .colAtendimento30.flex900, .tecnicoRecomendacao.flex900, .linePecas.flex900, .barraNavegacaoTable.flex900, .lineManutencao.flex900, .lineKpi.flex900, .filterCampos.flex900 {
         flex-direction: column;
     }
 
-
-    .colDash30.flex900, .colDash47.flex900, .tagsOcorrencia.flex900, .titleCardOcorrencia.flex900, .colAtendimento47.flex900, .colAtendimento30.flex900 {
+    .colDash30.flex900, .colDash47.flex900, .tagsOcorrencia.flex900, .titleCardOcorrencia.flex900, .colAtendimento47.flex900, .colAtendimento30.flex900, .colPecas21.flex900, .colPecas21Alerta.flex900, .colPecas21Criticas.flex900, .search-box.flex900, .containerCampos.flex900, .subtitlePage.flex900, .colPecas35.flex900, .colPecas20.flex900, .colManutencao.flex900, .colPlanAtrasados.flex900, .colPlanAtivos.flex900, .colKpi21.flex900, .colKpi47.flex900 {
         width: 100%;
+    }
+
+    .buscaCampo.flex900 {
+        width: 80%;
+        margin-left: 1rem;
     }
 
     .recomendacoes {
@@ -2427,11 +2459,11 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         padding: 0;
     }
 
-    .lineDash30.flex900 {
+    .lineDash30.flex900, .colPecas21.flex900, .colPecas21Alerta.flex900, .colPecas21Criticas.flex900, .colKpi21.flex900  {
         text-align: center;
     }
 
-    .botaoNovo.flex900 {
+    .botaoNovo.flex900, .subtitlePage.flex900 {
         margin-top: 1rem;
     }
 
@@ -2498,7 +2530,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         margin-top: 1rem;
     }
 
-    .containerIndexButton, .inputContainer.flex700, .elevadorOcorrencia.flex700, .lineEquipe.flex700 {
+    .containerIndexButton, .inputContainer.flex700, .elevadorOcorrencia.flex700, .lineEquipe.flex700, .calendar-top.flex700, .containerRecomendacoesManutencao.flex700, .relatorioContainer.flex700, .containerSelect.flex700 {
         flex-direction: column;
     }
 
@@ -2507,7 +2539,12 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         align-items: start;
     }
 
-    .elevadorOcorrencia.gap {
+    .recomendacoesGapRight.flex700, .recomendacoesGapLeft.flex700 {
+        width: 100%;
+        padding: 0 0.5rem 0.5rem;
+    }
+
+    .elevadorOcorrencia.gap, .calendar-top.flex700 {
         gap: 0;
     }
 
@@ -2534,6 +2571,14 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
     .recomendacoes {
         padding: 1rem;
+    }
+
+    .calendar-top.flex700 {
+        margin-bottom: 1rem;
+    }
+
+    .iconRecomendacoesManutencao.flex700 {
+        padding: 0.5rem;
     }
 }
 

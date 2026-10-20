@@ -54,7 +54,7 @@ export function graficoRosca() {
         options: {
             responsive: true,  // trás responsividade ao gráfico
             cutout: '60%',  // modifica o tamanho interno da rosquinha
-            maintainAspectRatio: false,  // o gráfico para de utilizar a sua proporção padrão e remove espaços excessivos de paddding
+            maintainAspectRatio: true,  // o gráfico para de utilizar a sua proporção padrão e remove espaços excessivos de paddding
             layout: {
                 padding: 0
             },
@@ -62,22 +62,22 @@ export function graficoRosca() {
                 datalabels: {
                     color: "#fff",
                     font: {
-                        size: 12
+                        size: 10
                     },
                     formatter: (value) => value   // mostra o número
                 },
                 legend: {
                     display: true,
-                    position: "right",
+                    position: "bottom",
                     align: 'center',
                     labels: {
                         responsive: true,
                         usePointStyle: true,
                         pointStyle: 'circle',
-                        padding: 20,
-                        boxWidth: 20,
+                        padding: 10,
+                        boxWidth: 8,
                         font: {
-                            size: 12
+                            size: 10
                         }
                     }
                 }
@@ -129,7 +129,7 @@ export function graficoRoscaSLA() {
         options: {
             responsive: true,  // trás responsividade ao gráfico
             cutout: '60%',  // modifica o tamanho interno da rosquinha
-            maintainAspectRatio: false,  // o gráfico para de utilizar a sua proporção padrão e remove espaços excessivos de paddding
+            maintainAspectRatio: true,  // o gráfico para de utilizar a sua proporção padrão e remove espaços excessivos de paddding
             layout: {
                 padding: 0
             },
@@ -179,9 +179,11 @@ export function graficoLinhas() {
             plugins: {
                 legend: {
                     display: true,
-                    position: "right",
+                    position: "bottom",
+                    align: "end",
                     labels: {
-                        padding: 30   // aumenta o espaço entre os itens
+                        padding: 15,   // aumenta o espaço entre os itens,
+                        boxWidth: 12
                         }
                 }
             },
@@ -504,7 +506,7 @@ export function graficoRoscaKpi() {
                 },
                 legend: {
                     display: true,
-                    position: "right",
+                    position: "bottom",
                     align: 'center',
                     labels: {
                         responsive: true,
@@ -619,7 +621,7 @@ export function graficoBarraVkpis() {
                 datalabels: {
                     color: "#fff",
                     font: {
-                        size: 12
+                        size: 10
                     },
                     formatter: (value) => value   // mostra o número
                 },
@@ -640,6 +642,11 @@ export function graficoBarraVkpis() {
                 y: {
                     grid: {
                         display: false   // opcional: remove as linhas de grade
+                    },
+                    ticks: {
+                        font: {
+                            size: 9 // Altere aqui o tamanho da fonte do eixo Y (em pixels)
+                        }
                     }
                 }
             }
