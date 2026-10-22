@@ -49,6 +49,12 @@
 
         <!-- painel: Geral -->
         <div class="painelConfig" data-painel="geral">
+          <div class="cabecalhoConfig">
+            <div>
+              <h2 class="subtitlePage">Geral</h2>
+              <p class="subsubtitlePage mb-4">Gerencie as configurações gerais, definindo informações da empresa, preferências globais e parâmetros de funcionamento.</p>
+            </div>
+          </div>
           <div class="linhaConfig">
             <!-- coluna principal: dados da empresa e configurações gerais -->
             <div class="colunaPrincipalConfig">
@@ -210,6 +216,13 @@
 
         <!-- painel: Usuários -->
         <div class="painelConfig d-none" data-painel="usuarios">
+          <div class="cabecalhoConfig">
+            <div>
+              <h2 class="subtitlePage">Usuários</h2>
+              <p class="subsubtitlePage mb-4">Gerencie os usuários do sistema, realizando novos cadastros, edições de perfil ou exclusões de conta.</p>
+            </div>
+          </div>
+
           <!-- cartões de resumo (total, ativos e quantidade por perfil) -->
           <div class="gradeResumoConfig" id="resumoUsuarios"></div>
 
@@ -266,7 +279,7 @@
               <tbody id="corpoTabelaUsuarios"></tbody>
             </table>
 
-            <div class="rodapeTabela">
+            <div class="rodapeTabela flex900">
               <span id="textoRodapeUsuarios"></span>
               <div class="paginacao">
                 <span class="paginaItem"
@@ -288,20 +301,24 @@
 
         <!-- painel: Permissões -->
         <div class="painelConfig d-none" data-painel="permissoes">
+          <div class="cabecalhoConfig">
+            <div>
+              <h2 class="subtitlePage">Permissões</h2>
+              <p class="subsubtitlePage mb-4">Gerencie os papéis e níveis de acesso do sistema, com criação, alteração ou exclusão de privilégios de usuários.</p>
+            </div>
+          </div>
           <div class="linhaConfig">
             <!-- coluna principal: matriz de acesso por funcionalidade e perfil -->
             <div class="colunaPrincipalConfig">
               <div class="cartaoConfig">
-                <p class="tituloCartaoConfig">Permissões por perfil</p>
-                <p class="textoApoioConfig">
-                  Configure o nível de acesso para cada perfil de usuário.
-                  Clique em um ícone para alterar o nível.
-                </p>
-
-                <table class="tabelaConfig tabelaPermissoes">
-                  <thead id="cabecalhoPermissoes"></thead>
-                  <tbody id="corpoTabelaPermissoes"></tbody>
-                </table>
+                              
+                <div class="tabelaConfig">
+                  <table class="tabelaPermissoes">
+                    <thead id="cabecalhoPermissoes"></thead>
+                    <tbody id="corpoTabelaPermissoes"></tbody>
+                  </table>
+                </div>
+                  
 
                 <!-- legenda dos ícones da matriz -->
                 <div class="legendaPermissoes">
@@ -347,6 +364,12 @@
 
         <!-- painel: Integrações -->
         <div class="painelConfig d-none" data-painel="integracoes">
+          <div class="cabecalhoConfig">
+            <div>
+              <h2 class="subtitlePage">Integrações</h2>
+              <p class="subsubtitlePage mb-4">Gerencie as conexões com serviços e sistemas externos, com integrações via API e webhooks.</p>
+            </div>
+          </div>
           <!-- sub-abas de categoria das integrações -->
           <div class="subAbasConfig">
             <span class="subAbaConfig subAbaConfigAtiva" data-subaba="otis"
@@ -453,6 +476,12 @@
 
         <!-- painel: Notificações -->
         <div class="painelConfig d-none" data-painel="notificacoes">
+          <div class="cabecalhoConfig">
+            <div>
+              <h2 class="subtitlePage">Notificações</h2>
+              <p class="subsubtitlePage mb-4">Gerencie os alertas e mensagens automáticas do sistema, personalizando canais de envio e regras de notificação.</p>
+            </div>
+          </div>
           <!-- sub-abas de categoria das notificações -->
           <div class="subAbasConfig">
             <span
@@ -558,6 +587,12 @@
 
         <!-- painel: Segurança -->
         <div class="painelConfig d-none" data-painel="seguranca">
+          <div class="cabecalhoConfig">
+            <div>
+              <h2 class="subtitlePage">Segurança</h2>
+              <p class="subsubtitlePage mb-4">Gerencie as políticas de segurança, ajustando regras de senha, autenticação em dois fatores (2FA) e restrições de acesso.</p>
+            </div>
+          </div>
           <!-- cartões de resumo da segurança -->
           <div
             class="gradeResumoConfig gradeResumoQuatro"
@@ -701,6 +736,12 @@
 
         <!-- painel: Auditoria -->
         <div class="painelConfig d-none" data-painel="auditoria">
+          <div class="cabecalhoConfig">
+            <div>
+              <h2 class="subtitlePage">Auditoria</h2>
+              <p class="subsubtitlePage mb-4">Consulte o histórico de atividades do sistema, visualizando registros de ações, alterações de dados e logs de usuários.</p>
+            </div>
+          </div>
           <!-- filtros de período, usuário, módulo e tipo de ação -->
           <div class="barraFiltrosConfig barraFiltrosAuditoria">
             <div>
@@ -805,6 +846,12 @@
 
         <!-- painel: IA -->
         <div class="painelConfig d-none" data-painel="ia">
+          <div class="cabecalhoConfig">
+            <div>
+              <h2 class="subtitlePage">IA</h2>
+              <p class="subsubtitlePage mb-4">Gerencie os modelos e assistentes de inteligência artificial, ajustando parâmetros de resposta e preferências de automação.</p>
+            </div>
+          </div>
           <div class="linhaConfig">
             <!-- coluna esquerda: predição de falhas e despacho inteligente -->
             <div class="colunaPrincipalConfig">

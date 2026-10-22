@@ -145,7 +145,7 @@ html, body {
     margin-bottom: 1rem;
 }
 
-.regioesPlano .subtitlePage {
+.regioesPlano .subtitlePage, .cabecalhoConfig .subtitlePage {
     font-weight: 600;
     color: black;
 }
@@ -2504,6 +2504,14 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
     .iconPerson {
         font-size: 5rem;
+    }
+
+    .rodapeTabela.flex900 {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
     }
 }
 

@@ -1,21 +1,8 @@
 /* Página de usuários */
-.cabecalhoUsuarios {
+.cabecalhoConfig {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.tituloUsuarios {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-}
-
-.textoUsuarios {
-  color: var(--cinzaMedio);
-  font-size: 0.85rem;
-  margin: 0;
 }
 
 /* Busca e filtros */
