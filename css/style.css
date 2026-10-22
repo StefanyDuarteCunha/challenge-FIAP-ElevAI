@@ -2620,6 +2620,10 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     .iconRecomendacoesManutencao.flex700 {
         padding: 0.5rem;
     }
+
+    .campoPergunta.flex700 {
+        width: 80%;
+    }
 }
 
 
