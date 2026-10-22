@@ -170,7 +170,7 @@
               </div>
 
               <button
-                class="btn btn-primary rounded-pill botaoSalvarConfig"
+                class="botaoNovo"
                 type="button"
                 id="botaoSalvarConfig"
               >
@@ -203,7 +203,7 @@
                   Acesse nossa central de ajuda ou fale com um suporte.
                 </p>
                 <button
-                  class="btn btn-primary rounded-pill"
+                  class="botaoNovo"
                   type="button"
                   id="botaoAbrirChat"
                 >
@@ -227,6 +227,13 @@
           <div class="gradeResumoConfig" id="resumoUsuarios"></div>
 
           <!-- barra de busca, filtros e botão de novo usuário -->
+          <div class="botaoNovoUsuario">
+            <a href="novo-usuario.html">
+              <button class="botaoNovo ms-auto" type="button">
+                <i class="bi bi-plus-lg"></i> Novo usuário
+              </button>
+            </a>
+          </div>
           <div class="barraFiltrosConfig">
             <div class="campoBuscaConfig">
               <i class="bi bi-search"></i>
@@ -252,32 +259,26 @@
               <option value="Inativo">Inativo</option>
               <option value="Bloqueado">Bloqueado</option>
             </select>
-
-            <button
-              class="botaoNovo ms-auto"
-              type="button"
-              id="botaoNovoUsuario"
-            >
-              <i class="bi bi-plus-lg"></i> Novo usuário
-            </button>
           </div>
 
           <!-- tabela de usuários -->
           <div class="cartaoConfig">
-            <table class="tabelaConfig">
-              <thead>
-                <tr>
-                  <th>Nome</th>
-                  <th>E-mail</th>
-                  <th>Perfil</th>
-                  <th>Empresa</th>
-                  <th>Último acesso</th>
-                  <th>Status</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody id="corpoTabelaUsuarios"></tbody>
-            </table>
+            <div class="tabelaConfig">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>E-mail</th>
+                      <th>Perfil</th>
+                      <th>Empresa</th>
+                      <th>Último acesso</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="corpoTabelaUsuarios"></tbody>
+                </table>
+            </div>
 
             <div class="rodapeTabela flex900">
               <span id="textoRodapeUsuarios"></span>
@@ -351,7 +352,7 @@
                 <div id="listaAcoesPermissao"></div>
 
                 <button
-                  class="btn btn-primary rounded-pill botaoSalvarConfig"
+                  class="botaoNovo"
                   type="button"
                   id="botaoSalvarPermissoes"
                 >
@@ -575,7 +576,7 @@
               </div>
 
               <button
-                class="btn btn-primary rounded-pill botaoSalvarConfig"
+                class="botaoNovo"
                 type="button"
                 id="botaoSalvarNotificacoes"
               >
@@ -717,7 +718,7 @@
           <div class="cartaoConfig">
             <p class="tituloCartaoConfig">Logs de acesso</p>
             <button
-              class="btn btn-primary rounded-pill"
+              class="botaoNovo"
               type="button"
               id="botaoVisualizarLogs"
             >
@@ -726,7 +727,7 @@
           </div>
 
           <button
-            class="btn btn-primary rounded-pill botaoSalvarConfig"
+            class="botaoNovo"
             type="button"
             id="botaoSalvarSeguranca"
           >
@@ -795,18 +796,20 @@
             <!-- coluna principal: tabela de registros -->
             <div class="colunaPrincipalConfig">
               <div class="cartaoConfig">
-                <table class="tabelaConfig">
-                  <thead>
-                    <tr>
-                      <th>Data/Hora</th>
-                      <th>Usuário</th>
-                      <th>Ação</th>
-                      <th>Módulo</th>
-                      <th>IP</th>
-                    </tr>
-                  </thead>
-                  <tbody id="corpoTabelaAuditoria"></tbody>
-                </table>
+                <div class="tabelaConfig">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Data/Hora</th>
+                        <th>Usuário</th>
+                        <th>Ação</th>
+                        <th>Módulo</th>
+                        <th>IP</th>
+                      </tr>
+                    </thead>
+                    <tbody id="corpoTabelaAuditoria"></tbody>
+                  </table>
+                </div>
 
                 <div class="rodapeTabela">
                   <span id="textoRodapeAuditoria"></span>
@@ -978,7 +981,7 @@
           </div>
 
           <button
-            class="btn btn-primary rounded-pill botaoSalvarConfig"
+            class="botaoNovo"
             type="button"
             id="botaoSalvarIa"
           >

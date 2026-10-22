@@ -117,10 +117,6 @@
   color: var(--azulElevAi);
 }
 
-.botaoSalvarConfig {
-  margin-top: 0.25rem;
-}
-
 /* coluna lateral: resumo do sistema */
 .listaResumoSistema {
   list-style: none;
@@ -233,6 +229,12 @@
   font-size: 1.6rem;
   font-weight: 700;
   margin: 0;
+}
+
+.botaoNovoUsuario {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* grades de cartões lado a lado (2 ou 3 colunas) */

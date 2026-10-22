@@ -26,7 +26,7 @@
   <body>
     <div id="navbar-placeholder"></div>
     <div id="page-content">
-      <header class="cabecalhoEquip">
+      <header class="cabecalhoEquip flex900">
         <div>
           <h1 class="titlePage">Equipamentos</h1>
           <p class="subtitlePage">
@@ -38,7 +38,7 @@
             <i class="bi bi-bell"></i>
             <span class="badgeSino">1</span>
           </span>
-          <button class="btn btn-primary rounded-pill" type="button">
+          <button class="botaoNovo" type="button">
             <i class="bi bi-plus-lg"></i> Novo equipamento
           </button>
         </div>
@@ -46,30 +46,30 @@
 
       <main>
         <!-- cartões de resumo -->
-        <div class="linhaResumoEquip">
-          <div class="cartaoResumo">
+        <div class="linhaResumoEquip flex900">
+          <div class="cartaoResumo flex900">
             <p class="tituloCartao">Total de equipamentos</p>
             <p class="valorCartao">1.248</p>
             <p class="legendaCartao legendaPositiva">↑ 4,2% vs mês anterior</p>
           </div>
-          <div class="cartaoResumo">
+          <div class="cartaoResumo flex900">
             <p class="tituloCartao">Em operação</p>
             <p class="valorCartao">
               1.186 <i class="bi bi-check-circle-fill legendaPositiva"></i>
             </p>
             <p class="legendaCartao">95,0% do total</p>
           </div>
-          <div class="cartaoResumo">
+          <div class="cartaoResumo flex900">
             <p class="tituloCartao">Com ocorrência</p>
             <p class="valorCartao">62</p>
             <p class="legendaCartao">5,0% do total</p>
           </div>
-          <div class="cartaoResumo">
+          <div class="cartaoResumo flex900">
             <p class="tituloCartao">Em manutenção</p>
             <p class="valorCartao">18</p>
             <p class="legendaCartao">1,4% do total</p>
           </div>
-          <div class="cartaoResumo">
+          <div class="cartaoResumo flex900">
             <p class="tituloCartao">Fora de operação</p>
             <p class="valorCartao">12</p>
             <p class="legendaCartao">1,0% do total</p>
@@ -85,53 +85,59 @@
 
         <div class="painelVisualizacao" data-painel="lista">
           <!-- busca e filtros -->
-          <div class="barraFiltrosEquip">
-            <div class="campoBusca">
-              <i class="bi bi-search"></i>
-              <input
-                type="text"
-                id="campoBuscaEquip"
-                placeholder="Buscar por código, local ou cliente..."
-              />
+          <div class="barraFiltrosEquip flex900">
+            <div class="filterBusca">
+              <div class="campoBusca">
+                <i class="bi bi-search"></i>
+                <input
+                  type="text"
+                  id="campoBuscaEquip"
+                  placeholder="Buscar por código, local ou cliente..."
+                />
+              </div>
+              <button class="botaoFiltros" type="button">
+                <i class="bi bi-sliders"></i> Filtros
+              </button>
             </div>
-            <select id="filtroTipo" class="seletorFiltro">
-              <option value="todos">Todos os tipos</option>
-              <option value="Elevador">Elevador</option>
-              <option value="Escada Rolante">Escada Rolante</option>
-            </select>
-            <select class="seletorFiltro">
-              <option>Todas as regiões</option>
-            </select>
-            <select id="filtroStatus" class="seletorFiltro">
-              <option value="todos">Todos os status</option>
-              <option value="operacao">Em operação</option>
-              <option value="manutencao">Em manutenção</option>
-              <option value="ocorrencia">Com ocorrência</option>
-              <option value="fora">Fora de operação</option>
-            </select>
-            <button class="botaoFiltros" type="button">
-              <i class="bi bi-sliders"></i> Filtros
-            </button>
+            <div class="filterBusca flex700">
+              <select id="filtroTipo" class="seletorFiltro flex700">
+                <option value="todos">Todos os tipos</option>
+                <option value="Elevador">Elevador</option>
+                <option value="Escada Rolante">Escada Rolante</option>
+              </select>
+              <select class="seletorFiltro flex700">
+                <option>Todas as regiões</option>
+              </select>
+              <select id="filtroStatus" class="seletorFiltro flex700">
+                <option value="todos">Todos os status</option>
+                <option value="operacao">Em operação</option>
+                <option value="manutencao">Em manutenção</option>
+                <option value="ocorrencia">Com ocorrência</option>
+                <option value="fora">Fora de operação</option>
+              </select>
+            </div>
           </div>
 
           <!-- tabela de equipamentos -->
-          <table class="tabelaEquipamentos">
-            <thead>
-              <tr>
-                <th>Código</th>
-                <th>Equipamento</th>
-                <th>Cliente / Local</th>
-                <th>Tipo</th>
-                <th>Modelo</th>
-                <th>Status</th>
-                <th>Última manutenção</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody id="corpoTabelaEquipamentos"></tbody>
-          </table>
+          <div class="tabelaEquipamentos">
+            <table>
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Equipamento</th>
+                  <th>Cliente / Local</th>
+                  <th>Tipo</th>
+                  <th>Modelo</th>
+                  <th>Status</th>
+                  <th>Última manutenção</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="corpoTabelaEquipamentos"></tbody>
+            </table>
+          </div>
 
-          <div class="rodapeTabela">
+          <div class="rodapeTabela flex900">
             <span>Mostrando 1 a 8 de 1.248 equipamentos</span>
             <div class="paginacao">
               <span class="paginaItem"><i class="bi bi-chevron-left"></i></span>
@@ -139,7 +145,6 @@
               <span class="paginaItem hover">2</span>
               <span class="paginaItem hover">3</span>
               <span class="paginaItem hover">4</span>
-              <span class="paginaItem hover">5</span>
               <span>...</span>
               <span class="paginaItem">156</span>
               <span class="paginaItem"
@@ -149,7 +154,7 @@
           </div>
 
           <!-- gráficos de apoio -->
-          <div class="linhaGraficos">
+          <div class="linhaGraficos flex1200">
             <div class="cartaoGrafico">
               <p class="tituloGrafico">Equipamentos por status</p>
               <div class="corpoGrafico">

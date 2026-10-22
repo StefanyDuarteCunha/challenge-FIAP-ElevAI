@@ -2259,6 +2259,15 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 }
 
 
+/* ----------- Page - Equipamentos ----------- */
+.filterBusca {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+} 
+
+
 /* ----------- Tablet ----------- */
 @media (max-width: 1200px) {
     .bodyNav {
@@ -2334,11 +2343,11 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         font-weight: 500;
     }
     
-    .containerTitle, .lineIndex, .lineIndexB, .conteudoSolucao, .lineRecursos, .lineBeneficios, .faleImagemFundo, .lineFale, .cardContainerPublico, .loginImagemFundo, .lineDash30.flex1200, .lineOcorrencia.flex1200, .lineEquipe.flex1200, .containerCronograma.flex1200, .filterCampos.flex1200 {
+    .containerTitle, .lineIndex, .lineIndexB, .conteudoSolucao, .lineRecursos, .lineBeneficios, .faleImagemFundo, .lineFale, .cardContainerPublico, .loginImagemFundo, .lineDash30.flex1200, .lineOcorrencia.flex1200, .lineEquipe.flex1200, .containerCronograma.flex1200, .filterCampos.flex1200, .linhaGraficos.flex1200, .cabecalhoBiblioteca.flex1200, .areaBiblioteca.flex1200, .linhaVisualizador.flex1200 {
         flex-direction: column;
     }
 
-    .colDash30.flex1200, .colOcorrencia35.flex1200, .colOcorrencia64.flex1200, .colEquipe58.flex1200, .colEquipe37.flex1200, .calendar.flex1200, .containerEsquerda.flex1200, .checkAutomativo.flex1200 {
+    .colDash30.flex1200, .colOcorrencia35.flex1200, .colOcorrencia64.flex1200, .colEquipe58.flex1200, .colEquipe37.flex1200, .calendar.flex1200, .containerEsquerda.flex1200, .checkAutomativo.flex1200, .colunaCategorias.flex1200, .colunaDocumentos.flex1200, .painelVisualizador.flex1200, .painelDetalhes.flex1200 {
         width: 100%;
     }
 
@@ -2457,11 +2466,11 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         margin-left: 25% !important;
     }
 
-    .lineDash30.flex900, .lineDash47.flex900, .headerDash.flex900, .classificacaoOcorrencia.flex900, .elevadorOcorrencia.flex900, .lineAtendimento.flex900, .colAtendimento30.flex900, .tecnicoRecomendacao.flex900, .linePecas.flex900, .barraNavegacaoTable.flex900, .lineManutencao.flex900, .lineKpi.flex900, .filterCampos.flex900 {
+    .lineDash30.flex900, .lineDash47.flex900, .headerDash.flex900, .classificacaoOcorrencia.flex900, .elevadorOcorrencia.flex900, .lineAtendimento.flex900, .colAtendimento30.flex900, .tecnicoRecomendacao.flex900, .linePecas.flex900, .barraNavegacaoTable.flex900, .lineManutencao.flex900, .lineKpi.flex900, .filterCampos.flex900, .linhaResumoEquip.flex900, .cabecalhoEquip.flex900, .barraFiltrosEquip.flex900, .rodapeTabela.flex900 {
         flex-direction: column;
     }
 
-    .colDash30.flex900, .colDash47.flex900, .tagsOcorrencia.flex900, .titleCardOcorrencia.flex900, .colAtendimento47.flex900, .colAtendimento30.flex900, .colPecas21.flex900, .colPecas21Alerta.flex900, .colPecas21Criticas.flex900, .search-box.flex900, .containerCampos.flex900, .subtitlePage.flex900, .colPecas35.flex900, .colPecas20.flex900, .colManutencao.flex900, .colPlanAtrasados.flex900, .colPlanAtivos.flex900, .colKpi21.flex900, .colKpi47.flex900 {
+    .colDash30.flex900, .colDash47.flex900, .tagsOcorrencia.flex900, .titleCardOcorrencia.flex900, .colAtendimento47.flex900, .colAtendimento30.flex900, .colPecas21.flex900, .colPecas21Alerta.flex900, .colPecas21Criticas.flex900, .search-box.flex900, .containerCampos.flex900, .subtitlePage.flex900, .colPecas35.flex900, .colPecas20.flex900, .colManutencao.flex900, .colPlanAtrasados.flex900, .colPlanAtivos.flex900, .colKpi21.flex900, .colKpi47.flex900, .cartaoResumo.flex900 {
         width: 100%;
     }
 
@@ -2557,13 +2566,17 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         margin-top: 1rem;
     }
 
-    .containerIndexButton, .inputContainer.flex700, .elevadorOcorrencia.flex700, .lineEquipe.flex700, .calendar-top.flex700, .containerRecomendacoesManutencao.flex700, .relatorioContainer.flex700, .containerSelect.flex700 {
+    .containerIndexButton, .inputContainer.flex700, .elevadorOcorrencia.flex700, .lineEquipe.flex700, .calendar-top.flex700, .containerRecomendacoesManutencao.flex700, .relatorioContainer.flex700, .containerSelect.flex700, .filterBusca.flex700, .acoesCabecalho.flex700, .cabecalhoVisualizador.flex700 {
         flex-direction: column;
     }
 
-    .elevadorOcorrencia.flex700, .colEquipe16.flex700, .colEquipe16Atendimento.flex700, .colEquipe16Disponivel.flex700, .colEquipe16Deslocamento.flex700 {
+    .elevadorOcorrencia.flex700, .colEquipe16.flex700, .colEquipe16Atendimento.flex700, .colEquipe16Disponivel.flex700, .colEquipe16Deslocamento.flex700, .seletorFiltro.flex700 {
         width: 100%;
         align-items: start;
+    }
+
+    .botaoNovo.flex700 {
+        align-self: start;
     }
 
     .recomendacoesGapRight.flex700, .recomendacoesGapLeft.flex700 {

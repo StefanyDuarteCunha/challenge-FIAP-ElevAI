@@ -18,25 +18,25 @@
 <body>
     <div id="navbar-placeholder"></div>
     <div id="page-content">
-        <header class="cabecalhoBiblioteca">
+        <header class="cabecalhoBiblioteca flex1200">
             <div>
                 <h1 class="titlePage">Biblioteca</h1>
                 <p class="subtitlePage">Acesse manuais, projetos, croquis e demais documentos técnicos.</p>
             </div>
-            <div class="acoesCabecalho">
+            <div class="acoesCabecalho flex700">
                 <div class="campoBuscaDoc">
                     <i class="bi bi-search"></i>
                     <input type="text" id="campoBuscaDoc" placeholder="Buscar documentos...">
                 </div>
-                <button class="btn btn-primary rounded-pill" type="button">
+                <button class="botaoNovo flex700" type="button">
                     <i class="bi bi-plus-lg"></i> Novo documento
                 </button>
             </div>
         </header>
         <main>
-            <div class="areaBiblioteca">
+            <div class="areaBiblioteca flex1200">
                 <!-- coluna lateral: categorias e assistente -->
-                <div class="colunaCategorias">
+                <div class="colunaCategorias flex1200">
                     <div class="cartaoCategorias">
                         <p class="tituloLateral">Categorias</p>
                         <ul class="listaCategorias" id="listaCategorias"></ul>
@@ -52,7 +52,7 @@
                 </div>
 
                 <!-- coluna principal: tabela de documentos -->
-                <div class="colunaDocumentos">
+                <div class="colunaDocumentos flex1200">
                     <div class="barraFiltrosDoc">
                         <select class="seletorFiltroDoc">
                             <option>Tipo</option>
@@ -65,21 +65,23 @@
                         </select>
                     </div>
 
-                    <table class="tabelaDocumentos">
-                        <thead>
-                            <tr>
-                                <th>Documento</th>
-                                <th>Categoria</th>
-                                <th>Tipo</th>
-                                <th>Versão</th>
-                                <th>Última atualização</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody id="corpoTabelaDocumentos"></tbody>
-                    </table>
+                    <div class="tabelaDocumentos">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Documento</th>
+                                    <th>Categoria</th>
+                                    <th>Tipo</th>
+                                    <th>Versão</th>
+                                    <th>Última atualização</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="corpoTabelaDocumentos"></tbody>
+                        </table>
+                    </div>
 
-                    <div class="rodapeTabela">
+                    <div class="rodapeTabela flex900">
                         <span>Mostrando 1 a 8 de 1.248 documentos</span>
                         <div class="paginacao">
                             <span class="paginaItem"><i class="bi bi-chevron-left"></i></span>
@@ -87,7 +89,6 @@
                             <span class="paginaItem hover">2</span>
                             <span class="paginaItem hover">3</span>
                             <span class="paginaItem hover">4</span>
-                            <span class="paginaItem hover">5</span>
                             <span>...</span>
                             <span class="paginaItem">156</span>
                             <span class="paginaItem"><i class="bi bi-chevron-right"></i></span>
@@ -95,9 +96,9 @@
                     </div>
 
                     <!-- visualizador do documento selecionado + painel de detalhes -->
-                    <div class="linhaVisualizador">
-                        <div class="painelVisualizador">
-                            <div class="cabecalhoVisualizador">
+                    <div class="linhaVisualizador flex1200">
+                        <div class="painelVisualizador flex1200">
+                            <div class="cabecalhoVisualizador flex700">
                                 <div>
                                     <p class="tituloLateral m-0">Visualizador</p>
                                     <span class="nomeArquivoVisualizador" id="nomeArquivoVisualizador"></span>
@@ -120,7 +121,7 @@
                             </div>
                         </div>
 
-                        <div class="painelDetalhes">
+                        <div class="painelDetalhes flex1200">
                             <div class="abasDetalhes">
                                 <span class="abaDetalhe abaDetalheAtiva" data-aba="detalhes">Detalhes</span>
                                 <span class="abaDetalhe" data-aba="informacoes">Informações</span>

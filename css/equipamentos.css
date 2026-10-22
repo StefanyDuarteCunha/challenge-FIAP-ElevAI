@@ -156,11 +156,17 @@
 /* tabela de equipamentos */
 .tabelaEquipamentos {
   width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos móveis */
+}
+
+.tabelaEquipamentos table {
+  width: 100%;
   font-size: 0.8rem;
   border-collapse: collapse;
 }
 
-.tabelaEquipamentos thead th {
+.tabelaEquipamentos table th {
   text-align: left;
   color: var(--cinzaMedio);
   font-weight: 600;
@@ -168,15 +174,17 @@
   border-bottom: 1px solid var(--cinzaMedio);
 }
 
-.tabelaEquipamentos thead th:last-child,
-.tabelaEquipamentos tbody td:last-child {
+.tabelaEquipamentos table th:last-child,
+.tabelaEquipamentos table td:last-child {
   text-align: center;
 }
 
-.tabelaEquipamentos tbody td {
+.tabelaEquipamentos table td {
   padding: 0.6rem 0.4rem;
   border-bottom: 1px solid rgba(128, 128, 128, 0.15);
   vertical-align: middle;
+  word-break: break-word;
+  white-space: nowrap;
 }
 
 .textoSecundario {

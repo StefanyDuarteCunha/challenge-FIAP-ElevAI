@@ -142,11 +142,18 @@
 /* tabela de documentos */
 .tabelaDocumentos {
     width: 100%;
+    text-align: start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos móveis */
+}
+
+.tabelaDocumentos table {
+    width: 100%;
     font-size: 0.8rem;
     border-collapse: collapse;
 }
 
-.tabelaDocumentos thead th {
+.tabelaDocumentos table th {
     text-align: left;
     color: var(--cinzaMedio);
     font-weight: 600;
@@ -154,10 +161,12 @@
     border-bottom: 1px solid var(--cinzaMedio);
 }
 
-.tabelaDocumentos tbody td {
+.tabelaDocumentos table td {
     padding: 0.6rem 0.4rem;
     border-bottom: 1px solid rgba(128, 128, 128, 0.15);
     vertical-align: middle;
+    word-break: break-word;
+    white-space: nowrap;
 }
 
 .linhaDocumento {
