@@ -189,3 +189,484 @@
     flex-direction: column;
   }
 }
+
+/* ----------- Page - Configurações (elementos compartilhados pelas abas) ----------- */
+
+/* texto de apoio abaixo do título de um cartão */
+.textoApoioConfig {
+  font-size: 0.75rem;
+  color: var(--cinzaEscuro);
+  margin: -0.5rem 0 1rem 0;
+}
+
+/* grade de cartões de resumo (usada em Usuários e Segurança) */
+.gradeResumoConfig {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gradeResumoConfig.gradeResumoQuatro {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cartaoResumoConfig {
+  background-color: var(--cinzaClaro);
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.cartaoResumoConfig:hover {
+  background-color: var(--azulHover);
+}
+
+.rotuloResumoConfig {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cinzaEscuro);
+  margin-bottom: 0.25rem;
+}
+
+.valorResumoConfig {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* grades de cartões lado a lado (2 ou 3 colunas) */
+.gradeCartoesConfig {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gradeCartoesConfig.gradeTresColunas {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* dentro das grades o espaçamento é controlado pelo gap */
+.gradeCartoesConfig > .cartaoConfig {
+  margin-bottom: 0;
+}
+
+/* barra de busca + filtros acima das tabelas */
+.barraFiltrosConfig {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.campoBuscaConfig {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1.5rem;
+  padding: 0.4rem 1rem;
+  width: 260px;
+  color: var(--cinzaMedio);
+}
+
+.campoBuscaConfig input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.filtroConfig {
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1.5rem;
+  padding: 0.35rem 1rem;
+  font-size: 0.8rem;
+  color: #444;
+  background-color: white;
+}
+
+.filtroConfig:focus {
+  outline: none;
+  border-color: var(--azulDestaque);
+}
+
+/* lista de resumo com os valores em destaque (Auditoria e IA) */
+.listaValoresDestaque .itemResumoSistema span:last-child {
+  color: var(--azulElevAi);
+  font-weight: 700;
+}
+
+/* tabela padrão das abas de configuração */
+.tabelaConfig {
+  width: 100%;
+  font-size: 0.8rem;
+  border-collapse: collapse;
+}
+
+.tabelaConfig thead th {
+  text-align: left;
+  color: var(--cinzaMedio);
+  font-weight: 600;
+  padding: 0.5rem 0.4rem;
+  border-bottom: 1px solid var(--cinzaMedio);
+}
+
+.tabelaConfig tbody td {
+  padding: 0.6rem 0.4rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  vertical-align: middle;
+}
+
+.tabelaConfig tbody tr:hover {
+  background-color: rgba(128, 128, 128, 0.08);
+}
+
+/* texto exibido quando nenhum registro atende aos filtros */
+.linhaSemResultado td {
+  text-align: center;
+  color: var(--cinzaMedio);
+  padding: 1.5rem 0;
+}
+
+/* linha com rótulo à esquerda e interruptor à direita */
+.linhaOpcaoConfig {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+.linhaOpcaoConfig:last-child {
+  border-bottom: none;
+}
+
+.linhaOpcaoConfig i {
+  color: var(--azulDestaque);
+  margin-right: 0.5rem;
+}
+
+/* rótulo de campo logo abaixo de uma linha com interruptor ganha respiro */
+.linhaOpcaoConfig + .rotuloCampo {
+  margin-top: 0.75rem;
+}
+
+/* botão de salvar no fim da aba não encosta no rodapé */
+.painelConfig > .botaoSalvarConfig {
+  margin-bottom: 1rem;
+}
+
+/* opções recuadas, dependentes da opção acima (ex.: provedores de SSO) */
+.opcaoSecundariaConfig {
+  padding-left: 1.25rem;
+}
+
+/* interruptor (bootstrap form-switch) usando as cores do ElevAI */
+.painelConfig .interruptorConfig {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+.painelConfig .interruptorConfig .form-check-input {
+  margin: 0;
+  float: none;
+  cursor: pointer;
+}
+
+.painelConfig .form-check-input:checked {
+  background-color: var(--azulDestaque);
+  border-color: var(--azulDestaque);
+}
+
+.painelConfig .form-check-input:focus {
+  border-color: var(--azulDestaque);
+  box-shadow: 0 0 0 0.2rem rgba(28, 63, 144, 0.2);
+}
+
+/* checkbox / radio com texto ao lado */
+.opcaoCheckConfig {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  padding: 0.3rem 0;
+  cursor: pointer;
+}
+
+.opcaoCheckConfig .form-check-input {
+  margin: 0;
+  cursor: pointer;
+}
+
+.opcaoCheckConfig .form-check-input:disabled {
+  cursor: not-allowed;
+}
+
+/* sub-abas (Integrações e Notificações) */
+.subAbasConfig {
+  display: flex;
+  gap: 1.25rem;
+  border-bottom: 1px solid var(--cinzaMedio);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.subAbaConfig {
+  font-size: 0.8rem;
+  color: var(--cinzaMedio);
+  padding-bottom: 0.4rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.subAbaConfig:hover {
+  color: var(--azulDestaque);
+}
+
+.subAbaConfig.subAbaConfigAtiva {
+  color: var(--azulElevAi);
+  font-weight: 700;
+  border-bottom: 2px solid var(--azulElevAi);
+}
+
+/* ----------- Aba - Usuários ----------- */
+
+.celulaUsuario {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+}
+
+/* círculo com as iniciais do usuário (no lugar da foto) */
+.avatarUsuario {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background-color: var(--azulHover);
+  color: var(--azulDestaque);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ----------- Aba - Permissões ----------- */
+
+.tabelaPermissoes thead th {
+  text-align: center;
+}
+
+.tabelaPermissoes thead th:first-child,
+.tabelaPermissoes tbody td:first-child {
+  text-align: left;
+}
+
+.celulaNivel {
+  text-align: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* coluna do administrador não pode ser alterada */
+.celulaNivelBloqueada {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.nivelTotal {
+  color: #16a34a;
+}
+
+.nivelParcial {
+  color: #ea8a0c;
+}
+
+.nivelNenhum {
+  color: #dc2626;
+}
+
+.legendaPermissoes {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--cinzaEscuro);
+  margin-top: 1rem;
+}
+
+/* ----------- Aba - Integrações ----------- */
+
+.cartaoIntegracao .tituloCartaoConfig i {
+  color: var(--azulDestaque);
+  margin-right: 0.3rem;
+}
+
+.valorDestaqueConfig {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.statusConexao {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 0.75rem;
+}
+
+.statusConexao i {
+  font-size: 0.55rem;
+  margin-right: 0.3rem;
+}
+
+.duasColunasConfig {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.acoesCartaoConfig {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.acoesCartaoConfig .btn {
+  font-size: 0.8rem;
+}
+
+/* mini cartões de cada ferramenta (SAP, TOTVS, WhatsApp...) */
+.gradeItensIntegracao {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.itemIntegracao {
+  background-color: white;
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.itemIntegracao .nomeIntegracao {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.itemIntegracao .badgeStatus {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+}
+
+.itemIntegracao .btn {
+  display: block;
+  width: 100%;
+  font-size: 0.75rem;
+}
+
+/* ----------- Aba - Notificações ----------- */
+
+.listaPerfisDestinatarios {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ----------- Aba - Auditoria ----------- */
+
+.barraFiltrosAuditoria .rotuloCampo {
+  margin-bottom: 0.2rem;
+}
+
+.periodoAuditoria {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.listaUsuariosAtivos {
+  list-style: none;
+  counter-reset: posicao;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.listaUsuariosAtivos li {
+  counter-increment: posicao;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+.listaUsuariosAtivos li::before {
+  content: counter(posicao) ".";
+  margin-right: 0.5rem;
+  color: var(--cinzaMedio);
+}
+
+.listaUsuariosAtivos li span:first-of-type {
+  flex: 1;
+}
+
+.listaUsuariosAtivos li span:last-of-type {
+  font-weight: 700;
+  color: var(--azulDestaque);
+}
+
+/* ----------- Aba - IA ----------- */
+
+/* itens desabilitados quando o recurso de IA está desativado */
+.painelConfig .seletorConfig:disabled,
+.painelConfig .opcaoCheckConfig:has(input:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ----------- Celulares e telas menores (novas abas) ----------- */
+@media (max-width: 1200px) {
+  .gradeResumoConfig,
+  .gradeResumoConfig.gradeResumoQuatro {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gradeCartoesConfig.gradeTresColunas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gradeItensIntegracao {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .gradeCartoesConfig,
+  .gradeCartoesConfig.gradeTresColunas {
+    grid-template-columns: 1fr;
+  }
+
+  .campoBuscaConfig {
+    width: 100%;
+  }
+
+  /* tabelas largas rolam na horizontal em vez de quebrar o layout */
+  .painelConfig .cartaoConfig {
+    overflow-x: auto;
+  }
+
+  .tabelaConfig {
+    min-width: 560px;
+  }
+}
