@@ -139,6 +139,25 @@ html, body {
     color: var(--cinzaEscuro);
 }
 
+.equipamentosPlano .subtitlePage {
+    font-weight: 600;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.regioesPlano .subtitlePage {
+    font-weight: 600;
+    color: black;
+}
+
+.subsubtitlePage {
+    font-family: var(--fonteLato);
+    font-size: var(--clamp08);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--cinzaEscuro);
+}
+
 footer {
     text-align: center;
     font-size: var(--clamp08);
