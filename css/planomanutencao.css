@@ -1,0 +1,148 @@
+/* Esconde os indicadores quando outra aba está aberta */
+.indicadoresVisao[hidden] {
+    display: none;
+}
+
+/* Painéis no mesmo estilo claro do projeto */
+.graficosManutencao {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.painelGraficoManutencao {
+    min-width: 0;
+    padding: 1.5rem;
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1.5rem;
+    background-color: var(--cinzaClaro);
+}
+
+.painelGraficoManutencao h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.notaGraficoManutencao {
+    font-size: 0.75rem;
+    color: #606060;
+}
+
+.legendaGraficoManutencao {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+
+.legendaGraficoManutencao span,
+.tiposManutencao li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legendaGraficoManutencao i,
+.tiposManutencao i {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.corPrevistas { background-color: #278bd2; }
+.corRealizadas, .corCorretiva { background-color: #11b9c6; }
+.corPreventiva { background-color: #278bd2; }
+.corPreditivo { background-color: #e8ae24; }
+.corInspecao { background-color: #e14e5b; }
+
+#graficoMensalManutencao {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* As partes da rosca somam 100%: 32 + 28 + 24 + 16 */
+.distribuicaoManutencao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.roscaManutencao {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(
+        #11b9c6 0% 32%,
+        #278bd2 32% 60%,
+        #e8ae24 60% 84%,
+        #e14e5b 84% 100%
+    );
+}
+
+.centroRoscaManutencao {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background-color: var(--cinzaClaro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.centroRoscaManutencao strong {
+    font-size: 2rem;
+}
+
+.centroRoscaManutencao span {
+    color: #606060;
+}
+
+.tiposManutencao {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.tiposManutencao li {
+    margin: 0.8rem 0;
+}
+
+.tiposManutencao strong {
+    margin-left: auto;
+    padding-left: 0.5rem;
+}
+
+/* Empilha os gráficos e indicadores em telas menores */
+@media (max-width: 1000px) {
+    .graficosManutencao {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .indicadoresVisao {
+        flex-wrap: wrap;
+    }
+
+    .indicadoresVisao > div {
+        width: 49%;
+    }
+
+    .painelGraficoManutencao {
+        padding: 1rem;
+    }
+}

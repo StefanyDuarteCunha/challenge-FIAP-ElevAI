@@ -7,6 +7,9 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 	<link href="../css/style.css" rel="stylesheet">
+    <link href="../css/planomanutencao.css" rel="stylesheet">
+    <link href="../css/equipamentos-plano.css" rel="stylesheet">
+    <link href="../css/regioes-plano.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,22 +24,42 @@
             <h6 class="subtitlePage">Planeje e acompanhe manutenções preventivas</h6>
         </header>
         <main>
-            <div class="lineManutencao marginLine flex900">
-                <div class="colPlanAtivos flex900">
-                    <p class="dadoManutencao m-0">86</p>
+            <!-- Indicadores de Cronograma, Equipamentos e Regiões -->
+            <div class="lineManutencao marginLine indicadoresVisao" id="indicadoresCronograma">
+                <div class="colPlanAtivos">
+                    <p class="dadoManutencao m-0">24</p>
                     <p class="legendaManutencao m-0">Planos ativos</p>
                 </div>
-                <div class="colManutencao flex900">
-                    <p class="dadoManutencao m-0">1.248</p>
-                    <p class="legendaManutencao grey m-0">Equipamentos cobertos</p>
+                <div class="colManutencao">
+                    <p class="dadoManutencao m-0">412</p>
+                    <p class="legendaManutencao m-0">Equipamentos incluídos</p>
                 </div>
-                <div class="colManutencao flex900">
-                    <p class="dadoManutencao m-0">312</p>
-                    <p class="legendaManutencao grey m-0">Agendamentos</p>
+                <div class="colPlanAtivos">
+                    <p class="dadoManutencao m-0">86%</p>
+                    <p class="legendaManutencao m-0">Execução em dia</p>
                 </div>
-                <div class="colPlanAtrasados flex900">
-                    <p class="dadoManutencao m-0">18</p>
-                    <p class="legendaManutencao m-0">Atrasadas</p>
+                <div class="colPlanAtrasados">
+                    <p class="dadoManutencao m-0">14</p>
+                    <p class="legendaManutencao m-0">Manutenções atrasadas</p>
+                </div>
+            </div>
+            <!-- Indicadores da visão geral -->
+            <div class="lineManutencao marginLine indicadoresVisao" id="indicadoresVisaoGeral" hidden>
+                <div class="colPlanAtivos">
+                    <p class="dadoManutencao m-0">24</p>
+                    <p class="legendaManutencao m-0">Planos ativos</p>
+                </div>
+                <div class="colManutencao">
+                    <p class="dadoManutencao m-0">412</p>
+                    <p class="legendaManutencao m-0">Equipamentos incluídos</p>
+                </div>
+                <div class="colPlanAtivos">
+                    <p class="dadoManutencao m-0">86%</p>
+                    <p class="legendaManutencao m-0">Execução em dia</p>
+                </div>
+                <div class="colPlanAtrasados">
+                    <p class="dadoManutencao m-0">14</p>
+                    <p class="legendaManutencao m-0">Manutenções atrasadas</p>
                 </div>
             </div>
             <div class="containerBotoes">
@@ -117,7 +140,7 @@
                 </div>
                 <div class="containerEsquerda flex1200">
                     <div>
-                        <button type="button" class="botaoNovo btnCards">+ Novo Plano</button>
+                        <button type="button" class="botaoNovo btnCards" id="abrirNovoPlano">+ Novo Plano</button>
                     </div>
                     <div class="containerCards">
                         <h5 class="titleRecomendacoes">Próximas manutenções</h5>
@@ -187,21 +210,172 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p class="verCards mt-3 mb-0">Ver todas (312) <i class="bi bi-arrow-right"></i></p>
+                        <a class="verCards mt-3 mb-0 d-inline-block text-decoration-none" href="todos-planos.html">Ver todas (24) <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
             <div class="escondido" id="tela-visao-geral">
-                <p class="painelSemDados">Visão Geral em desenvolvimento.</p>
-                <img src="../img/elevador.png" alt="Em manutenção" class="elevador">
+                <!-- Comparação das manutenções previstas e realizadas -->
+                <div class="graficosManutencao">
+                    <section class="painelGraficoManutencao">
+                        <h2>Manutenções por mês</h2>
+                        <p class="notaGraficoManutencao">Dados mensais ilustrativos</p>
+                        <div class="legendaGraficoManutencao">
+                            <span><i class="corPrevistas"></i>Previstas</span>
+                            <span><i class="corRealizadas"></i>Realizadas</span>
+                        </div>
+                        <canvas id="graficoMensalManutencao" width="720" height="320"
+                            role="img" aria-label="Manutenções previstas e realizadas de janeiro a dezembro">
+                            Comparação mensal de manutenções previstas e realizadas.
+                        </canvas>
+                    </section>
+
+                    <!-- Distribuição percentual dos tipos de manutenção -->
+                    <section class="painelGraficoManutencao">
+                        <h2>Tipos de manutenção</h2>
+                        <div class="distribuicaoManutencao">
+                            <div class="roscaManutencao" role="img"
+                                aria-label="Corretiva 32%, preventiva 28%, preditivo 24%, inspeção 16%">
+                                <div class="centroRoscaManutencao">
+                                    <strong>412</strong>
+                                    <span>Total</span>
+                                </div>
+                            </div>
+                            <ul class="tiposManutencao">
+                                <li><i class="corCorretiva"></i>Corretiva <strong>32%</strong></li>
+                                <li><i class="corPreventiva"></i>Preventiva <strong>28%</strong></li>
+                                <li><i class="corPreditivo"></i>Preditivo <strong>24%</strong></li>
+                                <li><i class="corInspecao"></i>Inspeção <strong>16%</strong></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
             </div>
             <div class="escondido" id="tela-equipamentos">
-                <p class="painelSemDados">Visão por equipamentos em desenvolvimento.</p>
-                <img src="../img/elevador.png" alt="Em manutenção" class="elevador">
+                <!-- Equipamentos incluídos no plano de manutenção -->
+                <section class="equipamentosPlano">
+                    <h2>Equipamentos no plano</h2>
+
+                    <!-- Busca por código ou nome e filtros combinados -->
+                    <div class="filtrosEquipamentosPlano">
+                        <input
+                            type="search"
+                            id="buscaEquipamentosPlano"
+                            placeholder="Buscar equipamentos..."
+                            aria-label="Buscar equipamentos por código ou nome"
+                        >
+
+                        <select id="filtroPlantaPlano" aria-label="Filtrar por planta">
+                            <option value="">Todas as plantas</option>
+                            <option>Financeiro</option>
+                            <option>Operações</option>
+                            <option>Shopping</option>
+                            <option>Recepção</option>
+                            <option>Logística</option>
+                        </select>
+
+                        <select id="filtroAreaPlano" aria-label="Filtrar por área">
+                            <option value="">Todas as áreas</option>
+                            <option>Torre A</option>
+                            <option>Serviço</option>
+                            <option>Shop</option>
+                            <option>PCD</option>
+                            <option>Carga</option>
+                        </select>
+                    </div>
+
+                    <!-- O JavaScript preenche as linhas conforme os filtros -->
+                    <div class="rolagemTabelaPlano">
+                        <table class="tabelaEquipamentosPlano">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Equipamento</th>
+                                    <th scope="col">Planta</th>
+                                    <th scope="col">Próxima manutenção</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="corpoEquipamentosPlano"></tbody>
+                        </table>
+                    </div>
+
+                    <p id="mensagemEquipamentosPlano" role="status" hidden>
+                        Nenhum equipamento encontrado com esses filtros.
+                    </p>
+                </section>
             </div>
             <div class="escondido" id="tela-regioes">
-                <p class="painelSemDados">Visão por regiões em desenvolvimento.</p>
-                <img src="../img/elevador.png" alt="Em manutenção" class="elevador">
+                <!-- Visão das manutenções distribuídas por região -->
+                <section class="regioesPlano">
+                    <h2>Manutenção por região</h2>
+                    <p class="descricaoRegioesPlano">
+                        Acompanhe a distribuição dos equipamentos e o status das manutenções em cada região.
+                    </p>
+
+                    <!-- Resumo nacional e filtros da tabela -->
+                    <div class="resumoRegioesPlano">
+                        <div class="indicadorRegiao">
+                            <strong>412</strong>
+                            <span>Equipamentos total no Brasil</span>
+                        </div>
+                        <div class="indicadorRegiao proximasRegiao">
+                            <strong>20</strong>
+                            <span>Próximas nos próximos 7 dias</span>
+                        </div>
+                        <div class="indicadorRegiao atrasadasRegiao">
+                            <strong>14</strong>
+                            <span>Manutenções atrasadas</span>
+                        </div>
+                        <div class="filtrosRegioesPlano">
+                            <select id="periodoRegioesPlano" aria-label="Período das próximas manutenções">
+                                <option value="semana" selected>Próximos 7 dias</option>
+                                <option value="mes">Este mês</option>
+                                <option value="todos">Todos os períodos</option>
+                            </select>
+                            <select id="statusRegioesPlano" aria-label="Filtrar regiões por status">
+                                <option value="">Todos os status</option>
+                                <option>Em dia</option>
+                                <option>Atenção</option>
+                                <option>Crítico</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="conteudoRegioesPlano">
+                        <!-- Barras proporcionais ao número de equipamentos -->
+                        <section class="distribuicaoRegioesPlano">
+                            <h3>Equipamentos por região</h3>
+                            <div id="barrasRegioesPlano"></div>
+                        </section>
+
+                        <!-- Tabela com datas e status fornecidos no exemplo -->
+                        <div class="painelTabelaRegioes">
+                            <div class="rolagemTabelaRegioes">
+                                <table class="tabelaRegioesPlano">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Região</th>
+                                            <th scope="col">Equipamentos</th>
+                                            <th scope="col">Manutenções pendentes</th>
+                                            <th scope="col">Próxima manutenção</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="corpoTabelaRegioes"></tbody>
+                                </table>
+                            </div>
+                            <p id="mensagemRegioesPlano" role="status" hidden>
+                                Nenhuma região encontrada com esses filtros.
+                            </p>
+                            <div class="acoesRegioesPlano">
+                                <button type="button" id="verEquipamentosRegioes">
+                                    Ver equipamentos ›
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
             <div class="recomendacoes">
                 <h5 class="titleRecomendacoes mt-0 mb-3">Recomendação ElevAI</h5>
@@ -230,6 +404,10 @@
         // Executa a função assim que a página carrega
         carregarNavbar();
         botaoNavPageManutencao();
-    </script>   
+    </script>
+    <script src="../js/planomanutencao.js"></script>
+    <script src="../js/equipamentos-plano.js"></script>
+    <script src="../js/regioes-plano.js"></script>
+    <script src="../js/planos-cadastrados.js"></script>   
 </body>
 </html>

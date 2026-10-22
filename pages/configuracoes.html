@@ -14,6 +14,7 @@
     />
     <link href="../css/style.css" rel="stylesheet" />
     <link href="../css/configuracoes.css" rel="stylesheet" />
+    <link href="../css/usuarios.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="../img/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -206,8 +207,57 @@
 
         <!-- painéis das demais seções, ainda em desenvolvimento -->
         <div class="painelConfig d-none" data-painel="usuarios">
-          <p class="painelSemDados">Gestão de usuários em desenvolvimento.</p>
-          <img src="../img/elevador.png" alt="Em manutenção" class="elevador config">
+          <!-- Cabeçalho da gestão de usuários -->
+          <div class="cabecalhoUsuarios">
+            <div>
+              <h2 class="titlePage">Usuários</h2>
+              <p class="subtitlePage">Gerencie os usuários cadastrados no sistema.</p>
+            </div>
+
+            <a class="btn btn-primary rounded-pill" href="novo-usuario.html">
+              <i class="bi bi-plus-lg"></i> Novo usuário
+            </a>
+          </div>
+
+          <!-- Busca e filtros -->
+          <div class="barraFiltrosUsuarios">
+            <select id="filtroPlanoUsuario" class="seletorFiltroUsuario">
+              <option value="todos">Todos os planos</option>
+              <option value="Administrador">Administrador</option>
+              <option value="Gestor">Gestor</option>
+              <option value="Técnico">Técnico</option>
+            </select>
+
+            <div class="campoBuscaUsuario">
+              <i class="bi bi-search"></i>
+              <input
+                type="text"
+                id="buscaUsuario"
+                placeholder="Buscar plano..."
+              />
+            </div>
+
+            <select id="filtroStatusUsuario" class="seletorFiltroUsuario">
+              <option value="todos">Todos os status</option>
+              <option value="Ativo">Ativos</option>
+              <option value="Inativo">Inativos</option>
+            </select>
+          </div>
+
+          <!-- Tabela de usuários -->
+          <div class="tabelaUsuarios">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>E-mail</th>
+                  <th>Perfil</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="corpoTabelaUsuarios"></tbody>
+            </table>
+          </div>
         </div>
         <div class="painelConfig d-none" data-painel="permissoes">
           <p class="painelSemDados">Gestão de permissões em desenvolvimento.</p>
@@ -235,5 +285,6 @@
       </footer>
     </div>
     <script type="module" src="../js/configuracoes.js"></script>
+    <script src="../js/usuarios.js"></script>
   </body>
 </html>

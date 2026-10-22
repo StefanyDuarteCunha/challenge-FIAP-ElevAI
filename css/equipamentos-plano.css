@@ -1,0 +1,91 @@
+/* Estilo limitado à tabela de equipamentos do plano */
+.equipamentosPlano {
+    margin: 1.5rem 0;
+}
+
+.equipamentosPlano h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+/* Busca e filtros no estilo claro já usado no projeto */
+.filtrosEquipamentosPlano {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.filtrosEquipamentosPlano input,
+.filtrosEquipamentosPlano select {
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--cinzaMedio);
+    border-radius: 1.5rem;
+    background-color: white;
+    font-size: 0.85rem;
+    min-width: 0;
+}
+
+.filtrosEquipamentosPlano input {
+    flex: 1;
+}
+
+.filtrosEquipamentosPlano input:focus,
+.filtrosEquipamentosPlano select:focus {
+    outline: 2px solid var(--azulDestaque);
+    outline-offset: 2px;
+}
+
+/* Permite rolar a tabela em telas pequenas */
+.rolagemTabelaPlano {
+    overflow-x: auto;
+}
+
+.tabelaEquipamentosPlano {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.tabelaEquipamentosPlano th {
+    padding: 0.9rem 0.75rem;
+    text-align: left;
+    background-color: var(--cinzaClaro);
+    border-bottom: 1px solid var(--cinzaMedio);
+}
+
+.tabelaEquipamentosPlano td {
+    padding: 1rem 0.75rem;
+    border-bottom: 1px solid var(--cinzaMedio30);
+}
+
+.statusEquipamentoPlano {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border-radius: 1rem;
+    white-space: nowrap;
+    font-size: 0.8rem;
+}
+
+.planoEmDia {
+    color: #146c2e;
+    background-color: var(--verdeClaro);
+}
+
+.planoAtrasado {
+    color: #b4232c;
+    background-color: var(--vermelhoClaro);
+}
+
+#mensagemEquipamentosPlano {
+    margin-top: 1rem;
+    color: #606060;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 700px) {
+    .filtrosEquipamentosPlano {
+        flex-direction: column;
+    }
+}
