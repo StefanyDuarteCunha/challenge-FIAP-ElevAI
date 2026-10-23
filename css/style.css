@@ -850,6 +850,12 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     display: flex;
 }
 
+.linkFaleConosco {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
 .lineFale {
     gap: 1rem;
     width: 100%;
@@ -862,13 +868,16 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .caixaFale30, .caixaFale70 {
     justify-content: center;
-    align-items: center;
+    align-items: start;
     margin: auto;
     padding: 0 4rem;
 }
 
 .caixaFale30 {
     width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .caixaFale70 {
@@ -1125,6 +1134,14 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     display: flex;
 } 
 
+.filterCampos .search-box, .filterCampos .containerCampos {
+    width: 25%;
+}
+
+.search-box .inputStyle, .containerCampos .inputStyle {
+    width: 100%;
+}
+
 .relatorioContainer {
     align-items: center;
     gap: 1rem; /* Controla o espaço entre os inputs e o "a" */
@@ -1137,7 +1154,7 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 .filterCampos {
     gap: 0.9rem;
     margin: auto;
-    justify-content: center;
+    justify-content: space-between;
     align-items: end;
     margin-bottom: 2rem;
 }
