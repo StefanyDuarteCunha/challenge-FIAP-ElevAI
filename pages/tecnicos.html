@@ -52,8 +52,8 @@
                             <select id="filtroTecnico" class="form-select inputStyle">
                                 <option value="todos">Todos</option>
                                 <option value="disponivel">Disponível</option>
-                                <option value="em-atendimento">Em atendimento</option>
-                                <option value="em-adeslocamento">Em deslocamento</option>
+                                <option value="atendimento">Em atendimento</option>
+                                <option value="deslocamento">Em deslocamento</option>
                             </select>
                         </div>
                     </div>
@@ -77,8 +77,8 @@
                                     <th>SLA</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
+                            <tbody id="container-status-tecnicos">
+                                <tr status-profissional="deslocamento">
                                     <td><i class="bi bi-person-circle iconPersonTable"></i></td>
                                     <td>João Pereira</td>
                                     <td>São Paulo - SP</td>
@@ -86,7 +86,7 @@
                                     <td>5</td>
                                     <td>96%</td>
                                 </tr>
-                                <tr>
+                                <tr status-profissional="disponivel">
                                     <td><i class="bi bi-person-circle iconPersonTable"></i></td>
                                     <td>Maria Souza</td>
                                     <td>Campinas - SP</td>
@@ -94,7 +94,7 @@
                                     <td>4</td>
                                     <td>95%</td>
                                 </tr>
-                                <tr>
+                                <tr status-profissional="deslocamento">
                                     <td><i class="bi bi-person-circle iconPersonTable"></i></td>
                                     <td>Carlos Lima</td>
                                     <td>Belo Horizonte - MG</td>
@@ -102,7 +102,7 @@
                                     <td>2</td>
                                     <td>95%</td>
                                 </tr>
-                                <tr>
+                                <tr status-profissional="atendimento">
                                     <td><i class="bi bi-person-circle iconPersonTable"></i></td>
                                     <td>Ana Oliveira</td>
                                     <td>Niterói - RJ</td>
@@ -110,7 +110,7 @@
                                     <td>1</td>
                                     <td>93%</td>
                                 </tr>
-                                <tr>
+                                <tr status-profissional="atendimento">
                                     <td><i class="bi bi-person-circle iconPersonTable"></i></td>
                                     <td>Pedro Alves</td>
                                     <td>Curitiba - PR</td>
@@ -118,7 +118,7 @@
                                     <td>5</td>
                                     <td>91%</td>
                                 </tr>
-                                <tr>
+                                <tr status-profissional="disponivel">
                                     <td><i class="bi bi-person-circle iconPersonTable"></i></td>
                                     <td>Gabriel Costa</td>
                                     <td>Santos - SP</td>
@@ -126,7 +126,7 @@
                                     <td>3</td>
                                     <td>90%</td>
                                 </tr>
-                                <tr>
+                                <tr status-profissional="deslocamento">
                                     <td><i class="bi bi-person-circle iconPersonTable"></i></td>
                                     <td>Rafael Santos</td>
                                     <td>Brasilia - DF</td>
@@ -174,9 +174,11 @@
     </div>
     <script type="module">
         import { carregarNavbar } from "../js/scripts.js";
+        import { statusTecnicos } from "../js/statusTecnicos.js";
 
         // Executa a função assim que a página carrega
         carregarNavbar();
+        statusTecnicos();
     </script>     
 </body>
 </html>

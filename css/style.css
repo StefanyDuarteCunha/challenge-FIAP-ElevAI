@@ -1134,8 +1134,18 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     display: flex;
 } 
 
-.filterCampos .search-box, .filterCampos .containerCampos {
+.filterCampos .search-box {
     width: 25%;
+}
+
+.filterCampos .containerCampos {
+    width: auto; /* Permite que cada bloco tenha o tamanho do seu conteúdo */
+    flex: 1;     /* Distribui o espaço restante igualmente entre Região, Cliente e Categoria */
+}
+
+/* Faz o primeiro bloco (Período) não encolher além do tamanho das duas datas */
+.filterCampos > .containerCampos:first-child {
+    flex: 0 0 auto;
 }
 
 .search-box .inputStyle, .containerCampos .inputStyle {
@@ -2024,6 +2034,13 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
     display: flex;
 }
 
+.lineAtendimentoCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
 .lineAtendimento {
     margin: .5rem 0;
     gap: 1%;
@@ -2040,10 +2057,6 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
 .colAtendimento47 {
     width: 49.5%;
-}
-
-.colAtendimento30 {
-    width: 32.6%;
 }
 
 .colAtendimento30:hover {
@@ -2539,6 +2552,11 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
         gap: 0.5rem;
         align-items: flex-start;
     }
+
+    .lineAtendimentoCards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* ----------- Celulares menores ----------- */
@@ -2640,6 +2658,11 @@ a.navIndexText, a.navIndexButton, a.navIndexButtonB {
 
     .campoPergunta.flex700 {
         width: 80%;
+    }
+
+    .lineAtendimentoCards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 

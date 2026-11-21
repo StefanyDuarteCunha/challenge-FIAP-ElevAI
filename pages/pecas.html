@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-    <script src="scripts.js"></script>
     <title>Gestão de Peças</title>
 </head>
 <body>
@@ -45,7 +44,7 @@
             <div class="filterCampos flex900">
                 <div class="search-box flex900">
                     <i class="bi bi-search"></i>
-                    <input type="text" placeholder="Buscar peça..." class="inputStyle buscaCampo flex900">
+                    <input type="text" id="buscaPecaDigit" placeholder="Buscar peça..." class="inputStyle buscaCampo flex900">
                 </div>
                 <div class="form-group containerCampos flex900">
                     <label for="filtroCategPecas">Categoria</label>
@@ -55,6 +54,7 @@
                         <option value="construcao">Construção Civil</option>
                         <option value="consumiveis">Consumíveis</option>
                         <option value="eletrica">Elétrica</option>
+                        <option value="eletronica">Eletrônica</option>
                         <option value="estrutural">Estrutural</option>
                         <option value="mecanica">Mecânica</option>
                         <option value="seguranca">Segurança</option>
@@ -67,7 +67,7 @@
                         <option value="todos">Todos</option>
                         <option value="alto">Alto</option>
                         <option value="baixo">Baixo</option>
-                        <option value="medio">Médio</option>
+                        <option value="normal">Normal</option>
                     </select>
                 </div>
                 <button type="button" class="botaoNovo">+ Nova Peça</button>
@@ -92,8 +92,8 @@
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody id="container-pecas-js">
+                        <tr status-peca="normal" categ-peca="eletrica">
                             <td>INV-OT-001</td>
                             <td>Inversor OTIS GEN2</td>
                             <td>Elétrica</td>
@@ -101,7 +101,7 @@
                             <td>10</td>
                             <td><span class="statusNormal">Normal</span></td>
                         </tr>
-                        <tr>
+                        <tr status-peca="baixo" categ-peca="eletrica">
                             <td>SPD-OT-002</td>
                             <td>Sensor de porta</td>
                             <td>Elétrica</td>
@@ -109,7 +109,7 @@
                             <td>15</td>
                             <td><span class="statusBaixo">Baixo</span></td>
                         </tr>
-                        <tr>
+                        <tr status-peca="normal" categ-peca="mecanica">
                             <td>COR-OT-003</td>
                             <td>Correia de Tração</td>
                             <td>Mecânica</td>
@@ -117,7 +117,7 @@
                             <td>10</td>
                             <td><span class="statusNormal">Normal</span></td>
                         </tr>
-                        <tr>
+                        <tr status-peca="baixo" categ-peca="eletrica">
                             <td>CTB-OT-004</td>
                             <td>Contator Tripolar</td>
                             <td>Elétrica</td>
@@ -125,7 +125,7 @@
                             <td>10</td>
                             <td><span class="statusBaixo">Baixo</span></td>
                         </tr>
-                        <tr>
+                        <tr status-peca="normal" categ-peca="seguranca">
                             <td>LIM-OT-005</td>
                             <td>Limitador de Velocidade</td>
                             <td>Segurança</td>
@@ -133,7 +133,7 @@
                             <td>5</td>
                             <td><span class="statusNormal">Normal</span></td>
                         </tr>
-                        <tr>
+                        <tr status-peca="baixo" categ-peca="mecanica">
                             <td>ROL-OT-006</td>
                             <td>Rolamento de Motor</td>
                             <td>Mecânica</td>
@@ -141,7 +141,7 @@
                             <td>8</td>
                             <td><span class="statusBaixo">Baixo</span></td>
                         </tr>
-                        <tr>
+                        <tr status-peca="baixo" categ-peca="eletronica">
                             <td>PLC-OT-007</td>
                             <td>Placa de Controle GEN2</td>
                             <td>Eletrônica</td>
@@ -149,7 +149,7 @@
                             <td>10</td>
                             <td><span class="statusBaixo">Baixo</span></td>
                         </tr>
-                        <tr>
+                        <tr status-peca="normal" categ-peca="eletrica">
                             <td>LED-OT-008</td>
                             <td>Lâmpada de Emergência</td>
                             <td>Elétrica</td>
@@ -202,11 +202,13 @@
     </div>
     <script type="module">
         import { carregarNavbar, graficoLinhasPecas, graficoBarraV } from "../js/scripts.js";
+        import { statusPecas } from "../js/filtroPecas.js";
 
         // Executa a função assim que a página carrega
         carregarNavbar();
         graficoLinhasPecas();
         graficoBarraV();
+        statusPecas();
     </script>   
 </body>
 </html>

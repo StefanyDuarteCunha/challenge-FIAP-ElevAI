@@ -71,8 +71,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="lineAtendimento flex900">
-                    <div class="colAtendimento30 flex900">
+                <div class="lineAtendimentoCards flex900" id="container-cards-fila">
+                    <div class="colAtendimento30 flex900" data-criticidade="alto">
                         <div class="identificacaoElevador">
                             <p class="tagElevador m-0">Elevador #976431</p>
                             <p class="atendimentoAlto m-0">Alto</p>
@@ -81,7 +81,7 @@
                         <p class="dadosAtendimento mt-1 mb-1">Aberta há 01h10min</p>
                         <p class="dadosAtendimento mt-1 mb-0">Score: <span class="infoAtendimento">80/100</span></p>
                     </div>
-                    <div class="colAtendimento30 flex900">
+                    <div class="colAtendimento30 flex900" data-criticidade="baixo">
                         <div class="identificacaoElevador">
                             <p class="tagElevador m-0">Elevador #793146</p>
                             <p class="atendimentoBaixo m-0">Baixo</p>
@@ -90,7 +90,7 @@
                         <p class="dadosAtendimento mt-1 mb-1">Aberta há 02h</p>
                         <p class="dadosAtendimento mt-1 mb-0">Score: <span class="infoAtendimento">60/100</span></p>
                     </div>
-                    <div class="colAtendimento30 flex900">
+                    <div class="colAtendimento30 flex900" data-criticidade="medio">
                         <div class="identificacaoElevador">
                             <p class="tagElevador m-0">Elevador #584297</p>
                             <p class="atendimentoMedio m-0">Medio</p>
@@ -99,27 +99,25 @@
                         <p class="dadosAtendimento mt-1 mb-1">Aberta há 02h23min</p>
                         <p class="dadosAtendimento mt-1 mb-0">Score: <span class="infoAtendimento">70/100</span></p>
                     </div>
-                </div>
-                <div class="lineAtendimento flex900">
-                    <div class="colAtendimento30 flex900">
+                    <div class="colAtendimento30 flex900" data-criticidade="medio">
                         <div class="identificacaoElevador">
                             <p class="tagElevador m-0">Elevador #468415</p>
-                            <p class="atendimentoMedio m-0">Medio</p>
+                            <p class="atendimentoMedio m-0">Médio</p>
                         </div>
                         <p class="dadosAtendimento mt-1 mb-1">Rua Bela Cintra, n° 1569 - São Paulo/SP</p>
                         <p class="dadosAtendimento mt-1 mb-1">Aberta há 01h10min</p>
                         <p class="dadosAtendimento mt-1 mb-0">Score: <span class="infoAtendimento">72/100</span></p>
                     </div>
-                    <div class="colAtendimento30 flex900">
+                    <div class="colAtendimento30 flex900" data-criticidade="medio">
                         <div class="identificacaoElevador">
                             <p class="tagElevador m-0">Elevador #124869</p>
-                            <p class="atendimentoMedio m-0">Medio</p>
+                            <p class="atendimentoMedio m-0">Médio</p>
                         </div>
                         <p class="dadosAtendimento mt-1 mb-1">Alameda Franca, n° 1433 - São Paulo/SP</p>
                         <p class="dadosAtendimento mt-1 mb-1">Aberta há 02h</p>
                         <p class="dadosAtendimento mt-1 mb-0">Score: <span class="infoAtendimento">75/100</span></p>
                     </div>
-                    <div class="colAtendimento30 flex900">
+                    <div class="colAtendimento30 flex900" data-criticidade="baixo">
                         <div class="identificacaoElevador">
                             <p class="tagElevador m-0">Elevador #584726</p>
                             <p class="atendimentoBaixo m-0">Baixo</p>
@@ -162,9 +160,11 @@
     </div>
     <script type="module">
         import { carregarNavbar, botaoNavPageAtendimento } from "../js/scripts.js";
+        import { criticidadeAtendimento } from "../js/criticidadeAtendimento.js";
         // Executa a função assim que a página carrega
         carregarNavbar();
         botaoNavPageAtendimento ();
+        criticidadeAtendimento ();
     </script> 
     <script type="module" src="../js/equipamentos.js"></script>
 </body>
