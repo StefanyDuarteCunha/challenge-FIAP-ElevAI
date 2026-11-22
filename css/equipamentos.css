@@ -1,11 +1,9 @@
 /* ----------- Page - Equipamentos ----------- */
 
 .subtitlePage {
-  font-family: var(--fonteLato);
-  font-size: 1rem;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--cinzaEscuro);
+  color: var(--cinzaMedio);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
 }
 
 .cabecalhoEquip {
@@ -52,13 +50,9 @@
   padding: 1rem 1.25rem;
 }
 
-.cartaoResumo:hover {
-  background-color: var(--azulHover);
-}
-
 .tituloCartao {
   font-size: 0.75rem;
-  color: var(--cinzaEscuro);
+  color: var(--cinzaMedio);
   margin: 0 0 0.35rem 0;
 }
 
@@ -83,7 +77,6 @@
   gap: 1.5rem;
   border-bottom: 1px solid var(--cinzaMedio);
   margin-bottom: 1rem;
-  font-weight: bold;
 }
 
 .abaVisualizacao {
@@ -98,11 +91,6 @@
   color: var(--azulElevAi);
   font-weight: 700;
   border-bottom: 2px solid var(--azulElevAi);
-}
-
-.abaVisualizacao:hover {
-  border-bottom: 2px solid var(--azulDestaque);
-  color: var(--azulDestaque);
 }
 
 .painelSemDados {
@@ -156,17 +144,11 @@
 /* tabela de equipamentos */
 .tabelaEquipamentos {
   width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos móveis */
-}
-
-.tabelaEquipamentos table {
-  width: 100%;
   font-size: 0.8rem;
   border-collapse: collapse;
 }
 
-.tabelaEquipamentos table th {
+.tabelaEquipamentos thead th {
   text-align: left;
   color: var(--cinzaMedio);
   font-weight: 600;
@@ -174,17 +156,15 @@
   border-bottom: 1px solid var(--cinzaMedio);
 }
 
-.tabelaEquipamentos table th:last-child,
-.tabelaEquipamentos table td:last-child {
+.tabelaEquipamentos thead th:last-child,
+.tabelaEquipamentos tbody td:last-child {
   text-align: center;
 }
 
-.tabelaEquipamentos table td {
+.tabelaEquipamentos tbody td {
   padding: 0.6rem 0.4rem;
   border-bottom: 1px solid rgba(128, 128, 128, 0.15);
   vertical-align: middle;
-  word-break: break-word;
-  white-space: nowrap;
 }
 
 .textoSecundario {
@@ -268,10 +248,6 @@
   border-color: var(--azulElevAi);
 }
 
-.paginaItem.hover:hover{
-  background-color: var(--azulHover);
-}
-
 /* linha com os 3 cartões de gráfico */
 .linhaGraficos {
   display: flex;
@@ -295,9 +271,7 @@
 .corpoGrafico {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
-  height: 85%;
 }
 
 .graficoRosca {
@@ -366,4 +340,229 @@
   font-size: 0.75rem;
   color: var(--azulDestaque);
   text-decoration: none;
+}
+
+.legendaNegativa {
+  color: #dc2626;
+}
+
+/* ----------- aba Mapa ----------- */
+.areaMapa {
+  display: flex;
+  gap: 1rem;
+}
+
+.caixaMapa {
+  position: relative;
+  flex: 1;
+  height: 480px;
+  border: 1px solid var(--cinzaMedio);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+#mapaEquipamentos {
+  width: 100%;
+  height: 100%;
+}
+
+/* legenda de status que fica em cima do mapa */
+.legendaMapa {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.colunaLateralMapa {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.colunaLateralMapa .seletorFiltro {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.6rem;
+  background-color: white;
+}
+
+/* barras horizontais (resumo por região e top 10 clientes) */
+.listaBarras {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem 0;
+  font-size: 0.75rem;
+}
+
+.linhaBarra {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.rotuloBarra {
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.trilhoBarra {
+  flex: 1;
+  height: 0.6rem;
+  background-color: #e5e7eb;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.preenchimentoBarra {
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.valorBarra {
+  width: 2rem;
+  text-align: right;
+}
+
+/* ----------- aba Análise ----------- */
+.linhaAnalise {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.linhaAnalise .cartaoGrafico {
+  min-width: 0;
+}
+
+.cartaoLargo {
+  flex: 1.6 !important;
+}
+
+.topoCartaoGrafico {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seletorPequeno {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.6rem;
+  background-color: white;
+}
+
+/* gráfico de linha feito com svg */
+#graficoLinha {
+  width: 100%;
+  height: auto;
+}
+
+.linhaGrade {
+  stroke: #e5e7eb;
+  stroke-width: 1;
+}
+
+.textoEixo {
+  font-size: 9px;
+  fill: #6b7280;
+}
+
+.linhaGrafico {
+  fill: none;
+  stroke: #2563eb;
+  stroke-width: 2;
+}
+
+.areaGrafico {
+  fill: rgba(37, 99, 235, 0.1);
+}
+
+.pontoGrafico {
+  fill: white;
+  stroke: #2563eb;
+  stroke-width: 2;
+}
+
+.caixaDestaque {
+  fill: white;
+  stroke: #d1d5db;
+}
+
+.textoDestaque {
+  font-size: 8px;
+  fill: #111827;
+  text-anchor: middle;
+}
+
+.graficoRoscaGrande {
+  width: 130px;
+  height: 130px;
+}
+
+.graficoRoscaGrande .textoRosca {
+  width: 70%;
+  height: 70%;
+}
+
+/* gráfico de colunas (ocorrências por tipo) */
+.graficoColunas {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  height: 170px;
+}
+
+.colunaBarra {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+.barraColuna {
+  width: 100%;
+  background-color: #60a5fa;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.valorColuna {
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.rotuloColuna {
+  margin-top: 0.3rem;
+}
+
+/* cartão de recomendações do ElevAI */
+.cartaoRecomendacao {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.listaRecomendacoes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.listaRecomendacoes li {
+  margin-bottom: 0.6rem;
+}
+
+.listaRecomendacoes i {
+  color: #2563eb;
+  margin-right: 0.35rem;
 }
